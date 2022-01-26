@@ -1,0 +1,515 @@
+
+\chapter{Quellcode}
+\label{sec:quellcode}
+
+\section{Datenaufbereitung}
+\begin{lstlisting}
+# import globals
+
+
+import sys
+import os
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+raw_data_folder =
+    os.path.abspath(
+        '/home/siedan/programming/masterarbeit/code/analysis/raw_data'
+        )
+
+columns = ['matrikel_num', 'Studienjahr', 'geschlecht',
+        'avgECTS_sem_before', 'ects_year_before', 'year',
+        'first_exam_negative', 'AHS_dummy', 'BHS_dummy', 
+        'ausland_vorbildung_dummy',
+        'sonstige_vorbildung_dummy',
+        'delayed_dummy', 'num_parallel_studies', 'subject',
+        'years_since_matura',
+        'styria_dummy', 'not_styria_dummy', 'germany_dummy',
+        'other_foreign_dummy',
+        'years_since_18',
+        'planned_duration','full_duration_sem',
+        'full_duration_sem_before',
+        'firstGen', 'cum_ects_pos_before',
+        'status_key', 'ECTS_year', 'SWS_year',
+        'active_dummy']
+
+
+# loading data
+
+def load_df(name):
+    return pd.read_csv(os.path.join(raw_data_folder, name))
+
+df = load_df('bwl_pad_jus.csv')
+
+
+# helper functions for calculating new features
+
+# Calculating 'full_duration_sem_before' as a new column:
+def full_duration_sem_before(df):
+    for i in range(len(df)):
+        a = math.floor(df.loc[i, 'full_duration_sem'])
+        if a <= 1:
+            df.loc[i, 'full_duration_sem_before'] = 0
+        else:
+            if df.loc[i, 'last_semester_name'][2] == 'W':
+                df.loc[i, 'full_duration_sem_before'] = a - 1
+            else:
+                df.loc[i, 'full_duration_sem_before'] = a - 2
+    return df
+
+# Calculating 'geschlecht' as a categorial variable:
+def geschlecht(df):
+    for i in range(len(df)):
+        a = df.loc[i, 'geschlecht']
+        if a == 'W':
+            df.loc[i, 'geschlecht'] = 0
+        else:
+            df.loc[i,'geschlecht'] = 1
+    return df
+
+# Calculating 'cum_ects_pos_before':
+def cum_ects_pos_before(df):
+    df['cum_ects_pos_before'] = df['avgECTS_sem_before']*df['full_duration_sem_before']
+    return df
+
+        
+# Calculating 'avgECTS_sem_before' as a new column:
+def avgECTS_sem_before(df):
+    for i in range(len(df)):
+        cum_ects_before_pseudo = df.loc[i, 'cumulated_ects_pos'] - df.loc[i, 'ECTS_year']
+        if not df.loc[i, 'full_duration_sem_before'] == 0:
+            df.loc[i, 'avgECTS_sem_before'] = float(cum_ects_before_pseudo) / df.loc[i, 'full_duration_sem_before']
+        else:
+            df.loc[i, 'avgECTS_sem_before'] = 0
+    return df 
+
+
+# Calculating 'Studienjahr' as a new column:
+def Studienjahr(df):
+    for i in range(len(df)):
+        df.loc[i, "Studienjahr"] = int((df.loc[i, "full_duration_sem_before"]//2) + (df.loc[i, "full_duration_sem_before"]%2) + 1)
+    return df
+
+# Deleting row with negative 'years since matura':
+def Matura(df):
+    df.drop(df[df['years_since_matura'] < 0].index, inplace = True)
+    return df
+    
+
+# Calculating 'ECTS_year_before':
+def year(df):
+    for i in df.index:
+        num = df.loc[i, 'year'][:2]
+        df.loc[i, 'year'] = int(num)
+    return df
+
+def ects_year_before(df):  
+    list_studienjahre = list(df['year'].unique())
+    list_studienjahre.sort()
+    for i in list_studienjahre[1:]:
+        df_year = df.query('year == @i')
+        df_year0 = df.query('year == (@i-1)')
+        
+        for num in df_year.index:
+            if df_year.loc[num, 'Studienjahr'] > 1:
+                matr = df_year.loc[num, 'matrikel_num']
+                if (num-1) in df_year0.index and df_year0.loc[(num-1), 'matrikel_num'] == matr:
+                    df.loc[num, 'ects_year_before'] = df.loc[(num-1), 'ECTS_year']
+            
+    return df
+
+
+# Functions for saving manipulated DataFrame:
+
+def saving(df, name):
+    df.to_csv(os.path.join(raw_data_folder, name))
+
+
+def data_manipulation_pipeline(df, columns, name, save_or_return): # does manipulations to df and is able to save.
+    geschlecht(df)
+    full_duration_sem_before(df)
+    avgECTS_sem_before(df)
+    cum_ects_pos_before(df)
+    Studienjahr(df)
+    Matura(df)
+    year(df)
+    ects_year_before(df)
+    
+    df = df[columns] # hier ordne ich die spalten und verwerfe diejenigen, die ich nicht brauche.
+    if save_or_return:
+        saving(df, name) # adapted_data muesste jetzt eine viel kleinere Datei sein.
+    else:
+        return df
+
+    
+data_manipulation_pipeline(df, columns, 'adapted_data.csv', True)
+    
+
+df1 = load_df('adapted_data.csv')[columns]
+
+df_a = df1.query('Studienjahr == 1')
+df_b = df1.query('Studienjahr > 1 and ects_year_before > 0')
+
+df1 = pd.concat([df_a, df_b]) 
+
+
+list_subjects = split(df1, 'subject')
+
+
+result_list = []
+for df in list_subjects:
+    df = df.drop_duplicates(['matrikel_num', 'Studienjahr'])
+    clear_df = pd.concat(g for _, g in df.groupby(['matrikel_num', 'planned_duration']) if len(g) > 3)
+    result_list.append(clear_df)
+    
+df_pretty = pd.concat(df for df in result_list)
+
+groups = df_pretty.groupby('matrikel_num')
+list_of_students = [] # list von df's, wobei jedes df einen Studenten oder eine Studentin ueber mehrere Jahre hinweg beschreibt.
+
+for i in df_pretty['matrikel_num'].drop_duplicates():
+    list_of_students.append(groups.get_group(i))
+    
+len(list_of_students)
+
+
+saving(df_pretty, 'df_pretty.csv')
+
+
+
+
+
+\end{lstlisting}
+
+
+\newpage
+
+
+\section{Ansatz 1}
+\begin{lstlisting}
+
+# import modules and define globals
+
+import sys
+import os
+
+import random as rd
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+import sklearn
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import r2_score
+from sklearn.model_selection import StratifiedShuffleSplit
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import cross_val_predict
+
+from sklearn.linear_model import LinearRegression
+from sklearn.svm import SVR
+from sklearn.ensemble import RandomForestRegressor
+
+import tensorflow as tf
+from tensorflow import keras
+
+
+raw_data_folder = os.path.abspath('/home/siedan/programming/masterarbeit/code/analysis/raw_data')
+
+def load_df(name):
+    return pd.read_csv(os.path.join(raw_data_folder, name))
+
+df = load_df('adapted_data.csv').drop(['Unnamed: 0'], axis =1)
+
+features_year1 = ['styria_dummy', 'not_styria_dummy', 'germany_dummy',
+                    'num_parallel_studies', 'cum_ects_pos_before',
+                    'years_since_matura', 'firstGen',
+                    'geschlecht', 'AHS_dummy', 'BHS_dummy',
+                    'ausland_vorbildung_dummy', 'sonstige_vorbildung_dummy',
+                    'delayed_dummy', 'ECTS_year', 'active_dummy']
+
+features_years = ['Studienjahr', 'styria_dummy', 'not_styria_dummy', 'germany_dummy',
+                    'num_parallel_studies', 'cum_ects_pos_before',
+                    'avgECTS_sem_before', 'ects_year_before',
+                    'full_duration_sem_before', 'geschlecht',
+                    'years_since_matura', 'firstGen', 'AHS_dummy',
+                    'BHS_dummy', 'ausland_vorbildung_dummy', 'sonstige_vorbildung_dummy',
+                    'delayed_dummy', 'ECTS_year', 'active_dummy']
+
+scaler = StandardScaler()
+
+
+
+
+# helper functions and functions for procedure
+
+def active(df_, prediction):
+    df = df_.copy(deep = True)
+    df.reset_index(drop = True)
+    if len(df) == len(prediction):
+        new_column = []
+        for i in range(len(prediction)):
+            if prediction[i] >= 16:
+                new_column.append(1)
+            else:
+                new_column.append(0)
+        df.insert(len(df.columns), 'active_predicted', new_column, allow_duplicates = True)
+        df.insert(len(df.columns), 'ECTS_predicted', prediction, allow_duplicates = True)
+    else:
+        print('ERROR')
+    return df
+
+    
+def ratio(df):
+    ratio = 0
+    for i in df.index:
+        if df.loc[i, 'active_dummy'] == df.loc[i, 'active_predicted']:
+            ratio +=1
+    ratio = ratio/len(df)
+    return ratio
+
+
+def display_scores(scores):
+    print('Scores: ', scores)
+    print('Mean: ', scores.mean())
+    print('Standard deviation: ', scores.std())
+
+
+def create_data1(df):
+    df = df.query('Studienjahr == 1')[features_year1].dropna().reset_index(drop = True).copy(deep = True)
+    split = StratifiedShuffleSplit(n_splits = 1, test_size = 0.1, random_state = 42)
+    for train_index, test_index in split.split(df, df['active_dummy']):
+        df_train = df.loc[train_index, :]
+        df_test = df.loc[test_index, :]
+    df_train_copy = df_train.copy(deep = True)
+    y_train = list(df_train['ECTS_year'])
+    y_test = list(df_test['ECTS_year'])
+    df_train = scaler.fit_transform(df_train.drop(['ECTS_year', 'active_dummy'], axis = 1))
+    df_test = scaler.fit_transform(df_test.drop(['ECTS_year', 'active_dummy'], axis = 1))
+    return df_train, y_train, df_test, y_test, df_train_copy
+
+def create_data2(df):
+    df = df.query('Studienjahr > 1')[features_years].dropna().reset_index(drop = True).copy(deep = True)
+    split = StratifiedShuffleSplit(n_splits = 1, test_size = 0.1, random_state = 42)
+    for train_index, test_index in split.split(df, df['active_dummy']):
+        df_train = df.loc[train_index, :]
+        df_test = df.loc[test_index, :]
+    df_train_copy = df_train.copy(deep = True)
+    y_train = list(df_train['ECTS_year'])
+    y_test = list(df_test['ECTS_year'])
+    df_train = scaler.fit_transform(df_train.drop(['ECTS_year', 'active_dummy'], axis = 1))
+    df_test = scaler.fit_transform(df_test.drop(['ECTS_year', 'active_dummy'], axis = 1))
+    return df_train, y_train, df_test, y_test, df_train_copy
+
+
+# define training procedure for regression models 
+
+
+def training_regression(df_train, y_train, df_train_copy, model): # df_train is already scaled!
+    model = sklearn.base.clone(model)
+    model.fit(df_train, y_train)
+    
+    predictions = cross_val_predict(model, df_train, y_train, cv=3)
+    rmse = np.sqrt(mean_squared_error(y_train, predictions))
+    mae = mean_absolute_error(y_train, predictions)
+    R_squared = r2_score(y_train, predictions)
+    
+    print('RMSE = ' + str(rmse))
+    print('MAE = ' + str(mae))
+    print('R2_score = ' + str(R_squared))
+    print('----------')
+    df_new = active(df_train_copy, predictions)
+    print('Ratio = ' + str(ratio(df_new)))
+    scores = cross_val_score(model, df_train, y_train, scoring = 'neg_mean_squared_error', cv = 5)
+    rmse_scores = np.sqrt(-scores)
+    display_scores(rmse_scores)
+    print('##########')
+    
+    return model
+
+
+# define training procedure for neural networks
+
+
+def training_ann_regression(df_train, y_train, df_train_copy):
+    model = keras.models.Sequential([
+        keras.layers.Dense(60, activation = 'relu', input_shape = df_train.shape[1:]),
+        keras.layers.Dense(40, activation = 'relu'),
+        keras.layers.Dense(20, activation = 'relu'),
+        keras.layers.Dense(1, activation = 'relu')
+    ])
+    model.compile(loss = 'huber', optimizer = 'sgd')
+    history = model.fit(df_train, np.array(y_train), epochs = 35, validation_split = 0.1)
+    
+    predictions = model.predict(df_train)
+    rmse = np.sqrt(mean_squared_error(y_train, predictions))
+    mae = mean_absolute_error(y_train, predictions)
+    R_squared = r2_score(y_train, predictions)
+    
+    print('RMSE = ' + str(rmse))
+    print('MAE = ' + str(mae))
+    print('R2_score = ' + str(R_squared))
+    print('----------')
+    df_new = active(df_train_copy, predictions)
+    print('Ratio = ' + str(ratio(df_new)))
+    print('##########')
+    
+    return model, history
+
+
+
+# data generation
+
+# Year 1 - 2:
+df1_train, y1_train, df1_test, y1_test, df1_train_copy = create_data1(df)
+
+#  Year > 2:
+df2_train, y2_train, df2_test, y2_test, df2_train_copy = create_data2(df)
+
+
+
+# code which produces results for linear regression
+
+lin_reg = LinearRegression()
+
+reg1 = training_regression(df1_train, y1_train, df1_train_copy, lin_reg)
+
+reg2 = training_regression(df2_train, y2_train, df2_train_copy, lin_reg)
+
+
+
+# code which produces results for support vector Machines
+
+svm_reg = SVR(kernel = 'rbf', gamma = 10, C = 100, epsilon = 5)
+
+svm1 = training_regression(df1_train, y1_train, df1_train_copy, svm_reg)
+
+svm2 = training_regression(df2_train, y2_train, df2_train_copy, svm_reg)
+
+
+
+# code which produces results for random forest models 
+
+forest_reg = RandomForestRegressor()
+
+forest1 = training_regression(df1_train, y1_train, df1_train_copy, forest_reg)
+
+forest2 = training_regression(df2_train, y2_train, df2_train_copy, forest_reg)
+
+
+
+# code which produces results for artificial neural networks
+
+ann1, history1 = training_ann_regression(df1_train, y1_train, df1_train_copy)
+
+pd.DataFrame(history1.history).plot(figsize=(8,5))
+plt.grid(True)
+plt.gca().set_ylim(0, 25)
+plt.show()
+
+
+ann2, history2 = training_ann_regression(df_train2, y_train2, df_train2_copy)
+
+pd.DataFrame(history2.history).plot(figsize=(8,5))
+plt.grid(True)
+plt.gca().set_ylim(0, 25)
+plt.show()
+
+
+# loading data for Simulation
+
+df_pretty = load_df('df_pretty.csv').drop(['Unnamed: 0'], axis =1)
+
+roups = df_pretty.groupby('matrikel_num')
+list_of_students = [] # list von df's, wobei jedes df einen Studenten oder eine Studentin ueber mehrere Jahre hinweg beschreibt.
+
+for i in df_pretty['matrikel_num'].drop_duplicates():
+    list_of_students.append(groups.get_group(i))
+
+
+
+# helper functions for Simulation
+
+predictors = [svm1, svm2]
+features = [features_year1[:-2], features_years[:-2]]
+
+
+def update(input_series):
+    series = input_series.copy(deep = True)
+    series['ects_year_before'] = series['ects_predicted']
+    series['cum_ects_pos_before'] += series['ects_predicted']
+    if series['Studienjahr'] == 1:
+        series['full_duration_sem_before'] = 2
+    else:
+        series['full_duration_sem_before'] += 2
+    series['avgECTS_sem_before'] = series['cum_ects_pos_before']/series['full_duration_sem_before']
+    series['Studienjahr'] += 1
+    return series
+
+def predict(input_student, predictors, features):
+    student = input_student.copy(deep = True)
+    if student['Studienjahr'] == 1:
+        predictor = predictors[0]
+        feature = features[0]
+    else:
+        predictor = predictors[1]
+        feature = features[1]
+    
+    student['ects_predicted'] = float(predictor.predict(pd.DataFrame(student[feature]).T))
+    
+    if student['ects_predicted'] >= 16:
+        student['active_predicted'] = 1
+    else:
+        student['active_predicted'] = 0
+    return student
+
+
+def model_student(df, predictors, features):
+    n_years = len(df)
+    student = df.iloc[0].fillna(0) # Series object # fillna kann Fehler erzeugen!
+    list_of_years = [] # initialisiere Liste der Jahre. Erster Eintrag soll dann erstes Jahr mit predicteten ECTS sein.
+    
+    for i in range(n_years):
+        new_student = predict(student, predictors, features).copy(deep = True)
+        
+        list_of_years.append(new_student)
+
+        student = update(list_of_years[-1])
+        
+        new_df = list_of_years[0].to_frame().T
+        
+    for year in list_of_years[1:]:
+        new_df = new_df.append(year.to_frame().T)
+    
+    return new_df.reset_index(drop = True)
+
+
+\end{lstlisting}
+\newpage
+
+
+
+
+\section{Ansatz 2}
+\begin{lstlisting}
+    # python code 
+
+    def test(df):
+        return df
+\end{lstlisting}
+\newpage
+
+
+
+\section{Ansatz 3}
+\begin{lstlisting}
+    # python code 
+
+    def test(df):
+        return df
+\end{lstlisting}

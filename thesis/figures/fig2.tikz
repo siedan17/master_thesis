@@ -1,0 +1,70 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=grey dot] (0) at (-18, 5) {$x^{(1)}$};
+		\node [style=grey dot] (1) at (-18, 0) {$x^{(2)}$};
+		\node [style=grey dot] (2) at (-18, -5) {$x^{(3)}$};
+		\node [style=grey dot] (3) at (-12, -6) {$w_1^{(4)}$};
+		\node [style=grey dot] (4) at (-12, -2) {$w_1^{(3)}$};
+		\node [style=grey dot] (5) at (-12, 2) {$w_1^{(2)}$};
+		\node [style=grey dot] (6) at (-12, 6) {$w_1^{(1)}$};
+		\node [style=white rectangle] (7) at (-7, 6) {$v_1^{(1)}$};
+		\node [style=white rectangle] (8) at (-7, 2) {$v_1^{(2)}$};
+		\node [style=white rectangle] (9) at (-7, -2) {$v_1^{(3)}$};
+		\node [style=white rectangle] (10) at (-7, -6) {$v_1^{(4)}$};
+		\node [style=grey dot] (11) at (-1, 6) {$w_2^{(1)}$};
+		\node [style=grey dot] (12) at (-1, 2) {$w_2^{(2)}$};
+		\node [style=grey dot] (13) at (-1, -2) {$w_2^{(3)}$};
+		\node [style=grey dot] (14) at (-1, -6) {$w_2^{(4)}$};
+		\node [style=white rectangle] (15) at (4, 6) {$v_2^{(1)}$};
+		\node [style=white rectangle] (16) at (4, 2) {$v_2^{(2)}$};
+		\node [style=white rectangle] (17) at (4, -2) {$v_2^{(3)}$};
+		\node [style=white rectangle] (18) at (4, -6) {$v_2^{(4)}$};
+		\node [style=grey dot] (19) at (9.25, 0) {$h(\mathbf{x}) = y$};
+		\node [style=none] (20) at (-18, -9) {Inputlayer};
+		\node [style=none] (22) at (-10, -9) {Hiddenlayer 1};
+		\node [style=none] (24) at (1, -9) {Hiddenlayer 2};
+		\node [style=none] (25) at (9, -9) {Outputlayer};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=blue] (0) to (6);
+		\draw [style=blue] (0) to (5);
+		\draw [style=blue] (0) to (4);
+		\draw [style=blue] (0) to (3);
+		\draw [style=blue, in=225, out=45] (1) to (6);
+		\draw [style=blue] (1) to (5);
+		\draw [style=blue] (1) to (4);
+		\draw [style=blue] (1) to (3);
+		\draw [style=blue] (2) to (6);
+		\draw [style=blue] (2) to (5);
+		\draw [style=blue] (2) to (4);
+		\draw [style=blue] (2) to (3);
+		\draw [style=dark] (6) to (7);
+		\draw [style=dark] (5) to (8);
+		\draw [style=dark] (4) to (9);
+		\draw [style=dark] (3) to (10);
+		\draw [style=blue] (7) to (11);
+		\draw [style=blue] (7) to (12);
+		\draw [style=blue] (7) to (13);
+		\draw [style=blue] (7) to (14);
+		\draw [style=blue] (8) to (11);
+		\draw [style=blue] (8) to (12);
+		\draw [style=blue] (8) to (13);
+		\draw [style=blue] (8) to (14);
+		\draw [style=blue] (9) to (11);
+		\draw [style=blue] (9) to (12);
+		\draw [style=blue] (9) to (13);
+		\draw [style=blue] (9) to (14);
+		\draw [style=blue] (10) to (11);
+		\draw [style=blue] (10) to (12);
+		\draw [style=blue] (10) to (13);
+		\draw [style=blue] (10) to (14);
+		\draw [style=dark] (11) to (15);
+		\draw [style=dark] (12) to (16);
+		\draw [style=dark] (13) to (17);
+		\draw [style=dark] (14) to (18);
+		\draw [style=blue] (15) to (19);
+		\draw [style=blue] (16) to (19);
+		\draw [style=blue] (17) to (19);
+		\draw [style=blue] (18) to (19);
+	\end{pgfonlayer}
+\end{tikzpicture}

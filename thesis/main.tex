@@ -1,0 +1,234 @@
+
+\documentclass[
+    fontsize=12pt,
+    paper=A4,
+    parskip=full, % keine Ahnung, was das bedeutet.
+    bibliography=totoc,
+    abstract=on,
+    listof=totoc,
+]{scrreprt} % KOMA Documentclass. Till now only for sans serif headings. Should also provide more flexibility.
+
+\setuptoc{toc}{totoc}
+
+
+\usepackage[a-2b]{pdfx}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} % f\"ur das trennen von W\"ortern. 
+\usepackage{graphicx} % for including pictures or making creating figures.
+\usepackage{multirow} % for tables
+
+
+\usepackage[english,ngerman]{babel} % deutsche Bezeichnungen und Worttrennung… 
+\usepackage{lmodern} % Die Schrift im PDF ist schoener 
+% \usepackage{tabularx} % Tabellen mit automatischen Zeilenumbruch in der Zelle…
+
+
+\usepackage[a4paper,left=3cm, top=2.5cm, bottom=2.5cm, right=2.5cm]{geometry}
+\usepackage{acronym}
+\usepackage{booktabs}
+\usepackage[onehalfspacing]{setspace}
+
+
+\usepackage{csquotes}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{main_bib.bib}
+
+
+\usepackage{tikzit}
+\input{sample.tikzstyles}
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb,amstext}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\median}{median}
+
+
+\graphicspath{{graphics/}} % for redirecting all graphical inputs to that specific folder.
+
+
+
+
+
+
+
+
+%%%% Code Def %%%%
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+%%%% End Code Def %%%%
+
+
+
+
+
+
+
+
+
+%%%% Title Page %%%%
+
+    % \titlehead{\begin{flushright} \includegraphics[scale=0.4]{logo.jpg} \end{flushright}}
+
+    \subject{
+        \Huge{\textbf{Daniel Siemmeister}}
+        }
+
+    % \subject{Bericht}
+
+    \title{
+        {Erprobung unterschiedlicher Machine Learning Modelle zur Sch\"atzung der Pr\"ufungsaktivit\"at von Studierenden}
+        }
+
+
+    % \author{
+    %     \large{verfasst von} \\
+    %     \large{\textbf{Daniel Siemmeister}} \\
+    %     \ \\
+    %     \large{im Rahmen einer Masterarbeit am} \\
+    %     \large{\textbf{Institut f\"ur Mathematik und wissenschaftliches Rechnen}}\\
+    %     \ \\
+    %     \large{an der} \\
+    %     \large{\textbf{Karl-Franzens Universit\"at Graz}}\\
+    % }
+    \author{
+        
+        \Huge{\textbf{Masterarbeit}} \\
+        \ \\
+        \large{zur Erlangung des akademischen Grades} \\
+        \large{\textbf{Master of Education}}\\ 
+        \\
+        \large{im Studium Lehramt Sekundarstufe Allgemeinbildung}\\
+        \large{im Entwicklungsverbung Süd-Ost}\\
+        \ \\
+        \large{vorgelegt an der} \\
+        \large{\textbf{Karl-Franzens-Universität Graz}}\\
+        \\
+        \large{unter der Anleitung von} \\
+        \large{\textbf{Univ.-Prof. Dr. Gunther Leobacher}} \\
+        \\
+        \large{ausgef\"uhrt am}\\
+        \large{\textbf{Institut f\"ur Mathematik und wissenschaftliches Rechnen}}
+        \\
+        \\
+        }
+
+    \date{ \normalsize{Graz, 2022}}
+
+%%%% End Title Page %%%%%
+
+
+
+
+
+
+
+
+
+
+
+\begin{document}
+
+\begin{singlespace}
+    \maketitle 
+    \setcounter{page}{2}
+\end{singlespace}
+
+
+
+    % \chapter*{Selbstst\"andigkeitserkl\"arung} % * for not including in  table of contents.
+    % Ich erkl\"are \dots
+
+    % \chapter*{Danksagungen}
+    % An dieser Stelle \dots
+
+    % \chapter*{Zusammenfassung}
+    % Das hier ist die Zusammenfassung
+
+    % \chapter*{Abstract}
+    % That is the abstract
+
+
+
+    \tableofcontents % Inhaltsverzeichnis
+    \listoffigures % Abbildungsverzeichnis
+    \listoftables % Tabellenverzeichnis
+
+    \chapter*{Abk\"urzungsverzeichnis}
+    \begin{acronym}
+        \acro{lqm}[LQM]{Leistungs- und Qualit\"atsmanagement; Abteilung der Universität Graz.}
+        \acro{ects}[ECTS]{European Credit Transfer and Accumulation System; 1 ECTS enspricht einem f\"ur einen Arbeitsaufwand von 25 Echtstunden \'a 60 Minuten.}
+        \acro{knn}[KNN]{K\"unstliches Neuronales Netzwerk}
+        \acro{svm}[SVM]{Support Vector Machine Modell}
+        \acro{rf}[RF]{Random Forest Modell}
+        \acro{linR}[lin. Reg.]{lineares Regressionsmodell}
+        \acro{logR}[log. Reg.]{logistisches Regressionsmodell}
+        \acro{fp}[FP]{\textit{false positives}; Studierende, die als pr\"ufungsaktiv klassifiziert werden, aber es tats\"achlich nicht waren.}
+        \acro{fn}[FN]{\textit{false negatives}; Studierende, die als nicht pr\"ufungsaktiv klassifiziert werden, aber es tats\"achlich waren.}
+        \acro{tp}[TP]{\textit{true positives}; Studierende , die als pr\"ufungsaktiv klassifiziert werden, und es tats\"achlich waren.}
+        \acro{tn}[TN]{\textit{true negatives}; Studierende , die als nicht pr\"ufungsaktiv klassifiziert werden, und es tats\"achlich nicht waren.}
+        \acro{p1}[P1]{Problem 1, definiert im Kapitel 2.1.}
+        \acro{p2}[P2]{Problem 2, definiert im Kapitel 2.1.}
+        \acro{RMSE}[RMSE]{Root Mean Squared Error}
+        \acro{MAE}[MAE]{Mean Absolut Error}
+        \acro{CV}[CV]{Crossvalidierung}
+        
+    \end{acronym}
+
+
+
+    \chapter{Einleitung}
+    \input{chapters/einleitung} 
+    \input{chapters/problemstellung.tex}    
+    \input{chapters/data.tex}    
+    
+
+    \chapter{Methoden und Modelle}
+    \input{chapters/ansaetzeP1}
+    \input{chapters/ansaetzeP2}
+    
+    \input{chapters/ml.tex}
+    
+    \input{chapters/implementation.tex}
+    
+    \input{chapters/auswertung.tex}
+
+
+    \chapter{Ergebnisse}
+    \input{chapters/ergebnisse}
+
+
+    \chapter{Diskussion}
+    \input{chapters/diskussion}
+
+    \begin{doublespace}
+        \printbibliography
+    \end{doublespace}
+    
+
+    % \appendix
+    % \input{chapters/appendix}
+
+    
+
+\end{document}

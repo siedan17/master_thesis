@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=blue dot] (0) at (-8, 10) {E1};
+		\node [style=white dot] (2) at (-4, 5) {E2};
+		\node [style=yellow dot] (4) at (-8, 2) {End (y = 1)};
+		\node [style=yellow dot] (6) at (-13, 5) {End (y = 1)};
+		\node [style=red dot] (7) at (0, 2) {End (y = 0)};
+		\node [style=none] (8) at (-12, 7.5) {E1 = 1};
+		\node [style=none] (9) at (-4.5, 7.5) {E1 = 0};
+		\node [style=none] (10) at (-7, 4) {E2 = 1};
+		\node [style=none] (11) at (-1, 4) {E2 = 0};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=dark] (0) to (6);
+		\draw [style=dark] (0) to (2);
+		\draw [style=dark] (2) to (4);
+		\draw [style=dark] (2) to (7);
+	\end{pgfonlayer}
+\end{tikzpicture}
