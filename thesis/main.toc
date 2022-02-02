@@ -35,11 +35,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Machine Learning Modelle}{27}{section.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Multiple Lineare Regression}{34}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.1}Multiple Lineare Regression}{35}{subsection.2.3.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.2}Logistische Regression}{37}{subsection.2.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.3}Random Forest Modelle}{38}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.3}Random Forest Modelle}{39}{subsection.2.3.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.4}Support Vector Machine Modelle}{41}{subsection.2.3.4}%
 \defcounter {refsection}{0}\relax 
@@ -51,9 +51,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.5.1}Machine Learning Modelle}{50}{subsection.2.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.2}Ans\"atze f\"ur P1}{51}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.2}Ans\"atze f\"ur P1}{52}{subsection.2.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.3}Ans\"atze f\"ur P2}{52}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.3}Ans\"atze f\"ur P2}{53}{subsection.2.5.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Ergebnisse}{54}{chapter.3}%
 \defcounter {refsection}{0}\relax 

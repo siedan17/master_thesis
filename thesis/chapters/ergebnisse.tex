@@ -10,7 +10,7 @@ In \hyperref[tab:ergebnisA1P1]{Tabelle 3.1} sind die Machine Learning Modelle un
   \caption{\label{tab:ergebnisA1P1} Auswertung der Machine Learnig Modelle in Ansatz 1 f\"ur P1}
   \begin{tabular}{ p{3cm} p{2cm} p{2cm} p{2cm} p{2cm} p{1.5cm} }
     \toprule
-    Metrik & & lineare Regression & Random Forest & SVM & KNN \\
+    Metrik & & lineare Regression & Random Forest & SVM & KNN (ohne CV) \\
     \midrule
     \multirow{2}{3em}{RMSE (Crossvalidation)} 
     & 1 Jahr & $18.7 \pm 0.2$ & $19.2 \pm 0.3$ & $19.7 \pm 0.4$ & $18.72$  \\
@@ -69,7 +69,7 @@ $\left[ \begin{array}{rrrr} 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \\ 0.05 & 0.01 & 0.8
 $\left[ \begin{array}{rrrr} 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \\ 0.15& 0.02& 0.71& 0.12\\ 0.03& 0.27& 0.28& 0.42 \end{array}\right]$. 
 
 Um eine \"Ubergangswahrscheinlichkeit abzulesen geht man wie folgt vor. die Zeilen der Matrizen geben den aktuellen Status der studierenden Person an. 
-Dieser kann entweder "aktiv und weiterhin inskripiert", "nicht aktiv und weiterhin inskripiert", "aktiv und nicht weiter inskripiert", oder "nicht aktiv und nicht weiter inskripiert" sein.
+Dieser kann entweder \glqq aktiv und weiterhin inskripiert\grqq{}, \glqq nicht aktiv und weiterhin inskripiert\grqq{}, \glqq aktiv und nicht weiter inskripiert\grqq{}, oder \glqq nicht aktiv und nicht weiter inskripiert\grqq{} sein.
 Die Spalten geben die Klasse an in die eine studierende Person im n\"achsten Jahr kommen kann. Beispielsweise gibt das Element (3, 2) jeder Matrix die Wahrscheinlichkeit an,
 mit der eine studierende Person aus Klasse c (pr\"ufungsakiv und weiterhin inskripiert) in die Klasse b (nicht pr\"ufungsakiv und nicht weiterhin inskripiert) gelangt.\\
 
