@@ -1,0 +1,37 @@
+\documentclass[a4paper, english,12pt]{article}
+
+%opening
+\title{Abstract}
+\author{Daniel Siemmeister}
+\date{Graz, 2022}
+
+\begin{document}
+
+
+\maketitle
+\thispagestyle{empty}
+
+The aim of this paper is to estimate, based on student data, how many students will be active
+students in 3 years. The aim is only to predict the total number, and not every student individually. \\
+
+To achieve the goal of the work, different approaches are tested, which try to solve the problem in different ways.
+The problem is divided into two smaller problems. The first of the two deals with the prediction of the number of students who are already enrolled.
+The second is concerned with predicting future students who will enrol in the following two years.
+In most of the approaches, machine learning models of different architectures are applied and compared in terms of their predictive ability. \\ 
+
+The key insights of the work are:
+\begin{itemize}
+    \item True understanding of the problem. That is, only the number of acitve students is required, and one does not need to classify each person exactly.
+    \item Machine learning algorithms for classification give probabilities. Based on manually set thresholds, they try to classify.
+    These probabilities can also be used without actual classification.
+    \item Different machine learning algorithms produce similar results. The complexity of the algorithms is not decisive.
+    \item Using estimated probabilities, one can reasonably predict the expected number of active students.
+\end{itemize}
+
+Although the predictions give good results, it is important to note that more data is needed to adequately test all approaches. 
+In addition, there is a risk that there will be fundamental changes in student behaviour over the 3 years and that the predictions will not be realised. 
+will not come true.
+
+
+
+\end{document}
