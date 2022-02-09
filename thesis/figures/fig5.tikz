@@ -1,14 +1,14 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=none] (0) at (-17, 1) {};
-		\node [style=none] (1) at (-9, 1) {};
+		\node [style=none] (1) at (-8, 1) {};
 		\node [style=none] (2) at (-4, 1) {};
-		\node [style=none] (3) at (4, 1) {};
-		\node [style=none] (4) at (-4, 7) {};
-		\node [style=none] (5) at (-17, 7) {};
-		\node [style=none] (6) at (-8, 1) {x1};
-		\node [style=none] (7) at (4.75, 1) {x1};
-		\node [style=none] (8) at (-4, 7.75) {x2};
+		\node [style=none] (3) at (5.25, 1) {};
+		\node [style=none] (4) at (-4, 7.5) {};
+		\node [style=none] (5) at (-17, 7.5) {};
+		\node [style=none] (6) at (-8, 0.25) {x1};
+		\node [style=none] (7) at (5.25, 0.5) {x1};
+		\node [style=none] (8) at (-5, 7.5) {x2};
 		\node [style=yellow dot] (9) at (-16, 1) {};
 		\node [style=yellow dot] (10) at (-15, 1) {};
 		\node [style=red dot] (11) at (-14, 1) {};
@@ -40,13 +40,13 @@
 		\node [style=none] (37) at (-15, 0) {-2};
 		\node [style=none] (38) at (-16, 0) {-3};
 		\node [style=none] (39) at (-4, 2.5) {};
-		\node [style=none] (40) at (4, 2.5) {};
+		\node [style=none] (40) at (5.25, 2.5) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw [style=black] (5.center) to (0.center);
-		\draw [style=black] (0.center) to (1.center);
-		\draw [style=black] (2.center) to (4.center);
-		\draw [style=black] (2.center) to (3.center);
 		\draw [style=red] (39.center) to (40.center);
+		\draw [style=dark] (0.center) to (1.center);
+		\draw [style=dark] (0.center) to (5.center);
+		\draw [style=dark] (2.center) to (4.center);
+		\draw [style=dark] (2.center) to (3.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

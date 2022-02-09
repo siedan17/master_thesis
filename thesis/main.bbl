@@ -361,6 +361,100 @@
       \endverb
       \keyw{classification classifier dblp decision ensemble final forest forests imported kde learning machine ml mykopie origin random text-detection the_youtube_social_network thema:exploiting_place_features_in_link_prediction_on_location-based_social_networks trees uw_ss14_web2.0}
     \endentry
+    \entry{sklearn_api}{inproceedings}{}
+      \name{author}{15}{}{%
+        {{hash=5325438f4daa7970e2720791d9ac690f}{%
+           family={Buitinck},
+           familyi={B\bibinitperiod},
+           given={Lars},
+           giveni={L\bibinitperiod}}}%
+        {{hash=832b9967410c05c324eec6e9b19da71e}{%
+           family={Louppe},
+           familyi={L\bibinitperiod},
+           given={Gilles},
+           giveni={G\bibinitperiod}}}%
+        {{hash=d3b6c8582cea4e8b6576137b6a72cadc}{%
+           family={Blondel},
+           familyi={B\bibinitperiod},
+           given={Mathieu},
+           giveni={M\bibinitperiod}}}%
+        {{hash=bab4e5caee2d67831e464ce575022b37}{%
+           family={Pedregosa},
+           familyi={P\bibinitperiod},
+           given={Fabian},
+           giveni={F\bibinitperiod}}}%
+        {{hash=8a6c9c0890b96766b8cc7c152d7b86a8}{%
+           family={Mueller},
+           familyi={M\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=721be0317527f44db425f7a97dcab15e}{%
+           family={Grisel},
+           familyi={G\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod}}}%
+        {{hash=7fb1184b4b06404ea26547130860771e}{%
+           family={Niculae},
+           familyi={N\bibinitperiod},
+           given={Vlad},
+           giveni={V\bibinitperiod}}}%
+        {{hash=86e647e5c801f3ce733927f75f029463}{%
+           family={Prettenhofer},
+           familyi={P\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=12ebe424e1c87de156c57e8fa7683f46}{%
+           family={Gramfort},
+           familyi={G\bibinitperiod},
+           given={Alexandre},
+           giveni={A\bibinitperiod}}}%
+        {{hash=dd23caf60ef6fe47d09bad8ff0dc8695}{%
+           family={Grobler},
+           familyi={G\bibinitperiod},
+           given={Jaques},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b77398bb05b09a70738309551dc505a7}{%
+           family={Layton},
+           familyi={L\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=0fd9a0e34f1b2adda41357c948d14986}{%
+           family={VanderPlas},
+           familyi={V\bibinitperiod},
+           given={Jake},
+           giveni={J\bibinitperiod}}}%
+        {{hash=557b78cbca511465f0b78ac10c0a9ce3}{%
+           family={Joly},
+           familyi={J\bibinitperiod},
+           given={Arnaud},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3309917dfb1d5f26d52eb9264a3296a0}{%
+           family={Holt},
+           familyi={H\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=cfa3239dded54488f9a82a5718d5b927}{%
+           family={Varoquaux},
+           familyi={V\bibinitperiod},
+           given={Ga{ë}l},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{8013e59991ab833d42c86ac9daf5e6ba}
+      \strng{fullhash}{e16647faba7aef4d40aca3c94f5333ad}
+      \strng{bibnamehash}{8013e59991ab833d42c86ac9daf5e6ba}
+      \strng{authorbibnamehash}{8013e59991ab833d42c86ac9daf5e6ba}
+      \strng{authornamehash}{8013e59991ab833d42c86ac9daf5e6ba}
+      \strng{authorfullhash}{e16647faba7aef4d40aca3c94f5333ad}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{ECML PKDD Workshop: Languages for Data Mining and Machine Learning}
+      \field{title}{{API} design for machine learning software: experiences from the scikit-learn project}
+      \field{year}{2013}
+      \field{pages}{108\bibrangedash 122}
+      \range{pages}{15}
+    \endentry
     \entry{SVM1}{article}{}
       \name{author}{1}{}{%
         {{hash=87a37d6147f8833d72d9db990fcc6951}{%
@@ -871,110 +965,103 @@
     \endentry
     \entry{sklearn}{article}{}
       \name{author}{16}{}{%
-        {{hash=bab4e5caee2d67831e464ce575022b37}{%
+        {{hash=6e96fec0d63277626bb324bd28cdecb7}{%
            family={Pedregosa},
            familyi={P\bibinitperiod},
-           given={Fabian},
+           given={F.},
            giveni={F\bibinitperiod}}}%
-        {{hash=cfa3239dded54488f9a82a5718d5b927}{%
+        {{hash=b99c2df2144dc5ee09317a7833dea42d}{%
            family={Varoquaux},
            familyi={V\bibinitperiod},
-           given={Gaël},
+           given={G.},
            giveni={G\bibinitperiod}}}%
-        {{hash=12ebe424e1c87de156c57e8fa7683f46}{%
+        {{hash=955f19cea89ae97bb7936078898e6255}{%
            family={Gramfort},
            familyi={G\bibinitperiod},
-           given={Alexandre},
+           given={A.},
            giveni={A\bibinitperiod}}}%
-        {{hash=504ea1986689f1047a6f0beda2cb3822}{%
+        {{hash=2787869c9954c1d4e9891098995feb75}{%
            family={Michel},
            familyi={M\bibinitperiod},
-           given={Vincent},
+           given={V.},
            giveni={V\bibinitperiod}}}%
-        {{hash=0f3fc06fb9fcbb01b9cc0985eaf0a71c}{%
+        {{hash=86d47ab9ca1a9dae108b4d4a0418c679}{%
            family={Thirion},
            familyi={T\bibinitperiod},
-           given={Bertrand},
+           given={B.},
            giveni={B\bibinitperiod}}}%
-        {{hash=721be0317527f44db425f7a97dcab15e}{%
+        {{hash=d42f9e9cec95da1dad2232eac74982ab}{%
            family={Grisel},
            familyi={G\bibinitperiod},
-           given={Olivier},
+           given={O.},
            giveni={O\bibinitperiod}}}%
-        {{hash=d3b6c8582cea4e8b6576137b6a72cadc}{%
+        {{hash=8bd8ef25258dd2311f92df23fe71ecf7}{%
            family={Blondel},
            familyi={B\bibinitperiod},
-           given={Mathieu},
+           given={M.},
            giveni={M\bibinitperiod}}}%
-        {{hash=86e647e5c801f3ce733927f75f029463}{%
+        {{hash=a5ee41fa92b9e425806e1773853f1932}{%
            family={Prettenhofer},
            familyi={P\bibinitperiod},
-           given={Peter},
+           given={P.},
            giveni={P\bibinitperiod}}}%
-        {{hash=89d698773eaf2fae761ff0008031c7be}{%
+        {{hash=0c808557734e8929976d1f06f99c4ff2}{%
            family={Weiss},
            familyi={W\bibinitperiod},
-           given={Ron},
+           given={R.},
            giveni={R\bibinitperiod}}}%
-        {{hash=b255e99d411f28c789a231829f765c64}{%
+        {{hash=9662a6ea01596c6dd450817ccac81c4a}{%
            family={Dubourg},
            familyi={D\bibinitperiod},
-           given={Vincent},
+           given={V.},
            giveni={V\bibinitperiod}}}%
-        {{hash=a08a00cf90823600b731a138afc28949}{%
+        {{hash=39e81a3e2193b954680a0ab847a0bb55}{%
            family={Vanderplas},
            familyi={V\bibinitperiod},
-           given={Jake},
+           given={J.},
            giveni={J\bibinitperiod}}}%
-        {{hash=afb9a37bec11b531f1f0f33793a7f1fe}{%
+        {{hash=14c4a498c032f77d0b83f86c710dd50e}{%
            family={Passos},
            familyi={P\bibinitperiod},
-           given={Alexandre},
+           given={A.},
            giveni={A\bibinitperiod}}}%
-        {{hash=9fd9ed8466bbb96364ae008f2a665e6e}{%
+        {{hash=dc075b18fb4710a1a37b258804c57efe}{%
            family={Cournapeau},
            familyi={C\bibinitperiod},
-           given={David},
+           given={D.},
            giveni={D\bibinitperiod}}}%
-        {{hash=281ac3097ec8447c2d26e9f3cfde6082}{%
+        {{hash=67ec0e8add781665a43010c9559111e9}{%
            family={Brucher},
            familyi={B\bibinitperiod},
-           given={Matthieu},
+           given={M.},
            giveni={M\bibinitperiod}}}%
-        {{hash=23403cde972dddbdb48efe2bcc07dc3c}{%
+        {{hash=dcb3918f09eb8785e6b212a907cc37cf}{%
            family={Perrot},
            familyi={P\bibinitperiod},
-           given={Matthieu},
+           given={M.},
            giveni={M\bibinitperiod}}}%
-        {{hash=e2f7a458c7c1f0d13cbcaad5c415ad54}{%
+        {{hash=ab20fcf381cd45daa82417c6fc595051}{%
            family={Duchesnay},
            familyi={D\bibinitperiod},
-           given={Édouard},
-           giveni={É\bibinitperiod}}}%
+           given={E.},
+           giveni={E\bibinitperiod}}}%
       }
-      \strng{namehash}{9ec95d747bac3417f92265a9a44f8bb4}
-      \strng{fullhash}{490c08d091505100c571bcba89f8c65d}
-      \strng{bibnamehash}{9ec95d747bac3417f92265a9a44f8bb4}
-      \strng{authorbibnamehash}{9ec95d747bac3417f92265a9a44f8bb4}
-      \strng{authornamehash}{9ec95d747bac3417f92265a9a44f8bb4}
-      \strng{authorfullhash}{490c08d091505100c571bcba89f8c65d}
+      \strng{namehash}{3a097aa3ebf2b8c2acf988341dde9710}
+      \strng{fullhash}{7a67607c66e4af944b5f16461d6d0a87}
+      \strng{bibnamehash}{3a097aa3ebf2b8c2acf988341dde9710}
+      \strng{authorbibnamehash}{3a097aa3ebf2b8c2acf988341dde9710}
+      \strng{authornamehash}{3a097aa3ebf2b8c2acf988341dde9710}
+      \strng{authorfullhash}{7a67607c66e4af944b5f16461d6d0a87}
       \field{sortinit}{P}
       \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Machine Learning Research}
-      \field{number}{85}
-      \field{title}{Scikit-learn: Machine Learning in Python}
+      \field{title}{Scikit-learn: Machine Learning in {P}ython}
       \field{volume}{12}
       \field{year}{2011}
       \field{pages}{2825\bibrangedash 2830}
       \range{pages}{6}
-      \verb{urlraw}
-      \verb http://jmlr.org/papers/v12/pedregosa11a.html
-      \endverb
-      \verb{url}
-      \verb http://jmlr.org/papers/v12/pedregosa11a.html
-      \endverb
     \endentry
     \entry{ID3}{article}{}
       \name{author}{1}{}{%

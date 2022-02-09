@@ -11,7 +11,7 @@
 \tikzstyle{yellow dot}=[fill=yellow, draw=black, shape=circle]
 \tikzstyle{red dot}=[fill=red, draw=black, shape=circle]
 \tikzstyle{blue rect}=[fill=cyan, draw=black, shape=rectangle, tikzit shape=rectangle, tikzit fill=cyan, tikzit draw=black]
-\tikzstyle{yellow}=[fill=white, draw=yellow, shape=rectangle]
+\tikzstyle{yellow}=[fill=yellow, draw=yellow, shape=rectangle, tikzit draw=yellow]
 \tikzstyle{red}=[fill=red, draw=black, shape=rectangle, tikzit fill=red, tikzit draw=black, tikzit shape=rectangle]
 
 % Edge styles
@@ -20,3 +20,5 @@
 \tikzstyle{red}=[-, draw=red]
 \tikzstyle{black}=[-, draw=black]
 \tikzstyle{green}=[-, draw=green, tikzit draw=green]
+\tikzstyle{new edge style 0}=[-, draw=blue, tikzit draw=blue]
+\tikzstyle{new edge style 1}=[-, draw={rgb,255: red,5; green,166; blue,24}, tikzit draw={rgb,255: red,5; green,166; blue,24}]

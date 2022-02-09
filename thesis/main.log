@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.2)  2 FEB 2022 10:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.2)  9 FEB 2022 19:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1841,93 +1841,93 @@ Underfull \hbox (badness 10000) in paragraph at lines 488--491
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 494--497
-
- []
-
 (./figures/fig4.tikz)
-Underfull \hbox (badness 10000) in paragraph at lines 539--542
-
- []
-
-
-Overfull \hbox (22.52596pt too wide) in paragraph at lines 543--549
-\T1/lmr/m/n/12 ten li-ne-ar zu se-pa-rie-ren. Das be-deu-tet, man ver-sucht für die Da-ten $\OML/lmm/m/it/12 S \OT1/lmr/m/n/12 = (\OT1/lmr/bx/n/12 x[]\OML/lmm/m/it/12 ; y[]\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; [] ; \OT1/lmr/m/n/12 (\OT1/lmr/bx/n/12 x[]\OML/lmm/m/it/12 ; y[]\OT1/lmr/m/n/12 )$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 543--549
+Underfull \hbox (badness 10000) in paragraph at lines 507--510
 
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 550--555
+Underfull \hbox (badness 10000) in paragraph at lines 542--545
+
+ []
+
+
+Overfull \hbox (22.52596pt too wide) in paragraph at lines 546--552
+\T1/lmr/m/n/12 ten li-ne-ar zu se-pa-rie-ren. Das be-deu-tet, man ver-sucht für die Da-ten $\OML/lmm/m/it/12 S \OT1/lmr/m/n/12 = (\OT1/lmr/bx/n/12 x[]\OML/lmm/m/it/12 ; y[]\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; [] ; \OT1/lmr/m/n/12 (\OT1/lmr/bx/n/12 x[]\OML/lmm/m/it/12 ; y[]\OT1/lmr/m/n/12 )$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 546--552
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--558
 
  []
 
 (./figures/fig6.tikz) [42]
-Underfull \hbox (badness 10000) in paragraph at lines 570--572
+Underfull \hbox (badness 10000) in paragraph at lines 573--575
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 573--577
+Underfull \hbox (badness 10000) in paragraph at lines 576--580
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 578--582
+Underfull \hbox (badness 10000) in paragraph at lines 581--585
 
  []
 
 (./figures/fig5.tikz)
-Underfull \hbox (badness 10000) in paragraph at lines 594--600
+Underfull \hbox (badness 10000) in paragraph at lines 597--603
 
  []
 
 [43]
-Underfull \hbox (badness 10000) in paragraph at lines 604--609
+Underfull \hbox (badness 10000) in paragraph at lines 607--612
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 641--645
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 646--651
+Underfull \hbox (badness 10000) in paragraph at lines 644--648
 
  []
 
 [44]
-Underfull \hbox (badness 10000) in paragraph at lines 652--655
+Underfull \hbox (badness 10000) in paragraph at lines 649--654
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 667--668
+Underfull \hbox (badness 10000) in paragraph at lines 655--658
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 670--671
 
  []
 
 [45]
-Underfull \hbox (badness 10000) in paragraph at lines 676--678
+Underfull \hbox (badness 10000) in paragraph at lines 679--681
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 679--682
+Underfull \hbox (badness 10000) in paragraph at lines 682--685
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 696--700
+Underfull \hbox (badness 10000) in paragraph at lines 699--703
 
  []
 
 (./figures/fig2.tikz)
-Overfull \hbox (1.52408pt too wide) in paragraph at lines 70--705
+Overfull \hbox (1.52408pt too wide) in paragraph at lines 70--708
  [] 
  []
 
@@ -1936,12 +1936,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--9
 
  []
 
-
+[47]
 Underfull \hbox (badness 10000) in paragraph at lines 10--13
 
  []
 
-[47]
+
 Underfull \hbox (badness 10000) in paragraph at lines 14--16
 
  []
@@ -2010,12 +2010,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--70
 
  []
 
-
+[52]
 Underfull \hbox (badness 10000) in paragraph at lines 71--72
 
  []
 
-[52]
+
 Underfull \hbox (badness 10000) in paragraph at lines 80--84
 
  []
@@ -2264,18 +2264,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 227.
  ) 
 Here is how much of TeX's memory you used:
- 40708 strings out of 481239
- 751583 string characters out of 5920378
- 1537278 words of memory out of 5000000
- 55061 multiletter control sequences out of 15000+600000
- 617524 words of font info for 78 fonts, out of 8000000 for 9000
+ 40859 strings out of 481239
+ 753646 string characters out of 5920378
+ 1537789 words of memory out of 5000000
+ 55212 multiletter control sequences out of 15000+600000
+ 614534 words of font info for 77 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  73i,27n,90p,10095b,3675s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc} </home/siedan/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk>{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (66 pages, 639186 bytes).
+Output written on main.pdf (66 pages, 639877 bytes).
 PDF statistics:
- 1405 PDF objects out of 1440 (max. 8388607)
- 793 compressed objects within 8 object streams
- 167 named destinations out of 1000 (max. 500000)
+ 1400 PDF objects out of 1440 (max. 8388607)
+ 788 compressed objects within 8 object streams
+ 168 named destinations out of 1000 (max. 500000)
  441 words of extra memory for PDF output out of 10000 (max. 10000000)
 

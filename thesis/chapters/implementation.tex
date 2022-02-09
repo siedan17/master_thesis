@@ -7,7 +7,7 @@ Alle Algorithmen, Modelle und Auswertungen wurden in der Programmiersprache \tex
 Bibliotheken f\"ur die allgemeine Entwicklung und Auswertung der Modelle waren
 \textit{Jupyter} \cite{jupyter}, \textit{Pandas} \cite{pandas}, \textit{Numpy} \cite{numpy} und \textit{Matplotlib} \cite{plt}.  \\
 
-F\"ur die Implementierung der unterschiedlichen Machine Learning Modelle wurde vor allem die Bibliothek \textit{Scikit-Learn} \cite{sklearn} verwendet, welche eine einfache API f\"ur 
+F\"ur die Implementierung der unterschiedlichen Machine Learning Modelle wurde vor allem die Bibliothek \textit{Scikit-Learn} \cite{sklearn_api} verwendet, welche eine einfache API f\"ur 
 diese und \"ahnliche Problemstellungen bereitstellt. Weiters kann man die Algorithmen leicht auswerten und auch die Hyperparameter optimieren.
 F\"ur die Implementierung der k\"unstlichen neuronalen Netzwerke wurde \textit{Tensorflow} \cite{tensorflow} und die passende API von \textit{Keras} \cite{keras} verwendet. \\
 
@@ -20,17 +20,17 @@ aufgeteilt, welche nur die Werte 0 oder 1 annehmen k\"onnen. \\
 
 One-Hot-Encoding bedeutet, dass ein nominales Merkmal mit $m$ Klassen in $m-1$ neue Merkmale umcodiert wird. Danach ist jenes Merkmale, welches 
 der Klasse enspricht in der das Beispiel zuvor war, mit 1 codiert und die anderen neuen Merkmale mit 0. Sollte das Beispiel zuvor in der Klasse gewesen sein, f\"ur die 
-es kein neues Merkmal gibt, so entspricht es der Kodierung, dass alle neuen Merkmale 0 sind \cite{handson}. \\
+es kein neues Merkmal gibt, so entspricht es der Kodierung, dass alle neuen Merkmale 0 sind \cite[Seite 67]{handson}. \\
 
 F\"ur das Training der Machine Learning Algorithmen wird der von den Anpassungen \"ubrig gebliebene Datensatz
 in \textit{Trainigsdaten}, in \textit{Testdaten} und gegebenenfalls in \textit{Valiedierungsdaten} unterteilt.
 Diese Unterteilung wurde so durch gef\"uhrt, dass die jeweiligen Datens\"atze pseudo-randomisiert zusammengestellt wurden,
-und auch der Anteil an pr\"ufungsaktiven Studierenden \"uberall gleich ist. Diesen Vorgang nennt man \textit{Stratifizierung} \cite{handson}. Zus\"atzlich wurde bei der Auswertung des Trainings der 
+und auch der Anteil an pr\"ufungsaktiven Studierenden \"uberall gleich ist. Diesen Vorgang nennt man \textit{Stratifizierung} \cite[Seite 53]{handson}. Zus\"atzlich wurde bei der Auswertung des Trainings der 
 Algorithmen \textit{Crossvalidation} verwendet. \\
 
 Crossvalidation bedeuted, dass der Trainingsdatensatz in $k$ gleichm\"achtige Mengen zerteilt wird, die zuf\"allig gebildet werden. 
 Anschlie{\ss}end wird das Modell $k$-mal trainiert, wobei immer eine Menge ausgelassen wird, auf der das Modell danach validiert wird. Somit bekommt man mehrere Validierungswerte
-und sieht auch deren Verteilung \cite{handson}. \\
+und sieht auch deren Verteilung \cite[Seiten 31 und 32]{handson}. \\
 
 Um die Machine Learning Modelle zu erproben, sowie die besten auszuw\"ahlen und sp\"ater in den \"ubergeordneten Ans\"atzen zu verwenden, 
 die dann eine Sch\"atzung der pr\"ufungsaktiven Studierenden ergibt, wurde wie folgt vorgegangen. Zuerst wurden die Daten auf Vollst\"andigkeit geprüft und neue
@@ -80,8 +80,8 @@ wurden die Hyperparameter nochmals genauer angepasst. Hierzu wird die Methode de
   
 \end{table}
 
-\noindent Grid Search bedeutet, dass man einen Bereich an diskreten Werten angibt, und danach mit jeder Kombination der Werte das Modell neu trainiert und auswertet.
-Das ist sehr zeitintensiv, und kann somit nur \"uber wenige Kombinationen durchgef\"uhrt werden \cite{handson}. In dieser Arbeit wurde zuerst Grid Search \"uber eine grobe Einteilung 
+Grid Search bedeutet, dass man einen Bereich an diskreten Werten angibt, und danach mit jeder Kombination der Werte das Modell neu trainiert und auswertet.
+Das ist sehr zeitintensiv, und kann somit nur \"uber wenige Kombinationen durchgef\"uhrt werden \cite[Seiten 76 bis 78]{handson}. In dieser Arbeit wurde zuerst Grid Search \"uber eine grobe Einteilung 
 vorgenommen und anschlie{\ss}end nur das beste Modell einer feineren Grid Search unterzogen. \\
 
 

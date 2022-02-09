@@ -1,8 +1,8 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=none] (0) at (-17, 1) {};
-		\node [style=none] (1) at (-9, 1) {};
-		\node [style=none] (5) at (-17, 7) {};
+		\node [style=none] (1) at (-8, 1) {};
+		\node [style=none] (5) at (-17, 8.25) {};
 		\node [style=yellow dot] (9) at (-14.5, 2) {};
 		\node [style=yellow dot] (10) at (-13.75, 3) {};
 		\node [style=red dot] (11) at (-14, 6.5) {};
@@ -20,12 +20,14 @@
 		\node [style=none] (33) at (-9, 1.5) {};
 		\node [style=red] (34) at (-14, 5) {};
 		\node [style=red] (35) at (-12, 4) {};
+		\node [style=none] (36) at (-8, 0.25) {x1};
+		\node [style=none] (37) at (-18, 8.25) {x2};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw [style=black] (5.center) to (0.center);
-		\draw [style=black] (0.center) to (1.center);
 		\draw [style=red] (24.center) to (25.center);
-		\draw [style=green] (30.center) to (31.center);
-		\draw [style=green] (32.center) to (33.center);
+		\draw [style=dark] (0.center) to (5.center);
+		\draw [style=dark] (0.center) to (1.center);
+		\draw [style=new edge style 1] (32.center) to (33.center);
+		\draw [style=new edge style 1] (30.center) to (31.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

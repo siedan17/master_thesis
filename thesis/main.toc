@@ -41,7 +41,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.3}Random Forest Modelle}{39}{subsection.2.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.4}Support Vector Machine Modelle}{41}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.4}Support Vector Machine Modelle}{42}{subsection.2.3.4}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.5}K\"unstliche Neuronale Netzwerke}{44}{subsection.2.3.5}%
 \defcounter {refsection}{0}\relax 
