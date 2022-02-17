@@ -1,5 +1,5 @@
 
-
+% Problem 2
 
 \section{Ans\"atze f\"ur Problem 2}
 P2 stellt die Sch\"atzung der pr\"ufungsaktiven Studierenden von zuk\"unftigen Studienbeginnern in drei Jahren in der Zukunft dar. Von diesen Studierenden
@@ -7,20 +7,22 @@ kennt man weder Anzahl noch Merkmalskombinationen. Es handelt sich jedoch immer 
 
 \subsection{Ansatz 1}
 Im ersten Ansatz wird versucht die Zahl aller Neuinskripenten in den folgenden zwei Kalenderjahren zu sch\"atzen. Hierzu wird versucht mittels einer Regression aus
-Daten von vergangen Jahren den Trend der Anzahl von Neuinskripenten fortzusetzen. Diese Sch\"atzung der Anzahl an den neu hinzukommenden Studierenden beinhaltet
-eine gewisse Unsicherheit, da die Anzahl an Neuinskripenten von vielen unterschiedlichen Faktoren abh\"angig sein kann. \\
+Daten von vergangen Jahren den Trend der Anzahl von Neuinskripenten fortzusetzen. Diese Sch\"atzung der Anzahl an neu hinzukommenden Studierenden beinhaltet
+eine gewisse Unsicherheit, da die Anzahl an Neuinskripenten von vielen unterschiedlichen Faktoren abh\"angig sein kann, von denen man 
+aber keine Informationen zur Verf\"ugung hat. \\
 
-\noindent Wenn man einen Wert f\"ur die Anzahl der kommenden Studienbeginnerinnen und Studienbeginner gesch\"atzt hat, wird f\"ur ihre Merkmalskombination angenommen,
-dass diese \textbf{gleich} mit jenen Merkmalskombinationen der Neuinskripenten aus dem letzten gegebenen Jahr ist. Das bedeutet, man w\"ahlt eine Stichprobe mit Zur\"ucklegen aus den Studienbeginnern im letzten gegebenen
-Jahr aus, welche die Gr\"o{\ss}e der gesch\"atzten Anzahl hat. \\
+Wenn man einen Wert f\"ur die Anzahl der kommenden Studienbeginnerinnen und Studienbeginner gesch\"atzt hat, wird f\"ur ihre Merkmalskombination angenommen,
+dass diese \textbf{gleich} mit jenen Merkmalskombinationen der Neuinskripenten aus dem letzten gegebenen Jahr ist. Das bedeutet, man w\"ahlt eine Stichprobe mit Zur\"ucklegen 
+der Gr\"o{\ss}e der gesch\"atzten Anzahl aus, welche aus den Merkmalen von Studienbeginneren aus dem letzten Jahr besteht, von denen man die Daten 
+noch zur Verf\"ugung hat. \\
 
-\noindent Nachdem man mit der gesch\"atzten Anzahl und den angenommen Merkmalskombinationen neue fiktive Studienbeginner f\"ur die kommenden Jahr erstellt hat, kann man
+Nachdem man mit der gesch\"atzten Anzahl und den angenommen Merkmalskombinationen neue fiktive Studienbeginner f\"ur die kommenden beiden Jahre erstellt hat, kann man
 f\"ur sie sch\"atzen, ob sie in einer gewissen Zeitspanne in der Zukunft pr\"ufungsaktiv sein werden oder nicht. Diese Sch\"atzung wird mit jener Methode durchgef\"uhrt, die
 sich f\"ur P1 als erfolgreich erwiesen hat.
 
 
 \subsection{Ansatz 2}
-Im zweiten Ansatz werden die Studierenden in nach den folgenden, \"ublicherweise unver\"anderbaren Merkmalen, eingeteilt.
+Im zweiten Ansatz werden die Studierenden in nach folgenden, unver\"anderbaren Merkmalen, eingeteilt.
 
 \begin{itemize}
   \item Geschlecht
@@ -29,11 +31,12 @@ Im zweiten Ansatz werden die Studierenden in nach den folgenden, \"ublicherweise
   \item Studienrichtung
 \end{itemize}
 
-\noindent Dadurch ergeben sich wieder 72 Kombinationen. Nun wird f\"ur jede dieser Kombinationen die Anzahl an zuk\"unftigen Neuinskripenten mittels einer Regression aus Daten von
+Dadurch ergeben sich 72 Kombinationen. Nun wird f\"ur jede dieser Kombinationen die Anzahl an zuk\"unftigen Neuinskripenten mittels einer Regression aus Daten von
 vergangen Jahren versucht vorherzusagen. Das bedeutet, dass man in diesem Ansatz den Verlauf der Anzahl an Neuinskripenten in jeder dieser Klassen versucht zu
 ber\"ucksichtigen. Somit kann m\"ogliche Informationen von Klassen, die sich anders entwickeln als alle Klassen gemeinsam, beachten. Jedoch ist die Sch\"atzung der
-Anzahlen an Neuinskripenten aller Klassen mit Unsicherheit behaftet, da diese Zahl von vielen unterschiedlichen Faktoren abh\"angig sein kann. \\
+Anzahlen an Neuinskripenten aller Klassen mit Unsicherheit behaftet, da diese Zahl von vielen unterschiedlichen Faktoren abh\"angig sein kann, 
+von denen man keine Informationen besitzt. \\
 
-\noindent Nachdem man die Anzahl f\"ur alle Klassen gesch\"atzt hat, kann man eine Menge von fiktiven Neuinskripenten bilden. Diese haben eine Merkmalskombination
+Nachdem man die Anzahl f\"ur alle Klassen gesch\"atzt hat, kann man eine Menge von fiktiven Neuinskripenten bilden. Diese haben eine Merkmalskombination
 welche aus vier Merkmalen besteht. Nun kann man f\"ur jeden erstellen Studienbeginner sch\"atzen, ob er in einer Zeitspanne in der Zukunft pr\"ufungsaktiv sein wird oder nicht.
 Diese Vorhersage wird mit der Methode gef\"uhrt, welche sich f\"ur P1 als erfolgreich erwiesen hat.

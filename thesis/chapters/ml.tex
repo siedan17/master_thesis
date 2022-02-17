@@ -1,8 +1,10 @@
 
+% Machine Learning Modelle
+
 \section{Machine Learning Modelle}
 \label{sec:ml}
 
-In P1 und P2 ist das Ziel, aus Daten der Vergangenheit Informationen zu gewinnen, und diese f\"ur Vorhersagen in die Zunkunft zu verwenden.
+In P1 und P2 ist das Ziel, von Daten aus der Vergangenheit Informationen zu gewinnen, und diese f\"ur Vorhersagen in die Zunkunft zu verwenden.
 Man versucht gewisse Muster in den Daten der Studierenden zu erkennen und anhand dieser eine Aussage \"uber deren Pr\"ufungsaktivit\"at in den kommenden Jahren zu treffen.
 Diese Aufgabe ist f\"ur Menschen aufgrund der gro{\ss}en Anzahl an Daten schwer bew\"altigbar. Aus diesem Grund werden Machine Learning Modelle verwendet,
 um dieses Ziel zu erreichen. \\
@@ -37,14 +39,16 @@ $Y = f(\mathbf{X}) + \epsilon$ eine weitere Zufallsvariable definiert. Wir nehme
 von $(\mathbf{X},Y)$ ist. Wenn $Y$ eine diskrete Verteilung hat, spricht man von einem Klassifizierungsproblem, sonst von einem Regressionsproblem.
 Die gemeinsame Verteilung von $\mathbf{X}$ und $Y$ nennen wir $\mathcal{D}$.\\
 
+
+Die folgenden Definitionen sind anglehnt an Shalev (2014) \cite[Seiten 33 bis 35]{shalev}.
 Ausgehend davon soll eine Vorhersagefunktion $h(\cdot;\mathbf{w})$ innerhalb einer parametrisierten Funktionenklasse $\mathcal{H} = \{ h(\cdot; \mathbf{w})
 	|\mathbf{w} \in \mathbf{W}\}$ gefunden werden. $h_S$ h\"angt zum einen von der Wahl der Funktionenklasse und zum anderen von der Auswahlmethode aus dieser Klasse ab.
-Diese Faktoren werden zusammengefasst durch einen \textit{Algorithmus} $\mathcal{A}$ \cite[Seiten 33 bis 35]{shalev}. Damit definiert man $h_S = \mathcal{A}(S)$, wobei die Menge $S$ eine
+Diese Faktoren werden zusammengefasst durch einen \textit{Algorithmus} $\mathcal{A}$. Damit definiert man $h_S = \mathcal{A}(S)$, wobei die Menge $S$ eine
 Stichprobe der Verteilung $\mathcal{D}$ mit der Gr\"o{\ss}e $n$ darstellt. \\
 
 
 Um eine Vorhersagefunktion $h_S$ zu finden, welche die wahre Funktion $f$ m\"oglichst gut ann\"ahert, muss definiert werden, was es bedeutet, dass
-$h_S$ \textit{nahe} an $f$ liegt. Die folgenden Definitionen folgen Shalev (2014) \cite{shalev}.
+$h_S$ \textit{nahe} an $f$ liegt. 
 Um zu beschreiben, wie nahe $h_S$ an $f$ liegt, wird die \textit{loss}-Funktion $\ell$ mit
 $$ \ell : \mathcal{H} \times \mathcal{Z} \to \mathbb{R}_+ $$
 definiert. $\mathcal{H}$ entspricht der Funktionklasse aus der $h_S$ gew\"ahlt werden soll und $\mathcal{Z} =

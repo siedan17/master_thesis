@@ -1,24 +1,27 @@
 
+% Methoden und Modelle
 
 In diesem Abschnitt werden L\"osungsans\"atze f\"ur P1 und P2 und deren Implementierung vorgestellt.
 Weiters werden die unterschiedlichen Machine Learning Modelle erkl\"art, die in den L\"osungsans\"atzen verwendet werden.
 Abschlie{\ss}end wird dargelegt, wie die unterschiedlichen Ans\"atze und auch die einzelnen Machine Learning Modelle
 verglichen und ausgewertet werden.
 
+% Problem 1
+
 \section{Ans\"atze f\"ur Problem 1}
 P1 stellt die Sch\"atzung der Anzahl der pr\"ufungsaktiven Studierenden im Jahr $t = 3$ aus den bestehenden Studierenden im Jahr $t = 0$ dar.
-Von diesen Studierenden kennt man die Anzahl und die Merkmalskombination jeder einzelnen Person.
+Von diesen Studierenden kennt man die Anzahl, und die Merkmalskombination jeder einzelnen Person.
 
 \subsection{Ansatz 1}
 \label{sec:appr1}
-In Ansatz 1 versucht man die Studierenden Jahr f\"ur Jahr zu modellieren und so viel Information wie m\"oglich weiterzuverwenden.
-Insbesondere soll f\"ur das jeweilige darauffolgende Studienjahr der ECTS-Wert vorhergesagt werden. Alle weiteren Eigenschaften der studierenden Person
+In Ansatz 1 versucht man die Pr\"ufungsaktivit\"at der Studierenden Jahr f\"ur Jahr zu modellieren und so viel Information wie m\"oglich weiterzuverwenden.
+Insbesondere soll f\"ur das jeweilige darauffolgende Studienjahr der ECTS-Wert vorhergesagt werden. Viele weitere Eigenschaften der studierenden Person
 k\"onnen dann aus diesem ECTS-Wert abgeleitet werden. \\
 
-Der Ausgangspunkt ist, dass sich für alle $S_i \in Z^{(t)}$ der erste Eintrag $E_i^{(1)}$ (aktuelles Studienjahr) unweigerlich um eins erhöht.
-Nun wird versucht eine Funktion zu finden, welche jeder studierenden Person $S_i \in Z^{(t)}$ einen passenden ECTS-Wert vorhergesagt.
+Der Ausgangspunkt ist, dass sich für alle $S_i \in Z^{(t)}$ der erste Eintrag $E_i^{(1)}$ (aktuelles Studienjahr) um eins erhöht.
+Nun wird versucht eine Funktion zu finden, welche jeder studierenden Person $S_i \in Z^{(t)}$ einen passenden ECTS-Wert vorhersagt.
 Somit kann f\"ur diese Person der \"Ubergang nach $Z_{alt}^{(t+1)}$ beschrieben werden und man hat alle Eintr\"age zur Verf\"ugung, die
-man auch von den gegebenen Daten hatte. Der Ansatz besteht darin die Funktion wie folgt zu bilden.
+man auch von den zuvor gegebenen Daten hatte. Der Ansatz besteht darin die Funktion wie folgt zu bilden.
 
 $$
   F(S_i)=
@@ -55,13 +58,13 @@ Wichtig ist, dass jedes dieser Modelle eine Regression der ECTS f\"ur das aktuel
 durchf\"uhrt. Aufgrund der gesch\"atzten ECTS kann dann entschieden werden, ob die Person
 pr\"ufungsaktiv war oder nicht. Die Regression der ECTS, anstelle einer Klassifikation nach
 \textit{pr\"ufungsaktiv} oder \textit{pr\"ufungsinaktiv} wird deshalb gew\"ahlt, da man dann im darauffolgenden Studienjahr diese
-gesch\"atzten ECTS als Input f\"ur den Sch\"atzer im Jahr darauf verwenden will.\\
+gesch\"atzten ECTS als Input f\"ur die Sch\"atzung verwenden will.\\
 
 
 Um die tats\"achliche Sch\"atzung der pr\"ufungsaktiven Studierenden in drei Jahren durchzuf\"uhren werden f\"ur die
 aktuellsten Daten die ECTS jeweils im darauffolgenden Jahr vorhergesagt. Das wird f\"ur drei Jahre in die Zukunft durchgef\"uhrt.
 Dabei baut man ab dem zweiten vorhergesagten Jahr
-bereits auf einer Sch\"atzung auf. Danach kann man f\"ur jeden Eintrag entscheiden, ob er im Jahr $t = 3$ pr\"ufungsaktiv sein wird oder nicht. \\
+bereits auf einer Sch\"atzung auf. Danach kann man f\"ur jeden Eintrag, anhand der gesch\"atzten ECTS entscheiden, ob er im Jahr $t = 3$ pr\"ufungsaktiv sein wird oder nicht. \\
 
 Weil man Vorhersagen aufgrund von bereits gesch\"atzten Daten durchf\"uhrt, kann es zu einer Fehlerfortpflanzungen kommen.
 Es gilt nun herauszufinden, ob sich diese in Grenzen h\"alt oder dieser Ansatz sich als unbrauchbar erweist. \\
@@ -138,7 +141,7 @@ angegebenen Übergangswahrscheinlichkeiten für den neuen Zustand im kommenden S
 \end{figure}
 
 Dieser Ansatz profitiert von der Eigenschaft der Problemstellung, dass nur die absolute H\"aufigkeit an pr\"ufungsaktiven Studierenden auf aggregierter Ebene
-gefragt ist, und nicht die genaue Vorhersage ob einzelne Studierende pr\"ufungsaktiv sein werden oder nicht.
+gefragt ist. Es ist nicht wichtig zu wissen, ob eine Studentin oder ein Student in einem bestimmten Studienjahr pr\"ufungsaktiv war oder nicht.
 Somit konvergiert die Sch\"atzung der pr\"ufungsaktiven Studierenden
 fast sicher gegen die tats\"achliche Anzahl der pr\"ufungsaktiven Studierenden, wenn die Anzahl der gesch\"atzen Personen gro{\ss} wird. Diese Bedingung ist in dieser Problemstellung
 erf\"ullt. \\
@@ -165,17 +168,17 @@ In diesem Ansatz sollen mehr Eigenschaften genutzt werden. Das bedeutet, es werd
 Um dieses Ziel zu erreichen, werden Machine Learning Modelle verwendet, welche grunds\"atzlich zur Klassifizierung dienen.
 Diese Klassifizierung wird mithilfe einer berechneten Wahrscheinlichkeit und eines manuell bestimmten Schwellwertes durchgef\"uhrt.
 Da man bei der vorliegenden Problemstellung jedoch keine exakte Klassifizierung ben\"otigt, sondern aussschlie{\ss}lich die Anzahl an
-pr\"ufungsaktiven Studierenden, wird nur die berechnete Wahrscheinlichkeit verwendet, ohne zu klassifizieren. Man berechnet die erwartete Anzahl an pr\"ufungsaktiven
-Studierenden im Jahr $t$ berechnet. \\
+pr\"ufungsaktiven Studierenden wissen will, wird nur die berechnete Wahrscheinlichkeit verwendet, ohne zu klassifizieren. Man summiert f\"ur alle 
+Studierenden deren gesch\"atzten Wahrschienlichkeiten pr\"ufungsaktiv zu sein auf, und erh\"alt somit die erwarte Anzahl an pr\"ufungsaktiven Studierenden. \\
 
 Es ist ein Vorteil neben vielen unterschiedlichen Klassen, welche durch diskrete Eigenschaften entstehen (analog zu Ansatz 2), auch kontinuierliche Datenpunkte von
-Studierenden verwenden zu k\"onnen. Somit werden auch \textit{\glqq kumulierte ECTS\grqq{}} und \textit{\glqq ECTS im Jahr zuvor\grqq{}} verwendet. Damit wird erreicht, dass
-m\"oglichst viel Information verwendet wird, was bei einer Wahrscheinlichkeitsberechnung wie in Ansatz 2 nicht m\"oglich ist. \\
+Studierenden verwenden zu k\"onnen. Somit werden beispielsweise auch Eigenschaften, wie \textit{\glqq kumulierte ECTS\grqq{}} und \textit{\glqq ECTS im Jahr zuvor\grqq{}} verwendet. Damit wird erreicht, dass
+m\"oglichst viel Information verwendet wird, was bei einer reinen Wahrscheinlichkeitsberechnung wie in Ansatz 2 nicht m\"oglich ist. \\
 
 Es wird eine Funktion $F_t(\cdot)$ gesucht, welche f\"ur alle Studierenden eine Wahrscheinlichkeit $p_t$ ausgibt, mit der
 sie im Jahr $t$ pr\"ufungsaktiv sein werden oder nicht. Es braucht f\"ur unterschiedliche Zeitspannen mehrere Funktionen, die in ihrem Aufbau gleich sind.
 Das bedeutet man muss f\"ur jede Zeitspanne von $t$ Jahren, die unterschiedlich lang sein kann, eine neue Funktion trainieren.
-Die Funktionen sind wie folgt aufgebaut:
+Die Vorhersagefunktionen sind wie folgt aufgebaut:
 
 $$
   F_t(S_i)=

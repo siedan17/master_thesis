@@ -1,6 +1,6 @@
 
 
-
+% Problemstellung
 
 \section{Problemstellungen}
 
@@ -28,7 +28,7 @@ hat man jedoch weder die Anzahl noch die Merkmalskombinationen. \\
 Jede studierende Person wird in jedem Jahr mit $m$ unterschiedliche Merkmalen beschrieben. Beispiele daf\"ur sind \textit{\glqq durchschnittliche ECTS bisher\grqq{}},
 \textit{\glqq kumulierte ECTS\grqq{}}, \textit{\glqq Geschlecht\grqq{}} oder auch \textit{\glqq positiv absolvierte ECTS\grqq{}}. Alle verwendeten Eigenschaften der
 Studierenden sind im Kapitel \hyperref[sec:daten]{Daten} in einer Tabelle dargestellt. Die meisten dieser Merkmale werden zur
-Vorhersage verwendet und wenige davon dienen als bereits vorhandener Zielwert. Um die Darstellung zu vereinfachen, fasst man f\"ur
+Vorhersage verwendet und wenige von ihnen dienen als bereits vorhandener Zielwert. Um die Darstellung zu vereinfachen, fasst man f\"ur
 jede studierende Person $S_i$ die Merkmale $E_i^{(j)}$ mittels eines Vektors zusammen:
 
 $$S_i = \begin{bmatrix}
@@ -66,7 +66,7 @@ eine Sch\"atzung der Anzahl an pr\"ufungsaktiven Studierenden im Zustand $Z_{alt
 Studierenden kennt man zuvor weder die genaue Anzahl, noch die Merkmalskombinationen. \\
 
 
-Es ist entscheident hervorzuheben, dass es nicht notwendig ist f\"ur jeden einzelnen Studierenden zu wissen, ob er
+Es ist entscheidend hervorzuheben, dass es nicht notwendig ist f\"ur jeden einzelnen Studierenden zu wissen, ob er
 zum Zeitpunkt $t$  pr\"ufungsaktiv sein wird oder nicht. Vielmehr geht es darum, die absolute H\"aufigkeit an pr\"ufungsaktiven
 Studierenden zum Zeitpunkt $t$ zu sch\"atzen. Durch diese Eigenschaft der Problemstellung ergibt sich der Fall,
 dass sich je eine \textit{False Positive} klassifizierte Person mit einer
@@ -75,17 +75,12 @@ als pr\"ufungsaktiv vorhergesagt werden, jedoch in der Realit\"at nicht pr\"ufun
 als nicht pr\"ufungsakiv  vorhergesagt werden, aber in der Realit\"at pr\"ufungsakiv sein werden.  \\
 
 
-
-
-
-
-
-
+% Ziel 
 
 \section{Ziel}
 Das Ziel dieser Arbeit kann wie folgt beschrieben werden. Erstens werden drei Ans\"atze formuliert und erprobt,
 um P1 zu l\"osen. Diese Ans\"atze stellen unterschiedliche Herangehensweisen an dieselbe Problemstellung aus P1 dar.
-Zweitens werden f\"ur P2 zwei verschiedene Ans\"atze ausprobiert, welche sich in ihrer Herangehensweise an P2 unterscheiden. \\
+Zweitens werden f\"ur P2 zwei verschiedene Ans\"atze formuliert, welche sich in ihrer Herangehensweise an P2 unterscheiden. \\
 
 
 Bei allen L\"osungsans\"atzen wird der Grundgedanke verfolgt, dass man diese Problemstellung mit einem Populationsmodell beschreiben kann.
@@ -99,6 +94,6 @@ Da man aber anhand der \hyperref[sec:daten]{Daten} sieht, dass dies f\"ur
 die Zeitspanne von drei Jahren nicht der Fall ist, ist es relevant P1 zu l\"osen. Zum Beispiel haben jene Studierende, die in ihr erstes oder zweites Studienjahr kommen und je nach Studienrichtung
 nicht in Mindeststudienzeit ihr Studium abschlie{\ss}en, auch in drei Jahren die M\"oglichkeit pr\"ufungsakiv zu sein. \\
 
-Abschlie{\ss}end m\"ochte man die besten L\"osungsans\"atze an P1 und an P2 zusammenf\"uhren. Somit wird eine Methode formuliert, wie man
-die Anzahl der pr\"ufungsaktiven Studierenden in drei Jahren bestm\"oglich vorhersagen kann. Es werden, f\"ur die Bewertung der L\"osungsans\"atze,
-im Abschnitt \hyperref[sec:auswertung]{Auswertung} werden Metriken vorgestellt, mit denen man die Ans\"atze untereinander vergleichen kann.
+Abschlie{\ss}end m\"ochte man die besten L\"osungsans\"atze f\"ur P1 und f\"ur P2 zusammenf\"uhren. Somit wird eine Methode formuliert, wie man
+die Anzahl der pr\"ufungsaktiven Studierenden in drei Jahren bestm\"oglich vorhersagen kann. Um die unterschiedlichen L\"osungsans\"atze miteinander
+zu vergleichen und den ausichtsreichsten Ansatz auszuw\"ahlen, werden im Kapitel \hyperref[sec:auswertung]{Auswertung} entsprechende Metriken daf\"ur beschrieben.
