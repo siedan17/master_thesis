@@ -1,5 +1,5 @@
 In diesem Abschnitt wird auf die Ergebnisse und auf entscheidende Punkte der unterschiedlichen Ans\"atze n\"aher eingegangen.
-Dar\"uber hinaus werden weitere M\"oglickkeiten genannt, die man verfolgen kann, um die Problemstellung noch genauer zu untersuchen. \\
+Dar\"uber hinaus werden weitere M\"oglickkeiten genannt, die man verfolgen kann, um die Problemstellung noch genauer zu untersuchen.
 
 
 
@@ -11,36 +11,36 @@ Dar\"uber hinaus werden weitere M\"oglickkeiten genannt, die man verfolgen kann,
 Grunds\"atzlich war bei diesem Problem das Verst\"andnis der Problemstellung wichtig. Dadurch, dass man nicht jeder studierenden Person exakt zuordnen muss,
 ob sie pr\"ufungsaktiv sein wird oder nicht, sondern nur die Gesamtanzahl m\"oglichst genau sch\"atzen muss, vereinfacht sich die Problemstellung.
 Durch diese Eigenschaft ist es nicht entscheidend, wenige FP oder FN klassifizierte Studierende zu haben, da diese sich gegenseitig aufheben, solange sie sich in der
-Waage halten. \\
+Waage halten.
 
 Ein weiteres Merkmal der Problemstellung war es, dass man immer zwischen erstj\"ahrigen Studierenden und Studierenden in h\"oheren Studienjahren unterscheiden muss.
 F\"ur die erstj\"ahrigen Studierenden hat man weniger Inputmerkmale zur Verf\"ugung. Vor allem die \textit{Anzahl der bisherigen ECTS} und die \textit{ECTS im Jahr zuvor} sind f\"ur
-Studierende in h\"oheren Studienjahren gute Pr\"adiktoren und genau diese fehlen bei Studienbeginnern. Deswegen sind die Sch\"atzer f\"ur Studienbeginner grunds\"atzlich
-nicht so genau, wie jene f\"ur Studierende aus h\"oheren Studienjahren. \\
+Studierende in h\"oheren Studienjahren gute Pr\"adiktoren und genau diese fehlen bei Studienanf\"angern. Deswegen sind die Sch\"atzer f\"ur Studienbeginner grunds\"atzlich
+nicht so genau, wie jene f\"ur Studierende aus h\"oheren Studienjahren.
 
 Bei P1 hat es sich als erfolgreicher herausgestellt eine Sch\"atzung der Anzahl an pr\"ufungsaktiven Studierenden \"uber eine Zeitspanne von mehreren
 Jahren zu machen, als Jahr f\"ur Jahr die ECTS Anzahl pro studierender Person vorherzusagen. Die j\"ahrliche Pr\"adiktion erweist sich als
-sehr schwierig und birgt eine Fehlerfortpflanzung in sich. Weiters hat dieser Ansatz f\"ur die konkrete Problemstellung keinen erkenntlichen Vorteil. \\
+sehr schwierig und bringt eine Fehlerfortpflanzung mit sich. Weiters hat dieser Ansatz f\"ur die konkrete Problemstellung keinen erkenntlichen Vorteil.
 
 Weitere M\"oglichkeiten um Ansatz 1 zu verbessern, w\"aren folgende. Man kann hier an den Daten, auf denen man die unterschiedlichen Machine Learning
 Modelle bildet, noch arbeiten. Beispielsweise kann man die ECTS Werte, die vorhergesagt werden sollen, nach oben beschr\"anken. Es ist f\"ur die
-zusammengefasste Anzahl nicht ausschlaggebend, wenn die wenigen Studierenden, die tats\"achlich sehr viele ECTS erreicht haben, nur eine gewisse Obergrenze zugeordnet wird.
+zusammengefasste Anzahl nicht ausschlaggebend, wenn den wenigen Studierenden, die tats\"achlich sehr viele ECTS erreicht haben, nur eine gewisse Obergrenze zugeordnet wird.
 Man bekommt dadurch im Gegensatz Modelle, die nicht von wenigen Ausrei{\ss}ern in den Trainingsdaten beeinflusst worden sind. Diesen Ansatz m\"usste man wiederum
-auf einem gesonderten Testdatensatz validieren. \\
+auf einem gesonderten Testdatensatz validieren.
 
-Um Ansatz 2 weiter zu vertiefen kann man \"uberlegen, wie man die Studierenden nach den vier Merkmalen in weniger Klassen zusammenfassen kann. Grunds\"atzlich verliert man bei
+Um Ansatz 2 weiter zu vertiefen, kann man \"uberlegen, wie man die Studierenden nach den vier Merkmalen in weniger Klassen zusammenfassen kann. Grunds\"atzlich verliert man bei
 jeder Zusammenfassung von Merkmalskombinationen gewisse Informationen. Im Gegensatz verhindert man eine zu hohe Anzahl an Klassen, wobei man f\"ur viele die \"Ubergangswahrscheinlichkeiten
 nicht berechnen kann. Eine konkrete \"Uberlegung ist es, eine Distanz zwischen den \"Ubergangsmatrizen einzelner Klassen festzulegen. Zus\"atzlich muss man f\"ur viele
-Kombinationen von Klassen berechnen, ob sie zusammengenommen eine relevante Anzahl an Studierenden darstellt oder nicht. Danach kann man in jene zwei (oder mehr) Klassen
-unterteilen, die jeweils eine hohe Anzahl an Studierenden beinhalten und eine gro{\ss}e Distanz der \"Ubergangswahrscheinlichkeiten zueinander besitzen. \\
+Kombinationen von Klassen berechnen, ob sie zusammengenommen eine relevante Anzahl an Studierenden darstellen oder nicht. Danach kann man in jene zwei (oder mehr) Klassen
+unterteilen, die jeweils eine hohe Anzahl an Studierenden beinhalten und eine gro{\ss}e Distanz der \"Ubergangswahrscheinlichkeiten zueinander besitzen.
 
 Bei Ansatz 3 kann man vor allem die Testung des Ansatzes noch ausf\"uhrlicher durchf\"uhren. Bisher wurde dieser Ansatz auf einem kleinen Testdatensatz evaluiert, wo er
-gute Ergebnisse geliefert hat. Es w\"are interessant, diesen Ansatz auf einem gro{\ss}en Testdatensatz zu \"uberpr\"ufen. \\
+gute Ergebnisse geliefert hat. Es w\"are interessant, diesen Ansatz auf einem gro{\ss}en Testdatensatz zu \"uberpr\"ufen.
 
 Generell ist diese Vorhersage immer mit der Unsicherheit behaftet, dass Zusammenh\"ange, die in den vorhandenen Daten
-gefunden worden sind, sich in den drei Jahren grundlegend ver\"andern. Ein Beispiel daf\"ur k\"onnte die Coronaviruspandemie im Jahr 2020 sein. Sollte sich
-durch die damit verbundenen Umstellungen das Verhalten der Studiereden grunds\"atzlich ver\"andern, ist es nicht m\"oglich eine gute Vorhersagefunktion auf Daten
-vor 2020 zu bilden. Man muss darauf achten, dass die Trainingsdaten representativ sind f\"ur die tats\"achliche Anwendung. Dieses Problem kann man nicht umgehen,
+gefunden worden sind, sich in den drei Jahren grundlegend ver\"andern k\"onnten. Ein Beispiel daf\"ur k\"onnte die Coronaviruspandemie im Jahr 2020 sein. Sollte sich
+durch die damit verbundenen Umstellungen das Verhalten der Studierenden grunds\"atzlich ver\"andern, ist es nicht m\"oglich eine gute Vorhersagefunktion auf Daten von
+vor dem Jahr 2020 zu bilden. Man muss darauf achten, dass die Trainingsdaten repr\"asentativ f\"ur die tats\"achliche Anwendung sind. Dieses Problem kann man nicht umgehen,
 weil es sich um eine Vorhersage \"uber eine gewisse Zeitspanne handelt und es immer unerwartete Ereignisse geben kann.
 
 
@@ -52,19 +52,19 @@ weil es sich um eine Vorhersage \"uber eine gewisse Zeitspanne handelt und es im
 
 Wie im Abschnitt zuvor bereits erw\"ahnt wurde, hat es sich als schwierig herausgestellt die Pr\"ufungsaktivit\"at von Studienbeginnern vorherzusagen, selbst
 wenn man die Anzahl und Merkmalskombinationen kannte. Die Problemstellung von P2 ist intrinsisch schwer zu l\"osen, da man hier zus\"atzlich weder Informationen \"uber die Anzahl, noch \"uber die
-Merkmalskombinationen zur Verf\"ugung hat. \\
+Merkmalskombinationen zur Verf\"ugung hat.
 
 In dieser Arbeit war es nicht m\"oglich eine ernsthafte \"Uberpr\"ufung der Ans\"atze durchzuf\"uhren, weil zu wenig Daten vorhanden waren.
-Vor allem f\"ur die Sch\"atzung der Anzahl der Studienbeginner in den folgenden Jahr ben\"otigt man mehr (und auch andere) Daten. Beispielsweise
+Vor allem f\"ur die Sch\"atzung der Anzahl der Studienbeginner in den folgenden Jahren ben\"otigt man mehr (und auch andere) Daten. Beispielsweise
 w\"are es interessant, weitere demografische Daten wie die Anzahl von Maturaabschl\"ussen an unterschiedlichen Schulzweigen und Schulstandorten zu verwenden.
 Zus\"atzlich braucht man f\"ur eine ernstzunehmende Sch\"atzung von zuk\"unftigen Studienbeginnern mehr Daten als von f\"unf Kalenderjahren, um eine Trendanalyse
-durchzuf\"uhren. \\
+durchzuf\"uhren.
 
 Beide vorgestellten Ans\"atze bauen stark auf der Anzahl der zuk\"unftigen Studienbeginner auf, die man aber nicht sch\"atzen konnte. Aus diesem Grund konnten
-beide Ans\"atze nicht getestet werden. \\
+beide Ans\"atze nicht getestet werden.
 
 Eine weitere Verbesserungsm\"oglichkeit beider vorgestellten Ans\"atze w\"are es, f\"ur die Anzahl der zuk\"unftigen Studienbeginner nicht nur einen einzelnen Wert
-zu sch\"tzen, sonder ein Konfidenzintervall zu bilden. Anhand dieses Konfidenzintervalls k\"onnte man unterschiedliche Szenarien berechnen und miteinander vergleichen.
+zu sch\"atzen, sondern ein Konfidenzintervall zu bilden. Anhand dieses Konfidenzintervalls k\"onnte man unterschiedliche Szenarien berechnen und miteinander vergleichen.
 
 
 
@@ -78,11 +78,11 @@ Zusammenfassend kann man aus der vorliegenden Arbeit folgende Schl\"usse ziehen:
 
 \begin{itemize}
     \item Es macht Sinn die vorliegende Problemstellung in zwei separate Probleme zu unterteilen. Anhand des verwendeten Datensatzes sieht man, dass
-          ein relevanter Anteil von derzeitigen Studierenden bereits vor drei Jahren inskripiert gewesen ist (Altbestand).
+          ein relevanter Anteil von derzeitigen Studierenden bereits vor drei Jahren inskribiert gewesen ist (Altbestand).
 
     \item Obwohl viele unterschiedliche Machine Learning Modelle ausprobiert worden sind, haben sie durchwegs \"ahnliche Ergebnisse geliefert.
           Aus diesem Grund kann man davon ausgehen, dass die Daten nicht mehr Informationen beinhalten und die Wahl des Modells keinen gravierenden Unterschied macht.
-          Man k\"onnte zwar weiter Modelle erproben, jedoch sollte man eher neue Ans\"atze an die Problemstellung \"uberlegen.
+          Man k\"onnte zwar weitere Modelle erproben, jedoch sollte man eher neue Ans\"atze f\"ur die Problemstellung \"uberlegen.
 
     \item Die wichtigste Erkenntnis der vorliegenden Arbeit war das Verstehen der Problemstellung. Der \"Ubergang von genauer Klassifizierung jeder einzelnen
           studierenden Person auf die Sch\"atzung der erwarteten Gesamtanzahl von pr\"ufungsaktiven Studierenden hat die Testergebnisse verbessert.
@@ -90,7 +90,7 @@ Zusammenfassend kann man aus der vorliegenden Arbeit folgende Schl\"usse ziehen:
     \item Bei P1 kann man mit zus\"atzlichen Daten noch Ansatz 2 \"uberpr\"ufen. Sollte auch dieser Ansatz vielversprechend sein, k\"onnen noch weitere
           \"Uberlegungen hinsichtlich einer Auswahl von wenigen relevanten Zusammenfassungen von mehreren Merkmalskombinationen durchgef\"uhrt werden.
 
-    \item Vor allem bei P2 kann man mittels zus\"atzlicher Daten und Daten, die weiter in die Vergangenheit zur\"uckreichen, bessere Sch\"atzungen der
+    \item Vor allem bei P2 kann man mittels zus\"atzlicher Daten und Daten, die weiter in die Vergangenheit zur\"uckliegen, bessere Sch\"atzungen der
           Anzahl von neuhinzukommenden Studierenden durchf\"uhren. Weiters k\"onnen die vorgestellten Ans\"atze anhand zuk\"unftiger Daten bewertet werden.
 
     \item Jede Vorhersage h\"angt von der Stabilit\"at der Zusammenh\"ange in der Zukunft ab. Grundlegende \"Anderungen des Verhaltens von Studierenden

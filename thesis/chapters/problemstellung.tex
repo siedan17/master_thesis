@@ -6,26 +6,26 @@
 
 Ausgehend von Daten von Studierenden in der Vergangenheit will man eine Vorhersage der \textbf{Anzahl} der prüfungsaktiven Studierenden in den kommenden
 Jahren durchf\"uhren. Insbesondere soll die Anzahl der pr\"ufungsaktiven Studierenden in \textbf{drei Jahren} in der Zukunft vorhergesagt werden.
-Die Schwierigkeit besteht darin, dass man zum Zeitpunkt, wo man die Schätzung durchf\"uhrt, nur Daten der zu dieser Zeit Studierenden im ersten, zweiten, dritten,
+Die Schwierigkeit besteht darin, dass man zum Zeitpunkt, wo man die Schätzung durchf\"uhrt, nur Daten der derzeitig Studierenden im ersten, zweiten, dritten,
 und h\"oheren Studienjahren zur Verfügung hat.
-Davon ausgehend soll versucht werden mehr als ein Jahr, eben drei Jahre in die Zukunft, die Anzahl an prüfungsaktiven Studierenden zu schätzen. \\
+Davon ausgehend soll versucht werden mehr als ein Jahr, eben drei Jahre in die Zukunft, die Anzahl an prüfungsaktiven Studierenden zu schätzen.
 
-Beispielsweise hat man im Jahr 2021 die Daten der zu dieser Zeit inskripierten Studierenden in ihrem jeweiligen Studienjahr gegeben. Nun wird versucht aufgrund dieser Daten
+Beispielsweise hat man im Jahr 2021 die Daten der zu dieser Zeit inskribierten Studierenden in ihrem jeweiligen Studienjahr gegeben. Nun wird versucht aufgrund dieser Daten
 vorherzusagen, wie viele pr\"ufungsaktive Studierende es im Jahr 2024 geben wird. Daf\"ur wei{\ss} man jedoch nicht, wie viele Personen im Jahr 2022 und 2023 zu studieren
-beginnen werden. \\
+beginnen werden.
 
 Zus\"atzlich sind die Modelle, welche f\"ur diese Vorhersage eingesetzt werden, auf Daten aus vergangen Studienjahren gebildet worden.
 Deshalb sind s\"amtliche Sch\"atzungen auf der Annahme aufgebaut, dass etwaige Zusammenh\"ange von bestimmten Merkmalskombinationen aus der Vergangenheit,
-die Auswirkungen auf die Pr\"ufungsaktivit\"at einer studierenden Person haben, sich auch in die Zukunft \"ubertragen lassen. \\
+die Auswirkungen auf die Pr\"ufungsaktivit\"at einer studierenden Person haben, sich auch in die Zukunft \"ubertragen lassen.
 
 Das Problem l\"asst sich in zwei, voneinander unabh\"angige, Komponenten unterteilen. Erstens versucht man aus den Studierendendaten, die man im Jahr
 der Sch\"atzung zur Verf\"ugung hat, die Anzahl der pr\"ufungsaktiven Personen zu sch\"atzen. Hier kennt man die Anzahl der Studierenden und auch ihre
-Merkmalskombinationen. Zweitens soll man die neuinskripierenden Studierenden in den kommenden beiden Jahren in die Sch\"atzung miteinbeziehen. Von diesen Personen
-hat man jedoch weder die Anzahl noch die Merkmalskombinationen. \\
+Merkmalskombinationen. Zweitens soll man die neuinskribierenden Studierenden in den kommenden beiden Jahren in die Sch\"atzung miteinbeziehen. Von diesen Personen
+hat man jedoch weder die Anzahl noch die Merkmalskombinationen.
 
 
 
-Jede studierende Person wird in jedem Jahr mit $m$ unterschiedliche Merkmalen beschrieben. Beispiele daf\"ur sind \textit{\glqq durchschnittliche ECTS bisher\grqq{}},
+Jede studierende Person wird in jedem Jahr mit $m$ unterschiedlichen Merkmalen beschrieben. Beispiele daf\"ur sind \textit{\glqq durchschnittliche ECTS bisher\grqq{}},
 \textit{\glqq kumulierte ECTS\grqq{}}, \textit{\glqq Geschlecht\grqq{}} oder auch \textit{\glqq positiv absolvierte ECTS\grqq{}}. Alle verwendeten Eigenschaften der
 Studierenden sind im Kapitel \hyperref[sec:daten]{Daten} in einer Tabelle dargestellt. Die meisten dieser Merkmale werden zur
 Vorhersage verwendet und wenige von ihnen dienen als bereits vorhandener Zielwert. Um die Darstellung zu vereinfachen, fasst man f\"ur
@@ -38,32 +38,32 @@ $$S_i = \begin{bmatrix}
 		E_i^{(m)} \\
 	\end{bmatrix}, $$
 
-wobei $S_i$ mit $i = 1,\dots,n$ f\"ur eine studierende Person in einem bestimmten Jahr steht und $1,\dots,m$ die Merkmale numerieren. \\
+wobei $S_i$ mit $i = 1,\dots,n$ f\"ur eine studierende Person in einem bestimmten Jahr steht und $1,\dots,m$ die Merkmale numerieren.
 
 Weil die Vorhersage der pr\"ufungsaktiven Studierenden \"uber mehrere Jahre erfolgt, bezeichnet man
 mit $t \in \{0,1,2,3\}$ die Zeit in Jahren, ab dem Vorhersagezeitpunkt. Es gibt Merkmale von Studierenden, die sich im Laufe der Zeit
 ver\"andern. Beispiele hierf\"ur sind \textit{\glqq kumulierte ECTS\grqq{}} und \textit{\glqq ECTS im Jahr zuvor\grqq{}}. Man fasst nun alle
-Studierenden im Jahr $t$ in einen Zustand $Z^{(t)}$ zusammen:
+Studierenden im Jahr $t$ in einem Zustand $Z^{(t)}$ zusammen:
 
 $$Z^{(t)} := \{S_1^{(t)}, \dots ,S_{n(t)}^{(t)}\},$$
 
-wobei $t$ den jeweiligen Zeitpunkt angibt. Weiters stellt $n(t)$ die Anzahl der der Studierenden im
+wobei $t$ den jeweiligen Zeitpunkt angibt. Weiters stellt $n(t)$ die Anzahl der Studierenden im
 Jahr $t$ dar. Wichtig ist auch, dass f\"ur jede studierende Person die Eigenschaft $E^{(1)}$ das aktuelle Studienjahr
-dieser Person im Jahr $t$ darstellt. \\
+dieser Person im Jahr $t$ darstellt.
 
 
 
 Weil für $t>0$ auch immer neuinskripierende Studierende in den jeweiligen Zuständen dazukommen, von denen man zum Zeitpunkt der Sch\"atzung weder
 Anzahl noch individuelle Merkmalskombinationen kennt, kann man für $t>0$, $Z^{(t)}$ in $Z_{neu}^{(t)}$ und $Z_{alt}^{(t)}$ unterteilen.
-$Z_{neu}^{(t)}$ steht f\"ur die Neuinskripenten im Jahr t.
-In $Z_{alt}^{(t)}$ sind diejenigen Studierenden, die bereits in den Jahre zuvor inskripiert waren.
-Zusammenfassend gilt $Z^{(t)} = Z_{neu}^{(t)} + Z_{alt}^{(t)}$.  \\
+$Z_{neu}^{(t)}$ steht f\"ur die neuinskribierenden Studierenden im Jahr t.
+In $Z_{alt}^{(t)}$ sind diejenigen Studierenden, die bereits in den Jahren zuvor inskribiert waren.
+Zusammenfassend gilt $Z^{(t)} = Z_{neu}^{(t)} + Z_{alt}^{(t)}$.
 
-\textit{Problem 1} (von nun an P1 genannt) besteht darin, ausgehend von vorhandenen Daten von Studierenden zum Zeitpunkt $t = 0$
-eine Sch\"atzung der Anzahl an pr\"ufungsaktiven Studierenden im Zustand $Z_{alt}^{(3)}$ zu machen. \\
+\textit{Problem 1} (von nun an P1 genannt) besteht darin, ausgehend von vorhandenen Daten von Studierenden zum Zeitpunkt $t = 0$,
+eine Sch\"atzung der Anzahl an pr\"ufungsaktiven Studierenden im Zustand $Z_{alt}^{(3)}$ zu machen.
 
 \textit{Problem 2} (von nun an P2 genannt) stellt die Sch\"atzung der Anzahl an pr\"ufungsaktiven Studierenden im Zustand $Z_{neu}^{(3)}$ dar. Von diesen
-Studierenden kennt man zuvor weder die genaue Anzahl, noch die Merkmalskombinationen. \\
+Studierenden kennt man zuvor weder die genaue Anzahl noch die Merkmalskombinationen.
 
 
 Es ist entscheidend hervorzuheben, dass es nicht notwendig ist f\"ur jeden einzelnen Studierenden zu wissen, ob er
@@ -72,7 +72,7 @@ Studierenden zum Zeitpunkt $t$ zu sch\"atzen. Durch diese Eigenschaft der Proble
 dass sich je eine \textit{False Positive} klassifizierte Person mit einer
 \textit{False Negative} klassifizierten Person in der Auswertung der Sch\"atzungen aufheben. False Positive klassifizierte Studierende sind jene, die
 als pr\"ufungsaktiv vorhergesagt werden, jedoch in der Realit\"at nicht pr\"ufungsaktiv sein werden. Analog sind False Negativ klassifizierte Studierende jene, die
-als nicht pr\"ufungsakiv  vorhergesagt werden, aber in der Realit\"at pr\"ufungsakiv sein werden.  \\
+als nicht pr\"ufungsakiv  vorhergesagt werden, aber in der Realit\"at pr\"ufungsakiv sein werden.
 
 
 % Ziel 
@@ -80,19 +80,19 @@ als nicht pr\"ufungsakiv  vorhergesagt werden, aber in der Realit\"at pr\"ufungs
 \section{Ziel}
 Das Ziel dieser Arbeit kann wie folgt beschrieben werden. Erstens werden drei Ans\"atze formuliert und erprobt,
 um P1 zu l\"osen. Diese Ans\"atze stellen unterschiedliche Herangehensweisen an dieselbe Problemstellung aus P1 dar.
-Zweitens werden f\"ur P2 zwei verschiedene Ans\"atze formuliert, welche sich in ihrer Herangehensweise an P2 unterscheiden. \\
+Zweitens werden f\"ur P2 zwei verschiedene Ans\"atze formuliert, welche sich in ihrer Herangehensweise an P2 unterscheiden.
 
 
 Bei allen L\"osungsans\"atzen wird der Grundgedanke verfolgt, dass man diese Problemstellung mit einem Populationsmodell beschreiben kann.
-In diesem Modell kennt man den aktuellen Zustand und man will davon ausgehend eine m\"oglichst gute Vorhersage \"uber die Population zu einem zuk\"unftigen
+In diesem Modell kennt man den aktuellen Zustand und will, davon ausgehend, eine m\"oglichst gute Vorhersage \"uber die Population zu einem zuk\"unftigen
 Zeitpunkt machen. Es ist wichtig zu beachten, dass es Austritte aus der Population und auch Eintritte in sie gibt. Die Austritte sind in der vorliegenden Problemstellung
-Studierende die ihr Studium abschlie{\ss}en oder abbrechen, und Eintritte sind Personen, die zu studieren beginnen. Vor allem \"uber die zunk\"unftigen Eintritte
-hat man wenig Information. \\
+Studierende, die ihr Studium abschlie{\ss}en oder abbrechen, und Eintritte sind Personen, die zu studieren beginnen. Vor allem \"uber die zunk\"unftigen Eintritte
+hat man wenig Information.
 
 Sollte die Zeitspanne, \"uber welche die Vorhersage angewandt wird, zu gro{\ss} sein, w\"urde es keinen Sinn sich mit P1 zu besch\"aftigen.
 Da man aber anhand der \hyperref[sec:daten]{Daten} sieht, dass dies f\"ur
-die Zeitspanne von drei Jahren nicht der Fall ist, ist es relevant P1 zu l\"osen. Zum Beispiel haben jene Studierende, die in ihr erstes oder zweites Studienjahr kommen und je nach Studienrichtung
-nicht in Mindeststudienzeit ihr Studium abschlie{\ss}en, auch in drei Jahren die M\"oglichkeit pr\"ufungsakiv zu sein. \\
+die Zeitspanne von drei Jahren nicht der Fall ist, ist es relevant P1 zu l\"osen. Zum Beispiel haben jene Studierende, die in ihr erstes oder zweites Studienjahr kommen und ihr Studium je nach Studienrichtung,
+nicht in Mindeststudienzeit abschlie{\ss}en, auch in drei Jahren die M\"oglichkeit pr\"ufungsakiv zu sein.
 
 Abschlie{\ss}end m\"ochte man die besten L\"osungsans\"atze f\"ur P1 und f\"ur P2 zusammenf\"uhren. Somit wird eine Methode formuliert, wie man
 die Anzahl der pr\"ufungsaktiven Studierenden in drei Jahren bestm\"oglich vorhersagen kann. Um die unterschiedlichen L\"osungsans\"atze miteinander

@@ -10,18 +10,18 @@ verglichen und ausgewertet werden.
 
 \section{Ans\"atze f\"ur Problem 1}
 P1 stellt die Sch\"atzung der Anzahl der pr\"ufungsaktiven Studierenden im Jahr $t = 3$ aus den bestehenden Studierenden im Jahr $t = 0$ dar.
-Von diesen Studierenden kennt man die Anzahl, und die Merkmalskombination jeder einzelnen Person.
+Von diesen Studierenden kennt man die Anzahl und die Merkmalskombination jeder einzelnen Person.
 
 \subsection{Ansatz 1}
 \label{sec:appr1}
 In Ansatz 1 versucht man die Pr\"ufungsaktivit\"at der Studierenden Jahr f\"ur Jahr zu modellieren und so viel Information wie m\"oglich weiterzuverwenden.
 Insbesondere soll f\"ur das jeweilige darauffolgende Studienjahr der ECTS-Wert vorhergesagt werden. Viele weitere Eigenschaften der studierenden Person
-k\"onnen dann aus diesem ECTS-Wert abgeleitet werden. \\
+k\"onnen dann aus diesem ECTS-Wert abgeleitet werden.
 
 Der Ausgangspunkt ist, dass sich für alle $S_i \in Z^{(t)}$ der erste Eintrag $E_i^{(1)}$ (aktuelles Studienjahr) um eins erhöht.
 Nun wird versucht eine Funktion zu finden, welche jeder studierenden Person $S_i \in Z^{(t)}$ einen passenden ECTS-Wert vorhersagt.
 Somit kann f\"ur diese Person der \"Ubergang nach $Z_{alt}^{(t+1)}$ beschrieben werden und man hat alle Eintr\"age zur Verf\"ugung, die
-man auch von den zuvor gegebenen Daten hatte. Der Ansatz besteht darin die Funktion wie folgt zu bilden.
+man auch von den zuvor gegebenen Daten hatte. Der Ansatz besteht darin, die Funktion wie folgt zu bilden.
 
 $$
   F(S_i)=
@@ -34,7 +34,7 @@ $$
 $$
 
 Die Funktionen $h_1$ und $h_2$ sind Sch\"atzfunktionen, die einer gewissen Merkmalskombination einer studierenden Person in einem Studienjahr einen
-ECTS-Wert zuordnet. \\
+ECTS-Wert zuordnen.
 
 Studierende im ersten Studienjahr werden gesondert betrachtet, weil f\"ur sie keine Eintr\"age mit ECTS-Werten vorhanden sind.
 Aufgrundessen gibt es f\"ur sie weniger Inputwerte.
@@ -48,8 +48,8 @@ werden folgende Machine Learning Modelle ausprobiert.
   \item K\"unstliche neuronale Netzwerke
 \end{itemize}
 
-Jedes Modell bekommt als Input die Eigenschaften einer studierenden Person. Anhand dieser Eigenschaften ist es das Ziel m\"oglichst genau
-vorherzusagen, wie viel ECTS diese Person im kommenden Studienjahr erreichen wird. \\
+Jedes Modell bekommt als Input die Eigenschaften einer studierenden Person. Anhand dieser Eigenschaften ist es das Ziel, m\"oglichst genau
+vorherzusagen, wie viel ECTS diese Person im kommenden Studienjahr erreichen wird.
 
 Je nachdem wie gut die einzelnen Vorhersagefunktionen für die vorliegende Problemstellung funktioneren
 und angepasst werden können, w\"ahlt man anhand einer Metrik, die sp\"ater beschrieben wird, jenes Modell aus, welches
@@ -57,17 +57,17 @@ am besten die jeweiligen ECTS-Werte vorhersagen kann.
 Wichtig ist, dass jedes dieser Modelle eine Regression der ECTS f\"ur das aktuelle Studienjahr
 durchf\"uhrt. Aufgrund der gesch\"atzten ECTS kann dann entschieden werden, ob die Person
 pr\"ufungsaktiv war oder nicht. Die Regression der ECTS, anstelle einer Klassifikation nach
-\textit{pr\"ufungsaktiv} oder \textit{pr\"ufungsinaktiv} wird deshalb gew\"ahlt, da man dann im darauffolgenden Studienjahr diese
-gesch\"atzten ECTS als Input f\"ur die Sch\"atzung verwenden will.\\
+\textit{pr\"ufungsaktiv} oder \textit{pr\"ufungsinaktiv} wird deshalb gew\"ahlt, weil man im darauffolgenden Studienjahr diese
+gesch\"atzten ECTS als Input f\"ur die Sch\"atzung verwenden will.
 
 
-Um die tats\"achliche Sch\"atzung der pr\"ufungsaktiven Studierenden in drei Jahren durchzuf\"uhren werden f\"ur die
-aktuellsten Daten die ECTS jeweils im darauffolgenden Jahr vorhergesagt. Das wird f\"ur drei Jahre in die Zukunft durchgef\"uhrt.
+Um die tats\"achliche Sch\"atzung der pr\"ufungsaktiven Studierenden in drei Jahren durchzuf\"uhren, werden f\"ur die
+aktuellsten Daten die ECTS jeweils im darauffolgenden Jahr vorhergesagt. Das wird f\"ur drei Jahre in der Zukunft durchgef\"uhrt.
 Dabei baut man ab dem zweiten vorhergesagten Jahr
-bereits auf einer Sch\"atzung auf. Danach kann man f\"ur jeden Eintrag, anhand der gesch\"atzten ECTS entscheiden, ob er im Jahr $t = 3$ pr\"ufungsaktiv sein wird oder nicht. \\
+bereits auf einer Sch\"atzung auf. Danach kann man f\"ur jeden Eintrag, anhand der gesch\"atzten ECTS entscheiden, ob er im Jahr $t = 3$ pr\"ufungsaktiv sein wird oder nicht.
 
-Weil man Vorhersagen aufgrund von bereits gesch\"atzten Daten durchf\"uhrt, kann es zu einer Fehlerfortpflanzungen kommen.
-Es gilt nun herauszufinden, ob sich diese in Grenzen h\"alt oder dieser Ansatz sich als unbrauchbar erweist. \\
+Weil man Vorhersagen aufgrund von bereits gesch\"atzten Daten durchf\"uhrt, kann es zu einer Fehlerfortpflanzung kommen.
+Es gilt nun herauszufinden, ob sich diese in Grenzen h\"alt oder ob sich dieser Ansatz als unbrauchbar erweist.
 
 
 
@@ -76,8 +76,8 @@ Es gilt nun herauszufinden, ob sich diese in Grenzen h\"alt oder dieser Ansatz s
 \subsection{Ansatz 2}
 \label{sec:appr2}
 
-Im zweiten Ansatz beachtet man, dass es Eigenschaften gibt, die sich w\"ahrend der gesamten Studienzeit nicht verändern. Alle ver\"anderlichen Merkmale
-wie beispielsweise \textit{ECTS im Jahr zuvor} werden nicht betrachtet.
+Im zweiten Ansatz beachtet man, dass es Eigenschaften gibt, die sich w\"ahrend der gesamten Studienzeit nicht verändern. Alle ver\"anderlichen Merkmale,
+wie beispielsweise \textit{ECTS im Jahr zuvor}, werden nicht betrachtet.
 Diese Eigenschaften und deren Ausprägungen sind:
 
 \begin{itemize}
@@ -88,44 +88,44 @@ Diese Eigenschaften und deren Ausprägungen sind:
   \item Studienrichtung (Rechtswissenschaften, Betriebswirtschaft, P\"adagogik)
 \end{itemize}
 
-Somit ergeben sich 72 verschiedene Kombinationen. Man kann jetzt alle 72 verschiedenen
+Somit ergeben sich 72 verschiedene Kombinationen. Man kann nun alle 72 verschiedenen
 Kombinationen betrachten. Weil alle anderen Eigenschaften nicht betrachtet werden, unterscheiden sich die Kombinationen in den
-ausstehenden Eigenschaften nicht und man kann für jede Kombination gleich vorgehen. \\
+ausstehenden Eigenschaften nicht und man kann für jede Kombination gleich vorgehen.
 
 
 Es wird von zeitlich ver\"anderbaren Zuständen $Z^{(t)}$ ausgegangen, wobei jeder dieser
 Zustände einer Menge von Studierenden entspricht. Anstatt eine Funktion von $Z^{(t)}$ nach $Z_{alt}^{(t+1)}$
 zu verwenden, ist hier der Ansatz, einen stochastischen Prozess $X = (X_r)_{r \in \{ 0,1, \dots, k \} }$ zu definieren, welcher einzelne Studierende \"uber
-die Zeit ihres Studiums $r \in \{0,1, \dots , k\}$ beschreibt. \\
+die Zeit ihres Studiums $r \in \{0,1, \dots , k\}$ beschreibt.
 
 Wichtig ist hier die Unterscheidung zwischen den Zuständen $Z^{(t)}$ und dem Prozess $X = (X_r)_{r \in \{ 0,1, \dots, k \} }$.
 $Z^{(t)}$ gibt die Menge der Studierenden zur gewünschten Zeit $t$ ab einem festgelegten Zeitpunkt an.
-$X_r$ gibt die Zustände der einzelnen Studierenden im jeweiligen Studienjahr $r$ an, indem sich die Studierende gerade befindet.
+$X_r$ gibt die Zustände der einzelnen Studierenden im jeweiligen Studienjahr $r$ an, indem sich die studierende Person gerade befindet.
 Das bedeutet der Prozess $X$ l\"auft auf der Ebene eines jeden Studierenden ab, wohingegen
 die Zust\"ande $Z^{(t)}$ die aggregierte Menge der gesamten Studierenden im Jahr $t$ beschreibt.
 
 
 
 Eine weitere Annahme in diesem Ansatz ist die \textit{Markov Eigenschaft} des Prozesses $X_r$. Sie besagt, dass der Zustand, in dem sich die studierende Person
-befindet, die gesamte Information f\"ur den weiteren Verlauf der studierenden Person im Prozess $X$ beinhaltet \cite[Seite 340]{tsitsiklis}. \\
+befindet, die gesamte Information f\"ur den weiteren Verlauf der studierenden Person im Prozess $X$ beinhaltet \cite[Seite 340]{tsitsiklis}.
 
 
 Der Prozess $X = (X_r)_{r \in \{ 0,1, \dots, k \} }$ hat ab den Jahren $r \geq 1$ folgende m\"ogliche Zust\"ande:
 \begin{itemize}
-  \item \textbf{a}: steht f\"ur Studierende die zwar pr\"ugungsaktiv waren, aber nicht f\"ur das kommende Jahr inskripiert sind. Das hei{\ss}t aufgrund einen Abschluss, Abbruch oder Pausierung des Studiums.
-  \item \textbf{b}: steht f\"ur Studierende die pr\"ufungsinaktiv waren, und nicht f\"ur das kommende Jahr inskripiert sind. Das hei{\ss}t aufgrund eines Abbruchs oder einer Pausierung des Studiums
-  \item \textbf{c}: steht f\"ur Studierende die pr\"ufungsaktiv waren, und auch f\"ur das n\"achste Jahr inskripiert sind.
-  \item \textbf{d}: steht f\"ur Studierende die pr\"ufungsinaktiv waren, aber dennoch weiterhin f\"ur das n\"achste Jahr inskripiert sind.
+  \item \textbf{a}: steht f\"ur Studierende die zwar pr\"ugungsaktiv waren, aber nicht f\"ur das kommende Jahr inskribiert sind. Das hei{\ss}t aufgrund eines Abschlusses, eines Abbruchs oder aufgrund einer Pausierung des Studiums.
+  \item \textbf{b}: steht f\"ur Studierende die pr\"ufungsinaktiv waren, aber nicht f\"ur das kommende Jahr inskribiert sind. Das hei{\ss}t aufgrund eines Abbruches oder aufgrund einer Pausierung des Studiums
+  \item \textbf{c}: steht f\"ur Studierende die pr\"ufungsaktiv waren, und auch f\"ur das n\"achste Jahr inskribiert sind.
+  \item \textbf{d}: steht f\"ur Studierende die pr\"ufungsinaktiv waren, aber dennoch weiterhin f\"ur das n\"achste Jahr inskribiert sind.
 \end{itemize}
 
 
 
-Jede studierende Person muss sich in einem dieser Zust\"ande befinden. Von dort ausgehend gibt es f\"ur diese Person eine gewisse Wahrscheinlichkeiten,
+Jede studierende Person muss sich in einem dieser Zust\"ande befinden. Von dort ausgehend gibt es f\"ur diese Person gewisse Wahrscheinlichkeiten,
 in welchem Zustand sie im kommenden Jahr sein wird.
 Aus diesem Grund müssen alle Übergangswahrscheinlichkeiten $p_r^{(xy)}$ f\"ur eine bestimmte Kategorie
 abgeschätzt werden, wobei $x \in \{c, d \}$ und $y \in \{a, b, c, d\}$ ist.
 Jeder Studierende dieser Kombination muss sich in einem dieser Zustände befinden und hat dann die
-angegebenen Übergangswahrscheinlichkeiten für den neuen Zustand im kommenden Studienjahr.  \\
+angegebenen Übergangswahrscheinlichkeiten für den neuen Zustand im kommenden Studienjahr.
 
 \hyperref[fig:prozess]{ Abbildung 2.1} beschreibt den Prozess $X$ grafisch.
 
@@ -155,29 +155,29 @@ erf\"ullt. \\
 \subsection{Ansatz 3}
 \label{sec:appr3}
 
-Auch hier wird versucht, passende \"Ubergangswahrscheinlichkeiten zu finden. Man versucht die Wahrscheinlichkeit zu finden, mit der eine studierende Person in einem
+Auch hier wird versucht, passende \"Ubergangswahrscheinlichkeiten zu finden. Man versucht die Wahrscheinlichkeit zu finden, mit der eine studierende Person zu einem
 gewissen Zeitpunkt $t$ in der Zukunft pr\"ufungsaktiv sein wird.
-Zum Beispiel wird die Wahrscheinlichkeit gesucht, mit der eine studierende Person \textit{in drei Jahren in der Zukunft} pr\"ufungsaktiv sein wird oder nicht. \\
+Zum Beispiel wird die Wahrscheinlichkeit gesucht, mit der eine studierende Person \textit{in drei Jahren in der Zukunft} pr\"ufungsaktiv sein wird oder nicht.
 
 
-In Ansatz 2 wurde jede studierende Person auf 4 Eigenschaften beschr\"ankt.
-In diesem Ansatz sollen mehr Eigenschaften genutzt werden. Das bedeutet, es werden auch Information
-\"uber absolvierte ECTS in der Vergangenheit verwendet. \\
+In Ansatz 2 wurde jede studierende Person auf vier Eigenschaften beschr\"ankt.
+In diesem Ansatz sollen mehr Eigenschaften genutzt werden. Das bedeutet, es werden auch die Informationen
+\"uber absolvierte ECTS in der Vergangenheit verwendet.
 
 
 Um dieses Ziel zu erreichen, werden Machine Learning Modelle verwendet, welche grunds\"atzlich zur Klassifizierung dienen.
 Diese Klassifizierung wird mithilfe einer berechneten Wahrscheinlichkeit und eines manuell bestimmten Schwellwertes durchgef\"uhrt.
-Da man bei der vorliegenden Problemstellung jedoch keine exakte Klassifizierung ben\"otigt, sondern aussschlie{\ss}lich die Anzahl an
+Da man bei der vorliegenden Problemstellung jedoch keine exakte Klassifizierung ben\"otigt, sondern ausschlie{\ss}lich die Anzahl an
 pr\"ufungsaktiven Studierenden wissen will, wird nur die berechnete Wahrscheinlichkeit verwendet, ohne zu klassifizieren. Man summiert f\"ur alle 
-Studierenden deren gesch\"atzten Wahrschienlichkeiten pr\"ufungsaktiv zu sein auf, und erh\"alt somit die erwarte Anzahl an pr\"ufungsaktiven Studierenden. \\
+Studierenden deren gesch\"atzten Wahrschienlichkeiten pr\"ufungsaktiv zu sein auf, und erh\"alt somit die erwarte Anzahl an pr\"ufungsaktiven Studierenden.
 
 Es ist ein Vorteil neben vielen unterschiedlichen Klassen, welche durch diskrete Eigenschaften entstehen (analog zu Ansatz 2), auch kontinuierliche Datenpunkte von
 Studierenden verwenden zu k\"onnen. Somit werden beispielsweise auch Eigenschaften, wie \textit{\glqq kumulierte ECTS\grqq{}} und \textit{\glqq ECTS im Jahr zuvor\grqq{}} verwendet. Damit wird erreicht, dass
-m\"oglichst viel Information verwendet wird, was bei einer reinen Wahrscheinlichkeitsberechnung wie in Ansatz 2 nicht m\"oglich ist. \\
+m\"oglichst viel Information verwendet wird, was bei einer reinen Wahrscheinlichkeitsberechnung wie in Ansatz 2 nicht m\"oglich ist.
 
 Es wird eine Funktion $F_t(\cdot)$ gesucht, welche f\"ur alle Studierenden eine Wahrscheinlichkeit $p_t$ ausgibt, mit der
 sie im Jahr $t$ pr\"ufungsaktiv sein werden oder nicht. Es braucht f\"ur unterschiedliche Zeitspannen mehrere Funktionen, die in ihrem Aufbau gleich sind.
-Das bedeutet man muss f\"ur jede Zeitspanne von $t$ Jahren, die unterschiedlich lang sein kann, eine neue Funktion trainieren.
+Das bedeutet, man muss f\"ur jede Zeitspanne von $t$ Jahren, die unterschiedlich lang sein kann, eine neue Funktion trainieren.
 Die Vorhersagefunktionen sind wie folgt aufgebaut:
 
 $$
@@ -192,7 +192,7 @@ $$
 $$
 
 Die Unterscheidung in $h_1$ und $h_2$ ist wieder notwendig, da man im ersten Studienjahr noch keine Informationen \"uber ECTS in den vorangegangen Jahren hat.
-Weiters ist der Output der Funktion eine Wahrscheinlichkeit $p_t \in (0,1)$. \\
+Weiters ist der Output der Funktion eine Wahrscheinlichkeit $p_t \in (0,1)$.
 
 Es werden folgende Machine Learning Modelle in diesem Ansatz verwendet:
 \begin{itemize}
@@ -203,10 +203,10 @@ Es werden folgende Machine Learning Modelle in diesem Ansatz verwendet:
 \end{itemize}
 
 Es wird anschlie{\ss}end das Modell ausgew\"ahlt, welches nach einer unten beschriebenen Metrik, die Anzahl der pr\"ufungsaktiven Studierenden
-im Jahr $t = 3$ am besten vorhersagen kann. \\
+im Jahr $t = 3$, am besten vorhersagen kann.
 
 Um eine Vorhersage in der Praxis durchzuf\"uhren werden die aktuellsten Daten verwendet und f\"ur jede studierende Person wird die
-Wahrscheinlichkeit gesch\"atzt mit der sie im Jahr $t=3$ pr\"ufungsaktiv sein wird. Danach werden alle gesch\"atzten Wahrscheinlichkeiten summiert und
+Wahrscheinlichkeit gesch\"atzt, mit der sie im Jahr $t=3$ pr\"ufungsaktiv sein wird. Danach werden alle gesch\"atzten Wahrscheinlichkeiten summiert und
 man erh\"alt den Erwartungswert an pr\"ufungsaktiven Studierenden in drei Jahren.
 
 

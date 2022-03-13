@@ -2,11 +2,11 @@
 
 \section{Auswertung}
 \label{sec:auswertung}
-Die Auswertung kann in drei Kategorien unterteilt werden. Erstens werden die verschiedenen Machine Learning Modelle bewertet.
+Die Auswertung kann in drei Kategorien unterteilt werden. Zuerst werden die verschiedenen Machine Learning Modelle bewertet.
 Diese werden in \hyperref[sec:appr1]{Ansatz 1} f\"ur P1 zur Regression, und in \hyperref[sec:appr2]{Ansatz 3} f\"ur P1 zur Klassifikation,
 beziehungsweise Sch\"atzung von Wahrscheinlichkeiten, verwendet.
-Zweitens werden die \"ubergeordneten Ans\"atze f\"ur P1 an sich bewertet.
-Drittens versucht man die beiden Ans\"atze f\"ur P2 zu bewerten. \\
+Als zweites werden die \"ubergeordneten Ans\"atze f\"ur P1 an sich bewertet.
+Als drittes versucht man die beiden Ans\"atze f\"ur P2 zu bewerten.
 
 Generell werden die Machine Learning Modelle immer f\"ur Studierende, die sich in ihrem ersten Studienjahr und f\"ur Studierende, die sich im
 zweiten oder h\"oheren Studienjahr befinden, gebildet. Diese Unterscheidung wird durchgef\"uhrt, da man f\"ur Studierende in ihrem ersten Jahr noch
@@ -33,13 +33,13 @@ Die ersten beiden bilden, je nach Entscheidung, ob man den bedingten Erwartungsw
 approximieren m\"ochte, eine Sch\"atzung des empirischen Risikos. Die Modelle werden anhand dieser Metrik trainiert und anschlie{\ss}end
 auch mit Daten, die man im Training nicht verwendet hat, getestet. Der Coefficient of determination gibt an, wie gut das Modell
 die Variabilit\"at der tats\"achlichen Werte (im Bezug zum Mittelwert) beschreiben kann. Der Wert liegt normalerweise zwischen 0 und 1. Sollte der Wert negativ sein,
-bedeutet dies, dass die Sch\"atzung des Modells schlechter die Zielwerte approximieren kann, als das arithmetische Mittel der Zielwerte \cite{guttag}.  \\
+bedeutet dies, dass die Sch\"atzung des Modells schlechter die Zielwerte approximieren kann, als das arithmetische Mittel der Zielwerte \cite{guttag}.
 
 
-Bei Ansatz 3 handelt es sich um Klassifikationsmodell. Entweder ist eine studierende Person am Ende eines Studienjahres pr\"ufungsaktiv oder nicht. Das soll
+Bei Ansatz 3 handelt es sich um ein Klassifikationsmodell. Entweder ist eine studierende Person am Ende eines Studienjahres pr\"ufungsaktiv oder nicht. Das soll
 durch Eigenschaften dieser Person, die man am Beginn des Studienjahres zur Verf\"ugung hat, vorhergesagt werden. Jedes Modell liefert f\"ur jede studierende Person
 einen Wert zwischen 0 und 1, je nachdem wie wahrscheinlich es ist, dass die studierende Person pr\"ufungsaktiv ist oder nicht. Erst anhand eines manuell festgelegten
-Schwellwertes klassifiziert das Modell in die jeweilige Klasse. \\
+Schwellwertes klassifiziert das Modell in die jeweilige Klasse.
 
 Man hat f\"ur die Auswertung aller Modelle eine \textit{Confusion Matrix} gebildet, die folgende Form besitzt:
 
@@ -61,14 +61,14 @@ Vor allem diese Differenz ist f\"ur die Wahl des besten Vorhersagemodells aussch
 Bei Ansatz 1 wird \"uberpr\"uft, ob es Sinn macht die erreichten ECTS der Studiereden Jahr f\"ur Jahr zu sch\"atzen. Sollten die Sch\"atzungen der
 ECTS Werte geringe RMSE und MAE im Bereich bis 5 ECTS ergeben, wird eine Vorhersage Jahr f\"ur Jahr durchgef\"uhrt.
 Anschlie{\ss}end wird im letzten Jahr, f\"ur das die ECTS gesch\"atzt wurden, entschieden, ob die studierende Person pr\"ufungsaktiv war oder nicht.
-Diese verkettete Sch\"atzung findet auch auf einem eigenen Testdatensatz statt. Nun wird bewertet, wie weit sich die gesch\"atzte Anzahl an pr\"ufungsaktvien
-Studierenden von der tats\"achlichen Anzahl in diesem Jahr unterscheidet. \\
+Diese verkettete Sch\"atzung findet auch auf einem eigenen Testdatensatz statt. Nun wird bewertet, wie weit sich die gesch\"atzte Anzahl an pr\"ufungsaktiven
+Studierenden von der tats\"achlichen Anzahl in diesem Jahr unterscheidet.
 
 Bei Ansatz 2 kann man aufgrund von mangelnden Daten keine Bewertung der Berechnungen durchf\"uhren. Weil es sich um berchnete relative H\"aufigkeiten
 handelt, macht es keinen Sinn in einen Testdatensatz und Trainingsdatensatz zu unterscheiden, welche zuf\"allig gew\"ahlt werden. Es werden die relativen
-H\"aufigkeiten berechnet, die man an einem Testzeitraum in der Zukunft bewerten m\"usste. \\
+H\"aufigkeiten berechnet, die man an einem Testzeitraum in der Zukunft bewerten m\"usste.
 
-Bei Ansatz 3 kann wie oben angef\"uhrt die gesch\"atzte Anzahl an pr\"ufungsaktiven Studierenden mit der tats\"achlichen Anzahl verglichen werden. \\
+Bei Ansatz 3 kann, wie oben angef\"uhrt, die gesch\"atzte Anzahl an pr\"ufungsaktiven Studierenden mit der tats\"achlichen Anzahl verglichen werden.
 
 Schlussendlich ist es das Ziel, dass die gesch\"atzte Anzahl an pr\"ufungsaktiven Studierenden im Jahr $t = 3$ m\"oglichst nahe an der tats\"achlichen Anzahl
 liegt.
@@ -80,14 +80,14 @@ liegt.
 Man hat bei P2 nicht ausreichend Daten, um die Studienbeginner in den kommenden Jahren  vorherzusagen. Das bedeutet auch, dass es innerhalb der vorhandenen
 Daten nicht m\"oglich ist einen Testdatensatz zu bilden, an dem die beiden Ans\"atze f\"ur P2 verglichen werden k\"onnen. Bei beiden Ans\"atzen h\"angt
 sehr viel von der Sch\"atzung der Anzahl der zuk\"unftigen Studienbeginner ab, f\"ur die man mehr Kalenderjahre im Datensatz ben\"otigen w\"urde, als
-man zur Verf\"ugung hat. \\
+man zur Verf\"ugung hat.
 
-F\"ur Ansatz 1 wird \"uberpr\"uft, ob es f\"ur 2 aus den 5 vorhandenen Kalenderjahren sinnvoll gewesen w\"are, diesen Ansatz zu w\"ahlen, oder ob sich die
+F\"ur Ansatz 1 wird \"uberpr\"uft, ob es f\"ur zwei aus den f\"unf vorhandenen Kalenderjahren sinnvoll gewesen w\"are, diesen Ansatz zu w\"ahlen, oder ob sich die
 Merkmalskombinationen stark von jenen im Vorjahr unterscheiden. Daf\"ur wird die Anzahl, welche bei einer tats\"achlichen Anwendung gesch\"atzt werden muss,
 als gegeben angenommen. Anschlie{\ss}end vergleicht man, wie stark sich eine Sch\"atzung anhand der tats\"achlichen Merkmalskombination mit einer Sch\"atzung anhand von
-Merkmalskombinationen aus dem Vorjahr unterscheiden. Zus\"atzlich werden diese beiden Werte mit der tats\"achlichen Anzahl an pr\"ufungsaktiven Neuinskripierenden
-in diesem Kalenderjahr verglichen.\\
+Merkmalskombinationen aus dem Vorjahr unterscheiden. Zus\"atzlich werden diese beiden Werte mit der tats\"achlichen Anzahl an pr\"ufungsaktiven Neuinskribierenden
+in diesem Kalenderjahr verglichen.
 
-Weil Ansatz 2 noch mehr auf der Sch\"atzung der Anzahl der neuinskripierenden Studierenden aufbaut, kann man diesen Ansatz mit den vorhandenen Daten nicht bewerten oder legitimieren.
+Weil Ansatz 2 noch mehr auf der Sch\"atzung der Anzahl der neuinskribierenden Studierenden aufbaut, kann man diesen Ansatz mit den vorhandenen Daten nicht bewerten oder legitimieren.
 Zus\"atzlich zur Sch\"atzung der Anzahl der Studierenden wird die Sch\"atzung der Pr\"ufungsaktivit\"at so wie in P1 durchgef\"uhrt. Hierf\"ur kann man die
 Ergebnisse aus P1 als einen Richtwert nehmen.

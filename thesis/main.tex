@@ -9,6 +9,8 @@
 
 \setuptoc{toc}{totoc}
 
+\KOMAoptions{twoside = false}
+
 
 \usepackage[a-2b]{pdfx}
 
@@ -91,7 +93,7 @@
     % \titlehead{\begin{flushright} \includegraphics[scale=0.4]{logo.jpg} \end{flushright}}
 
     \subject{
-        \Huge{\textbf{Daniel Siemmeister}}
+        \Huge{\textbf{Daniel Simon Siemmeister}}
         }
 
     % \subject{Bericht}
@@ -133,16 +135,9 @@
         \\
         }
 
-    \date{ \normalsize{Graz, 2022}}
+    \date{ \normalsize{Graz, \today{}}}
 
 %%%% End Title Page %%%%%
-
-
-
-
-
-
-
 
 
 
@@ -158,16 +153,24 @@
 
 % \chapter*{Selbstst\"andigkeitserkl\"arung} % * for not including in  table of contents.
 % Ich erkl\"are \dots -> mache ich online???
+\addchap{Eidesstattliche Erklärung}
+Ich erkläre ehrenwörtlich, dass ich die vorliegende Arbeit selbstständig und ohne
+fremde Hilfe verfasst, andere als die angegebenen Quellen nicht benutzt und die den
+Quellen wörtlich oder inhaltlich entnommenen Stellen als solche kenntlich gemacht
+habe. 
+
+Graz, am \today{} \hfill Daniel Simon Siemmeister
+
 
 \addchap{Danksagungen}
-An dieser Stelle m\"ochte ich mich bei Herrn Prof. Gunther Leobacher bedanken, der es mir erm\"oglicht hat meine Masterarbeit zu
+An dieser Stelle m\"ochte ich mich bei Herrn Prof. Gunther Leobacher bedanken, der es mir erm\"oglicht hat, meine Masterarbeit zu
 diesem spannenden Thema zu verfassen. Neben der unb\"urokratischen Zusammenarbeit m\"ochte ich mich f\"ur die fachliche
 Unterst\"utzung und den Fokus auf das Wesentliche bedanken.
 
 Weiters m\"ochte ich mich bei meiner Familie bedanken, die mich w\"ahrend meines Studiums finanziell als auch zwischenmenschlich unterst\"utzt hat, 
 was ich nicht als selbstverst\"andlich empfinde.
 
-
+Graz, am \today{}
 
 
 \tableofcontents % Inhaltsverzeichnis
@@ -197,7 +200,8 @@ was ich nicht als selbstverst\"andlich empfinde.
 \listoffigures % Abbildungsverzeichnis
 \listoftables % Tabellenverzeichnis
 
-
+\input{chapters/abstract_deutsch.tex}
+\input{chapters/abstract_english.tex}
 
 \chapter{Einleitung}
 \input{chapters/einleitung}

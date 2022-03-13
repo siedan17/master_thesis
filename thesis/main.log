@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.2)  10 MAR 2022 13:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.2)  13 MAR 2022 12:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -107,7 +107,25 @@ Package tocbasic Info: omitting babel extension for `lot'
 \c@table=\count176
 Class scrreprt Info: Redefining `\numberline' on input line 7028.
 \bibindent=\dimen134
-) (/usr/share/texlive/texmf-dist/tex/latex/pdfx/pdfx.sty
+)
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = 12
+(typearea)             BCOR = 0.0pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 448.13095pt
+(typearea)              DIV departure   = -6%
+(typearea)              \evensidemargin = 2.4185pt
+(typearea)              \oddsidemargin  = 2.4185pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 635.5pt
+(typearea)              \topmargin      = -41.72441pt
+(typearea)              \headheight     = 18.125pt
+(typearea)              \headsep        = 21.75pt
+(typearea)              \topskip        = 12.0pt
+(typearea)              \footskip       = 50.75pt
+(typearea)              \baselineskip   = 14.5pt
+(typearea)              on input line 12.
+ (/usr/share/texlive/texmf-dist/tex/latex/pdfx/pdfx.sty
 Package: pdfx 2019/02/27 v1.6.3 PDF/X and PDF/A support (CVR/HTH/RRM/PS)
 \pdfx@minorversion=\count177
  (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
@@ -975,25 +993,25 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 150.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 145.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) ABD: EveryShipout initializing macros (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -1016,7 +1034,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \AtBeginShipoutBox=\box90
-Package hyperref Info: Link coloring OFF on input line 150.
+Package hyperref Info: Link coloring OFF on input line 145.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1026,9 +1044,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count446
 )
-LaTeX Info: Redefining \ref on input line 150.
-LaTeX Info: Redefining \pageref on input line 150.
-LaTeX Info: Redefining \nameref on input line 150.
+LaTeX Info: Redefining \ref on input line 145.
+LaTeX Info: Redefining \pageref on input line 145.
+LaTeX Info: Redefining \nameref on input line 145.
  (./main.out) (./main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
@@ -1040,7 +1058,7 @@ Class scrreprt Info: loading recommended package `bookmark'.
 (scrreprt)           `bookmarkpackage=false' before \begin{document} and
 (scrreprt)           you can avoid this message adding:
 (scrreprt)             \usepackage{bookmark}
-(scrreprt)           before \begin{document} on input line 150.
+(scrreprt)           before \begin{document} on input line 145.
  (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2019/12/03 v1.28 PDF bookmarks (HO)
  (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1110,40 +1128,40 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 150.
-Package biblatex Info: Reference segment=0 on input line 150.
+Package biblatex Info: Reference section=0 on input line 145.
+Package biblatex Info: Reference segment=0 on input line 145.
 \c@lstlisting=\count448
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 154.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 149.
  (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 154.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 149.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 154.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 149.
  (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 154.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 149.
  (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 154.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 149.
  (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 154.
+(Font)              <17.28> on input line 149.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 154.
+(Font)              <12> on input line 149.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 154.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 154.
+(Font)              <10> on input line 149.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 149.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 154.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 149.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -1169,172 +1187,69 @@ Class scrreprt Warning: \float@addtolists detected!
 
 [2
 
+]
+chapter without number
+[3
+
 ] (./main.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 16.
+(Font)              <8> on input line 22.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 16.
- [3
+(Font)              <6> on input line 22.
+ [4
 
 ])
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
- [4]
+ [5]
 chapter without number
-[5
+[6
 
-] [6] (./main.lof)
+] [7] (./main.lof)
 \tf@lof=\write8
 \openout8 = `main.lof'.
 
- [7
+ [8
 
 ] (./main.lot)
 \tf@lot=\write9
 \openout9 = `main.lot'.
 
- [8
+ (./chapters/abstract_deutsch.tex [9
 
 ]
-chapter 1.
-(./chapters/einleitung.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--7
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 8--16
-
- []
-
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 20.
+chapter without number
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 14.
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Underfull \hbox (badness 10000) in paragraph at lines 24--25
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--41
-
- []
-
-[9
+)) (./chapters/abstract_english.tex [10
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 43--46
+chapter without number
+[11
 
- []
+]) [12]
+chapter 1.
+(./chapters/einleitung.tex [13
 
-) (./chapters/problemstellung.tex
-Underfull \hbox (badness 10000) in paragraph at lines 7--12
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--16
-
- []
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 17--20
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--25
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
-
- []
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 56--61
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 62--64
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 65--67
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--76
-
- []
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 81--84
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--91
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--96
-
- []
-
-) (./chapters/data.tex
-Underfull \hbox (badness 10000) in paragraph at lines 6--10
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 11--13
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--59
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--63
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 64--66
-
- []
-
-[14]
-<graphics/pad1.pdf, id=223, 433.62pt x 289.08pt>
+]) (./chapters/problemstellung.tex [14] [15] [16]) (./chapters/data.tex [17] [18]
+<graphics/pad1.pdf, id=245, 433.62pt x 289.08pt>
 File: graphics/pad1.pdf Graphic file (type pdf)
 <use graphics/pad1.pdf>
 Package pdftex.def Info: graphics/pad1.pdf  used on input line 77.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/bwl1.pdf, id=224, 433.62pt x 289.08pt>
+<graphics/bwl1.pdf, id=246, 433.62pt x 289.08pt>
 File: graphics/bwl1.pdf Graphic file (type pdf)
 <use graphics/bwl1.pdf>
 Package pdftex.def Info: graphics/bwl1.pdf  used on input line 78.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/jus1.pdf, id=225, 433.62pt x 289.08pt>
+<graphics/jus1.pdf, id=247, 433.62pt x 289.08pt>
 File: graphics/jus1.pdf Graphic file (type pdf)
 <use graphics/jus1.pdf>
 Package pdftex.def Info: graphics/jus1.pdf  used on input line 79.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/ges1.pdf, id=226, 433.62pt x 289.08pt>
+<graphics/ges1.pdf, id=248, 433.62pt x 289.08pt>
 File: graphics/ges1.pdf Graphic file (type pdf)
 <use graphics/ges1.pdf>
 Package pdftex.def Info: graphics/ges1.pdf  used on input line 80.
@@ -1349,23 +1264,32 @@ Overfull \hbox (2.61107pt too wide) in paragraph at lines 77--83
 [] [] 
  []
 
-[15]
-<graphics/pad2.pdf, id=233, 433.62pt x 289.08pt>
+[19 <./graphics/pad1.pdf> <./graphics/bwl1.pdf
+
+pdfTeX warning: pdflatex (file ./graphics/bwl1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./graphics/jus1.pdf
+
+pdfTeX warning: pdflatex (file ./graphics/jus1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./graphics/ges1.pdf
+
+pdfTeX warning: pdflatex (file ./graphics/ges1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+<graphics/pad2.pdf, id=387, 433.62pt x 289.08pt>
 File: graphics/pad2.pdf Graphic file (type pdf)
 <use graphics/pad2.pdf>
 Package pdftex.def Info: graphics/pad2.pdf  used on input line 93.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/bwl2.pdf, id=234, 433.62pt x 289.08pt>
+<graphics/bwl2.pdf, id=388, 433.62pt x 289.08pt>
 File: graphics/bwl2.pdf Graphic file (type pdf)
 <use graphics/bwl2.pdf>
 Package pdftex.def Info: graphics/bwl2.pdf  used on input line 94.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/jus2.pdf, id=235, 433.62pt x 289.08pt>
+<graphics/jus2.pdf, id=389, 433.62pt x 289.08pt>
 File: graphics/jus2.pdf Graphic file (type pdf)
 <use graphics/jus2.pdf>
 Package pdftex.def Info: graphics/jus2.pdf  used on input line 95.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/ges2.pdf, id=236, 433.62pt x 289.08pt>
+<graphics/ges2.pdf, id=390, 433.62pt x 289.08pt>
 File: graphics/ges2.pdf Graphic file (type pdf)
 <use graphics/ges2.pdf>
 Package pdftex.def Info: graphics/ges2.pdf  used on input line 96.
@@ -1380,22 +1304,22 @@ Overfull \hbox (2.61107pt too wide) in paragraph at lines 93--99
 [] [] 
  []
 
-<graphics/pad3.pdf, id=238, 433.62pt x 289.08pt>
+<graphics/pad3.pdf, id=392, 433.62pt x 289.08pt>
 File: graphics/pad3.pdf Graphic file (type pdf)
 <use graphics/pad3.pdf>
 Package pdftex.def Info: graphics/pad3.pdf  used on input line 107.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/bwl3.pdf, id=239, 433.62pt x 289.08pt>
+<graphics/bwl3.pdf, id=393, 433.62pt x 289.08pt>
 File: graphics/bwl3.pdf Graphic file (type pdf)
 <use graphics/bwl3.pdf>
 Package pdftex.def Info: graphics/bwl3.pdf  used on input line 108.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/jus3.pdf, id=240, 433.62pt x 289.08pt>
+<graphics/jus3.pdf, id=394, 433.62pt x 289.08pt>
 File: graphics/jus3.pdf Graphic file (type pdf)
 <use graphics/jus3.pdf>
 Package pdftex.def Info: graphics/jus3.pdf  used on input line 109.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/ges3.pdf, id=241, 433.62pt x 289.08pt>
+<graphics/ges3.pdf, id=395, 433.62pt x 289.08pt>
 File: graphics/ges3.pdf Graphic file (type pdf)
 <use graphics/ges3.pdf>
 Package pdftex.def Info: graphics/ges3.pdf  used on input line 110.
@@ -1485,22 +1409,22 @@ Overfull \hbox (2.10434pt too wide) in paragraph at lines 153--153
 []\T1/lmr/bx/n/12 Gesamt| 
  []
 
-<graphics/pad4.pdf, id=243, 433.62pt x 289.08pt>
+<graphics/pad4.pdf, id=397, 433.62pt x 289.08pt>
 File: graphics/pad4.pdf Graphic file (type pdf)
 <use graphics/pad4.pdf>
 Package pdftex.def Info: graphics/pad4.pdf  used on input line 165.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/bwl4.pdf, id=244, 433.62pt x 289.08pt>
+<graphics/bwl4.pdf, id=398, 433.62pt x 289.08pt>
 File: graphics/bwl4.pdf Graphic file (type pdf)
 <use graphics/bwl4.pdf>
 Package pdftex.def Info: graphics/bwl4.pdf  used on input line 166.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/jus4.pdf, id=245, 433.62pt x 289.08pt>
+<graphics/jus4.pdf, id=399, 433.62pt x 289.08pt>
 File: graphics/jus4.pdf Graphic file (type pdf)
 <use graphics/jus4.pdf>
 Package pdftex.def Info: graphics/jus4.pdf  used on input line 167.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/ges4.pdf, id=246, 433.62pt x 289.08pt>
+<graphics/ges4.pdf, id=400, 433.62pt x 289.08pt>
 File: graphics/ges4.pdf Graphic file (type pdf)
 <use graphics/ges4.pdf>
 Package pdftex.def Info: graphics/ges4.pdf  used on input line 168.
@@ -1515,16 +1439,7 @@ Overfull \hbox (2.61107pt too wide) in paragraph at lines 165--170
 [] [] 
  []
 
-) [16 <./graphics/pad1.pdf> <./graphics/bwl1.pdf
-
-pdfTeX warning: pdflatex (file ./graphics/bwl1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./graphics/jus1.pdf
-
-pdfTeX warning: pdflatex (file ./graphics/jus1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./graphics/ges1.pdf
-
-pdfTeX warning: pdflatex (file ./graphics/ges1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [17 <./graphics/pad2.pdf> <./graphics/bwl2.pdf
+) [20 <./graphics/pad2.pdf> <./graphics/bwl2.pdf
 
 pdfTeX warning: pdflatex (file ./graphics/bwl2.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./graphics/jus2.pdf
@@ -1533,7 +1448,7 @@ pdfTeX warning: pdflatex (file ./graphics/jus2.pdf): PDF inclusion: multiple pdf
 > <./graphics/ges2.pdf
 
 pdfTeX warning: pdflatex (file ./graphics/ges2.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [18 <./graphics/pad3.pdf> <./graphics/bwl3.pdf
+>] [21 <./graphics/pad3.pdf> <./graphics/bwl3.pdf
 
 pdfTeX warning: pdflatex (file ./graphics/bwl3.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./graphics/jus3.pdf
@@ -1554,286 +1469,21 @@ pdfTeX warning: pdflatex (file ./graphics/jus4.pdf): PDF inclusion: multiple pdf
 > <./graphics/ges4.pdf
 
 pdfTeX warning: pdflatex (file ./graphics/ges4.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [19]
+>] [22]
 chapter 2.
-(./chapters/ansaetzeP1.tex
-Underfull \hbox (badness 10000) in paragraph at lines 17--20
+(./chapters/ansaetzeP1.tex [23
 
- []
-
-[20
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 36--38
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--53
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--62
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 64--68
-
- []
-
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 69--71
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 91--94
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 96--100
-
- []
-
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 109--111
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--129
-
- []
-
-[23] (./figures/fig1.tikz)
+] [24] [25] (./figures/fig1.tikz)
 Underfull \hbox (badness 10000) in paragraph at lines 143--148
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 158--161
-
- []
-
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 163--166
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 168--173
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 174--177
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 194--196
-
- []
-
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 205--207
-
- []
-
-) (./chapters/ansaetzeP2.tex
-Underfull \hbox (badness 10000) in paragraph at lines 9--13
-
- []
-
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 14--18
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--39
-
- []
-
-[27]) (./chapters/ml.tex
-Underfull \hbox (badness 10000) in paragraph at lines 7--11
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--18
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--21
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 22--25
-
- []
-
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 28--35
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--41
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--48
-
- []
-
-[29]
-Underfull \hbox (badness 10000) in paragraph at lines 64--66
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--71
-
- []
-
-
+[26] [27] [28]) (./chapters/ansaetzeP2.tex [29]) (./chapters/ml.tex [30] [31] [32]
 Underfull \hbox (badness 10000) in paragraph at lines 73--78
 
  []
 
-[30]
-Underfull \hbox (badness 10000) in paragraph at lines 87--91
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 93--102
-
- []
-
-[31] [32]
-Underfull \hbox (badness 10000) in paragraph at lines 165--170
-
- []
-
-[33] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 226--230
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 232--236
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 237--240
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 242--245
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 278--281
-
- []
-
-[35]
-Underfull \hbox (badness 10000) in paragraph at lines 286--288
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 293--296
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 297--300
-
- []
-
-[36]
-Underfull \hbox (badness 10000) in paragraph at lines 306--309
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 314--316
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 317--320
-
- []
-
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 334--336
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 370--372
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 373--376
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 377--381
-
- []
-
-[38]
-Underfull \hbox (badness 10000) in paragraph at lines 383--386
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 396--397
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 426--432
-
- []
-
-[39]
-Underfull \hbox (badness 10000) in paragraph at lines 433--437
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 438--443
-
- []
-
-(./figures/fig3.tikz) [40]
-Underfull \hbox (badness 10000) in paragraph at lines 476--479
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 480--482
-
- []
-
-[41]
+[33] [34] [35] [36] [37] [38] [39] [40] [41] (./figures/fig3.tikz) [42]
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 483.
  (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
@@ -1842,257 +1492,87 @@ Underfull \hbox (badness 10000) in paragraph at lines 483--485
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 492--495
-
+[43] (./figures/fig4.tikz) [44]
+Overfull \hbox (48.04942pt too wide) in paragraph at lines 550--556
+\T1/lmr/m/n/12 schaf-ten li-ne-ar zu se-pa-rie-ren. Das be-deu-tet, man ver-sucht für die Da-ten $\OML/lmm/m/it/12 S \OT1/lmr/m/n/12 = (\OT1/lmr/bx/n/12 x[]\OML/lmm/m/it/12 ; y[]\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; [] ; \OT1/lmr/m/n/12 (\OT1/lmr/bx/n/12 x[]\OML/lmm/m/it/12 ; y[]\OT1/lmr/m/n/12 )$
  []
 
-(./figures/fig4.tikz)
-Underfull \hbox (badness 10000) in paragraph at lines 511--514
-
- []
-
-[42]
-Underfull \hbox (badness 10000) in paragraph at lines 546--549
-
- []
-
-
-Overfull \hbox (22.52596pt too wide) in paragraph at lines 550--556
-\T1/lmr/m/n/12 ten li-ne-ar zu se-pa-rie-ren. Das be-deu-tet, man ver-sucht für die Da-ten $\OML/lmm/m/it/12 S \OT1/lmr/m/n/12 = (\OT1/lmr/bx/n/12 x[]\OML/lmm/m/it/12 ; y[]\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; [] ; \OT1/lmr/m/n/12 (\OT1/lmr/bx/n/12 x[]\OML/lmm/m/it/12 ; y[]\OT1/lmr/m/n/12 )$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 550--556
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 557--562
-
- []
-
-(./figures/fig6.tikz) [43]
-Underfull \hbox (badness 10000) in paragraph at lines 577--579
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 580--584
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 585--589
-
- []
-
-(./figures/fig5.tikz)
-Underfull \hbox (badness 10000) in paragraph at lines 601--607
-
- []
-
-[44]
-Underfull \hbox (badness 10000) in paragraph at lines 611--616
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 648--652
-
- []
-
-[45]
-Underfull \hbox (badness 10000) in paragraph at lines 653--658
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 659--662
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 674--675
-
- []
-
-[46]
-Underfull \hbox (badness 10000) in paragraph at lines 683--685
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 686--689
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 703--707
-
- []
-
-(./figures/fig2.tikz)
+(./figures/fig6.tikz) [45] (./figures/fig5.tikz) [46] [47] [48] (./figures/fig2.tikz)
 Overfull \hbox (1.52408pt too wide) in paragraph at lines 70--712
  [] 
  []
 
-) [47] (./chapters/implementation.tex
-Underfull \hbox (badness 10000) in paragraph at lines 6--9
-
- []
-
-[48]
-Underfull \hbox (badness 10000) in paragraph at lines 10--13
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--16
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--20
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--24
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--30
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--34
-
- []
-
-[49]
-Underfull \hbox (badness 10000) in paragraph at lines 35--41
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--47
-
- []
-
-
+) [49] (./chapters/implementation.tex [50]
 Overfull \vbox (14.50002pt too high) detected at line 74
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 82--85
-
- []
-
-) (./chapters/auswertung.tex
-Underfull \hbox (badness 10000) in paragraph at lines 5--10
-
- []
-
-[50] [51]
-Underfull \hbox (badness 10000) in paragraph at lines 32--37
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 39--43
-
- []
-
-[52]
-Underfull \hbox (badness 10000) in paragraph at lines 61--66
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--70
-
- []
-
-[53]
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--84
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 85--90
-
- []
-
-) [54]
+) (./chapters/auswertung.tex [51] [52] [53] [54]) [55]
 chapter 3.
 (./chapters/ergebnisse.tex
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
 []\T1/lmr/m/n/12 Random
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--14
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
 []\T1/lmr/m/n/12 KNN
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--14
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
 \T1/lmr/m/n/12 (oh-ne
  []
 
 
-Overfull \hbox (52.67975pt too wide) in paragraph at lines 15--15
+Overfull \hbox (52.67975pt too wide) in paragraph at lines 13--13
 \T1/lmr/m/n/12 (Crossvalidation)|  
  []
 
 
-Overfull \hbox (50.6562pt too wide) in paragraph at lines 20--20
+Overfull \hbox (50.6562pt too wide) in paragraph at lines 18--18
 \T1/lmr/m/n/12 (Trainingsdaten)|  
  []
 
 
-Overfull \hbox (18.59985pt too wide) in paragraph at lines 30--30
+Overfull \hbox (18.59985pt too wide) in paragraph at lines 28--28
 \T1/lmr/m/n/12 Accurancy|  
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 39--43
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--47
-
- []
-
-[55
+[56
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 58--61
+Underfull \hbox (badness 10000) in paragraph at lines 62--64
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 64--66
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 70--74
-
- []
-
-[56]
-Overfull \hbox (14.22638pt too wide) in paragraph at lines 96--97
+[57]
+Overfull \hbox (14.22638pt too wide) in paragraph at lines 94--95
 [][]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
+[]\T1/lmr/m/n/12 Confusion
+ []
+
+
+Overfull \hbox (10.01112pt too wide) in paragraph at lines 99--99
+[]$[]$| 
+ []
+
+
+Overfull \hbox (15.88611pt too wide) in paragraph at lines 99--99
+[]$[]$| 
+ []
+
+
+Overfull \hbox (15.88611pt too wide) in paragraph at lines 99--99
+[]$[]$| 
+ []
+
+
+Overfull \hbox (15.88611pt too wide) in paragraph at lines 99--100
+[]$[]$| 
  []
 
 
@@ -2101,7 +1581,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--101
  []
 
 
-Overfull \hbox (10.01112pt too wide) in paragraph at lines 101--101
+Overfull \hbox (15.88611pt too wide) in paragraph at lines 101--101
 []$[]$| 
  []
 
@@ -2120,168 +1600,62 @@ Overfull \hbox (15.88611pt too wide) in paragraph at lines 101--102
 []$[]$| 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 103--103
-[]\T1/lmr/m/n/12 Confusion
- []
-
-
-Overfull \hbox (15.88611pt too wide) in paragraph at lines 103--103
-[]$[]$| 
- []
-
-
-Overfull \hbox (15.88611pt too wide) in paragraph at lines 103--103
-[]$[]$| 
- []
-
-
-Overfull \hbox (15.88611pt too wide) in paragraph at lines 103--103
-[]$[]$| 
- []
-
-
-Overfull \hbox (15.88611pt too wide) in paragraph at lines 103--104
-[]$[]$| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--118
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 119--121
-
- []
-
-[57]
-Underfull \hbox (badness 10000) in paragraph at lines 129--131
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 132--135
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 136--138
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
-
- []
-
 [58]
-Underfull \hbox (badness 10000) in paragraph at lines 162--162
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
 []\T1/lmr/m/n/12 Zeitspanne
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--162
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
 \T1/lmr/m/n/12 der Schät-
  []
 
 
-Underfull \hbox (badness 1024) in paragraph at lines 162--162
+Underfull \hbox (badness 1024) in paragraph at lines 160--160
 []\T1/lmr/m/n/12 Prediction rea-le
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 177--181
-
- []
-
-) [59] [60]
+[59]) [60]
 chapter 4.
-(./chapters/diskussion.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--3
+(./chapters/diskussion.tex [61
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--15
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--20
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--24
-
- []
-
-[61
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 25--30
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--36
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--39
-
- []
-
-[62]
-Underfull \hbox (badness 10000) in paragraph at lines 53--56
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 57--62
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--65
-
- []
-
-[63]) [64]
+] [62] [63]) [64]
 chapter without number
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 227.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 231.
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [65
 
 ] [66] [67]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 236.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 236.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 240.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 240.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 236.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 236.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 240.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 240.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 236.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 240.
  ) 
 Here is how much of TeX's memory you used:
- 40863 strings out of 481239
- 753675 string characters out of 5920378
- 1537789 words of memory out of 5000000
- 55214 multiletter control sequences out of 15000+600000
+ 40882 strings out of 481239
+ 754050 string characters out of 5920378
+ 1536806 words of memory out of 5000000
+ 55224 multiletter control sequences out of 15000+600000
  614534 words of font info for 77 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  73i,27n,90p,10095b,3666s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc} </home/siedan/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk>{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (67 pages, 641804 bytes).
+Output written on main.pdf (67 pages, 645517 bytes).
 PDF statistics:
- 1417 PDF objects out of 1440 (max. 8388607)
- 803 compressed objects within 9 object streams
- 170 named destinations out of 1000 (max. 500000)
- 457 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1431 PDF objects out of 1440 (max. 8388607)
+ 817 compressed objects within 9 object streams
+ 173 named destinations out of 1000 (max. 500000)
+ 481 words of extra memory for PDF output out of 10000 (max. 10000000)
 

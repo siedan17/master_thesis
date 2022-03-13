@@ -1,5 +1,3 @@
-
-
 \section{Ans\"atze f\"ur Problem 1}
 
 
@@ -36,14 +34,14 @@ In \hyperref[tab:ergebnisA1P1]{Tabelle 3.1} sind die Machine Learning Modelle un
 
 \end{table}
 
-\noindent Nach dieser Auswertung ist das KNN jenes Modell, welches f\"ur diese Problemstellung am besten funktioniert. Jedoch sind auch bei diesem Modell der
+Nach dieser Auswertung ist das KNN jenes Modell, welches f\"ur diese Problemstellung am besten funktioniert. Jedoch sind auch bei diesem Modell der
 RMSE und der MAE in der Gr\"o{\ss}enordnung von ca. 16 ECTS. Das bedeutet, der Fehler ist durchschnittlich so gro{\ss} wie die Schwelle zur Pr\"ufungsaktivit\"at.
 Weiters ist vor allem die Sch\"atzung der ECTS im ersten Studienjahr, wo man weniger Inputvariablen zur Verf\"ugung hat, bei allen Modellen schlechter als bei der
-Sch\"atzung der ECTS in den darauffolgenden Studienjahren. \\
+Sch\"atzung der ECTS in den darauffolgenden Studienjahren.
 
-\noindent Man sieht, dass bei allen Modellen die jeweiligen Fehler gro{\ss} sind, und das jeweils f\"ur das erste darauffolgende Jahr.
-Deswegen ist aufgrund der schlechten Vorhersagbarkeit der ECTS, und der weiteren Fehlerfortpflanzungen bei einer Vorhersage \"uber mehrere Studienjahre,
-dieser Ansatz nicht brauchbar. \\
+Man sieht, dass bei allen Modellen die jeweiligen Fehler gro{\ss} sind, und das jeweils f\"ur das erste darauffolgende Jahr.
+Deswegen ist, aufgrund der schlechten Vorhersagbarkeit der ECTS, und der weiteren Fehlerfortpflanzungen bei einer Vorhersage \"uber mehrere Studienjahre,
+dieser Ansatz nicht brauchbar.
 
 
 
@@ -57,9 +55,9 @@ dieser Ansatz nicht brauchbar. \\
 \subsection{Ansatz 2}
 Es war wie oben angef\"uhrt aufgrund von mangelnden Daten nicht m\"oglich diesen Ansatz zu \"uberpr\"ufen.
 Aus den 72 eingeteilten Kategorien war es f\"ur 49 Kategorien m\"oglich \"Ubergangsmatrizen zu berechnen. F\"ur alle anderen
-Kategorien hat es in dem vorhandenen Datensatz zu wenig Daten gegeben. \\
+Kategorien hat es in dem vorhandenen Datensatz zu wenig Daten gegeben.
 
-F\"ur die Beispielsklasse \textit{Weiblich, Rechtswissenschaften, Steiermark und AHS Vorbildung} haben die \"Ubergangsmatrizen der ersten 5 Jahre f\"ur den Prozess $X$ wie folgt ausgesehen:
+F\"ur die Beispielsklasse \textit{Weiblich, Rechtswissenschaften, Steiermark} und  \textit{AHS Vorbildung} haben die \"Ubergangsmatrizen der ersten 5 Jahre f\"ur den Prozess $X$ wie folgt ausgesehen:
 
 $\left[ \begin{array}{rrrr}  0.05 & 0.19 & 0.53 & 0.23  \end{array}\right]$, $\left[ \begin{array}{rrrr} 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \\ 0.02 & 0.13 & 0.79 & 0.07 \\ 0.02 & 0.49 & 0.19 & 0.29 \end{array}\right]$,
 $\left[ \begin{array}{rrrr} 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \\ 0.01 & 0.05  & 0.82  & 0.13 \\ 0.01 & 0.46 & 0.24 & 0.29 \end{array}\right]$, \\
@@ -67,10 +65,10 @@ $\left[ \begin{array}{rrrr} 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \\ 0.01 & 0.05  & 0.
 $\left[ \begin{array}{rrrr} 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \\ 0.05 & 0.01 & 0.83 & 0.11\\ 0.00& 0.18 & 0.25 & 0.50\end{array}\right]$,
 $\left[ \begin{array}{rrrr} 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \\ 0.15& 0.02& 0.71& 0.12\\ 0.03& 0.27& 0.28& 0.42 \end{array}\right]$.
 
-Um eine \"Ubergangswahrscheinlichkeit abzulesen geht man wie folgt vor. die Zeilen der Matrizen geben den aktuellen Status der studierenden Person an.
-Dieser kann entweder \glqq aktiv und weiterhin inskripiert\grqq{}, \glqq nicht aktiv und weiterhin inskripiert\grqq{}, \glqq aktiv und nicht weiter inskripiert\grqq{}, oder \glqq nicht aktiv und nicht weiter inskripiert\grqq{} sein.
+Um eine \"Ubergangswahrscheinlichkeit abzulesen geht man wie folgt vor. Die Zeilen der Matrizen geben den aktuellen Status der studierenden Person an.
+Dieser kann entweder \glqq aktiv und weiterhin inskribiert\grqq{}, \glqq nicht aktiv und weiterhin inskribiert\grqq{}, \glqq aktiv und nicht weiter inskribiert\grqq{}, oder \glqq nicht aktiv und nicht weiter inskribiert\grqq{} sein.
 Die Spalten geben die Klasse an in die eine studierende Person im n\"achsten Jahr kommen kann. Beispielsweise gibt das Element (3, 2) jeder Matrix die Wahrscheinlichkeit an,
-mit der eine studierende Person aus Klasse c (pr\"ufungsakiv und weiterhin inskripiert) in die Klasse b (nicht pr\"ufungsakiv und nicht weiterhin inskripiert) gelangt.\\
+mit der eine studierende Person aus Klasse c (pr\"ufungsakiv und weiterhin inskribiert) in die Klasse b (nicht pr\"ufungsakiv und nicht weiterhin inskribiert) gelangt.
 
 
 Mit diesen \"Ubergangswahrscheinlichkeiten ist es m\"oglich f\"ur Studierende dieser Klasse die erwartete Anzahl an pr\"ufungsaktiven Studierenden
@@ -79,7 +77,7 @@ zu einem Zeitpunkt $t$ in der Zukunft zu berechnen.
 \subsection{Ansatz 3}
 
 In \hyperref[tab:ergebnisA3P1]{Tabelle 3.2} sieht man die zusammengefassten Ergebnisse der  Machine Learning Modelle unter der Vorgehensweise von Ansatz 3.
-In Zeile 1 sind die tats\"achlichen Anzahl an pr\"ufungsaktiven Studierenden mit den gesch\"atzten Anzahlen dargestellt. Man sieht hier, dass diese nicht sehr weit voneinander abweichen.
+In Zeile 1 sind die tats\"achlichen Anzahlen an pr\"ufungsaktiven Studierenden mit den gesch\"atzten Anzahlen dargestellt. Man sieht hier, dass diese nicht sehr weit voneinander abweichen.
 In Zeilen 2 und 3 sind Ergebnisse einer m\"oglichen Klassifizierung mittels eines Schwellwertes von 0.5 dargestellt. Man sieht in der Confusion Matrix, dass bei einer
 durchgef\"uhrten Klassifizierung die Ergebnisse nicht so gut ausfallen w\"urden, weil sich die False Positiv und False Negativ klassifizierten Testbeispiele nicht gut aufheben.
 
@@ -111,13 +109,13 @@ durchgef\"uhrten Klassifizierung die Ergebnisse nicht so gut ausfallen w\"urden,
 
 \end{table}
 
-Man sieht in den Ergebnissen, dass alle vier Modelle auf einem Testdatensatz gut funktionieren und in ihrer Genauigkeit nicht weit voneinander
-abweichen. Man sieht auch im Vergleich wie die Klassifikatoren abschneiden, wenn sie jedes Beispiel bewerten m\"ussten. Man sieht, dass sich die FP und FN nicht
+Man erkennt in den Ergebnissen, dass alle vier Modelle auf einem Testdatensatz gut funktionieren und in ihrer Genauigkeit nicht weit voneinander
+abweichen. Man sieht auch im Vergleich wie die Klassifikatoren abschneiden, wenn sie jedes Beispiel bewerten m\"ussten. Es ist erkenntlich, dass sich die FP und FN nicht
 so genau aufheben, wie es mit der Ausgabe der Wahrscheinlichkeiten der Fall ist. Die unterschiedlichen Anzahlen der Ausgaben kommen zustande, weil bei der Confusion Matrix
-mittels einer Crossvalidation gearbeitet wurde. Das hei{\ss}t auch hier wurde auf Daten ausgewertet, auf die das Modell nicht trainiert wurde. \\
+mittels einer Crossvalidation gearbeitet wurde. Das hei{\ss}t, auch hier wurde auf Daten ausgewertet, auf die das Modell nicht trainiert wurde.
 
 Das beste Modell nach dieser Auswertung ist das K\"unstliche Neuronale Netzwerk. Wobei auch das Support Vector Machine Modell und die logistische Regression beinahe
-idente Ergebnisse auf den Testdatensatz liefern. \\
+idente Ergebnisse auf den Testdatensatz liefern.
 
 
 
@@ -127,16 +125,16 @@ idente Ergebnisse auf den Testdatensatz liefern. \\
 
 \subsection{Auswahl}
 Aufgrund der schlechten Vorhersagbarkeit und der weiteren Fehlerfortpflanzungen muss Ansatz 1 verworfen werden. Es macht somit keinen Sinn den ECTS Wert
-der Studierenden Jahr f\"ur Jahr zu sch\"atzen. \\
+der Studierenden Jahr f\"ur Jahr zu sch\"atzen.
 
 Ansatz 2 liefert \"Ubergangswahrscheinlichkeiten, welche auf diesem Datensatz stabil sind. Dieser Ansatz kann f\"ur wenige Klassen zuverl\"assig verwendet werden.
 Der Nachteil dieses Ansatzes ist, dass man ihn erst in einer Zeitspanne in der Zukunft \"uberpr\"ufen kann und, dass man f\"ur die Berechnungen der Wahrscheinlichkeiten
-f\"ur einige Klassen zu wenig Daten hat. \\
+f\"ur einige Klassen zu wenig Daten hat.
 
 Ansatz 3 hat auf dem gebildeten Testdatensatz gut abgeschnitten. Die Modelle dieses Ansatzes m\"ussen f\"ur eine gewisse Zeitspanne gebildet werden. Der Vorteil ist, dass
-bei diesem Ansatz mehr Inputmerkmale pro Person verwendet werden k\"onnen um eine Wahrscheinlichkeit zu berechnen, als in Ansatz 2. \\
+bei diesem Ansatz mehr Inputmerkmale pro Person verwendet werden k\"onnen, um eine Wahrscheinlichkeit zu berechnen, als in Ansatz 2.
 
-Aufgrund der oben angef\"uhrten Ergebnisse wird Ansatz 3 f\"ur P1 verwendet. \\
+Aufgrund der oben angef\"uhrten Ergebnisse wird Ansatz 3 f\"ur P1 verwendet.
 
 
 
@@ -146,9 +144,9 @@ Aufgrund der oben angef\"uhrten Ergebnisse wird Ansatz 3 f\"ur P1 verwendet. \\
 
 
 \section{Ans\"atze f\"ur Problem 2}
-F\"ur P2 gibt es keine M\"oglichkeit die beiden Ans\"atze sinnhaft miteinander zu vergleichen. Es sind zu wenig Daten vorhanden,
+F\"ur P2 gibt es keine M\"oglichkeit die beiden Ans\"atze sinnvoll miteinander zu vergleichen. Es sind zu wenig Daten vorhanden,
 um einen Testdatensatz zu bilden, auf diesem beide Ans\"atze miteinander verglichen werden k\"onnen. Weiters w\"urde man in beiden
-Ans\"atzen ein Sch\"atzung der Anzahl der neuinskripierenden Studierenden durchf\"uhren m\"ussen. Daf\"ur sind in den Daten mit f\"unf Kalenderjahren
+Ans\"atzen eine Sch\"atzung der Anzahl der neuinskripierenden Studierenden durchf\"uhren m\"ussen. Daf\"ur sind in den Daten mit f\"unf Kalenderjahren
 zu wenig Kalenderjahre vorhanden, um eine ernsthafte Sch\"atzung zu bilden.
 
 
@@ -176,12 +174,12 @@ Als Legitimation f\"ur diesen Ansatz kann man folgende Ergebnisse in \hyperref[t
 
 In dieser Tabelle sieht man in den Zeilen \textit{1 Jahr} und \textit{2 Jahre} die Daten f\"ur Vorhersagen \"uber 1 beziehungsweise 2 Jahre.
 In der Spalte \textit{Prediction reale Daten} werden die tats\"achlichen Daten aus den Kalenderjahren 2016 und 2017 \"uber 1 beziehungsweise
-2 Jahr vorhergesagt. Die Spalte \textit{Prediction dummy Daten} zeigt eine Vorhersage von Daten, welche die Merkmalskombinationen aus dem letzten
-verf\"ugbaren Jahr haben. Die letzte Spalte gibt die tats\"achlich Anzahl an pr\"ufungsaktiven Studierenden im zu sch\"atzenden Kalenderjahr an. \\
+2 Jahre vorhergesagt. Die Spalte \textit{Prediction dummy Daten} zeigt eine Vorhersage von Daten, welche die Merkmalskombinationen aus dem letzten
+verf\"ugbaren Jahr haben. Die letzte Spalte gibt die tats\"achliche Anzahl an pr\"ufungsaktiven Studierenden im zu sch\"atzenden Kalenderjahr an.
 
 
 \subsection{Ansatz 2}
-Wie oben beschrieben, sind f\"ur die Sch\"atzung der Anzahl der neuinskripierenden Studierenden nicht gen\"ugend Daten vorhanden.
+Wie oben beschrieben, sind f\"ur die Sch\"atzung der Anzahl der neuinskribierenden Studierenden nicht gen\"ugend Daten vorhanden.
 Weil dieser Ansatz gr\"o{\ss}tenteils auf dieser Sch\"atzung beruht, konnten keine Ergebnisse berechnet werden. F\"ur die Vorhersage,
 ob die Studierenden pr\"ufungsaktiv sein werden oder nicht, sollte Ansatz 3 aus P1 verwendet werden.
 

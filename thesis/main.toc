@@ -1,81 +1,87 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {ngerman}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Danksagungen}{2}{chapter*.1}%
+\contentsline {chapter}{\nonumberline Eidesstattliche Erklärung}{2}{chapter*.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Inhaltsverzeichnis}{3}{chapter*.2}%
+\contentsline {chapter}{\nonumberline Danksagungen}{3}{chapter*.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Abk\"urzungsverzeichnis}{5}{chapter*.3}%
+\contentsline {chapter}{\nonumberline Inhaltsverzeichnis}{4}{chapter*.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{7}{chapter*.4}%
+\contentsline {chapter}{\nonumberline Abk\"urzungsverzeichnis}{6}{chapter*.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{8}{chapter*.5}%
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{8}{chapter*.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}Einleitung}{9}{chapter.1}%
+\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{9}{chapter*.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Bisherige Herangehensweise}{10}{section.1.1}%
+\contentsline {chapter}{\nonumberline Zusammenfassung}{10}{chapter*.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Problemstellungen}{10}{section.1.2}%
+\contentsline {chapter}{\nonumberline Abstract}{11}{chapter*.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Ziel}{13}{section.1.3}%
+\contentsline {chapter}{\numberline {1}Einleitung}{13}{chapter.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.4}Daten}{14}{section.1.4}%
+\contentsline {section}{\numberline {1.1}Bisherige Herangehensweise}{14}{section.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Methoden und Modelle}{20}{chapter.2}%
+\contentsline {section}{\numberline {1.2}Problemstellungen}{14}{section.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Ans\"atze f\"ur Problem 1}{20}{section.2.1}%
+\contentsline {section}{\numberline {1.3}Ziel}{16}{section.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}Ansatz 1}{20}{subsection.2.1.1}%
+\contentsline {section}{\numberline {1.4}Daten}{17}{section.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.2}Ansatz 2}{22}{subsection.2.1.2}%
+\contentsline {chapter}{\numberline {2}Methoden und Modelle}{23}{chapter.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.3}Ansatz 3}{24}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.1}Ans\"atze f\"ur Problem 1}{23}{section.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Ans\"atze f\"ur Problem 2}{26}{section.2.2}%
+\contentsline {subsection}{\numberline {2.1.1}Ansatz 1}{23}{subsection.2.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Ansatz 1}{26}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.1.2}Ansatz 2}{25}{subsection.2.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Ansatz 2}{27}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.1.3}Ansatz 3}{27}{subsection.2.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Machine Learning Modelle}{28}{section.2.3}%
+\contentsline {section}{\numberline {2.2}Ans\"atze f\"ur Problem 2}{29}{section.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Multiple Lineare Regression}{36}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.2.1}Ansatz 1}{29}{subsection.2.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.2}Logistische Regression}{38}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.2.2}Ansatz 2}{30}{subsection.2.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.3}Random Forest Modelle}{40}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.3}Machine Learning Modelle}{31}{section.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.4}Support Vector Machine Modelle}{43}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.1}Multiple Lineare Regression}{38}{subsection.2.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.5}K\"unstliche Neuronale Netzwerke}{45}{subsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.3.2}Logistische Regression}{40}{subsection.2.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Implementierung}{48}{section.2.4}%
+\contentsline {subsection}{\numberline {2.3.3}Random Forest Modelle}{42}{subsection.2.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Auswertung}{50}{section.2.5}%
+\contentsline {subsection}{\numberline {2.3.4}Support Vector Machine Modelle}{45}{subsection.2.3.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.1}Machine Learning Modelle}{51}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.3.5}K\"unstliche Neuronale Netzwerke}{47}{subsection.2.3.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.2}Ans\"atze f\"ur P1}{53}{subsection.2.5.2}%
+\contentsline {section}{\numberline {2.4}Implementierung}{50}{section.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.3}Ans\"atze f\"ur P2}{54}{subsection.2.5.3}%
+\contentsline {section}{\numberline {2.5}Auswertung}{52}{section.2.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Ergebnisse}{55}{chapter.3}%
+\contentsline {subsection}{\numberline {2.5.1}Machine Learning Modelle}{53}{subsection.2.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Ans\"atze f\"ur Problem 1}{55}{section.3.1}%
+\contentsline {subsection}{\numberline {2.5.2}Ans\"atze f\"ur P1}{54}{subsection.2.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Ansatz 1}{55}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {2.5.3}Ans\"atze f\"ur P2}{55}{subsection.2.5.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Ansatz 2}{56}{subsection.3.1.2}%
+\contentsline {chapter}{\numberline {3}Ergebnisse}{56}{chapter.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.3}Ansatz 3}{57}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.1}Ans\"atze f\"ur Problem 1}{56}{section.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.4}Auswahl}{58}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.1}Ansatz 1}{56}{subsection.3.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Ans\"atze f\"ur Problem 2}{58}{section.3.2}%
+\contentsline {subsection}{\numberline {3.1.2}Ansatz 2}{57}{subsection.3.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.3}Ansatz 3}{58}{subsection.3.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.4}Auswahl}{59}{subsection.3.1.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Ans\"atze f\"ur Problem 2}{59}{section.3.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.1}Ansatz 1}{59}{subsection.3.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Ansatz 2}{59}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.2}Ansatz 2}{60}{subsection.3.2.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.3}Auswahl}{60}{subsection.3.2.3}%
 \defcounter {refsection}{0}\relax 
@@ -85,6 +91,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.2}Problem 2}{63}{section.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Fazit}{64}{section.4.3}%
+\contentsline {section}{\numberline {4.3}Fazit}{63}{section.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Literatur}{65}{chapter*.6}%
+\contentsline {chapter}{\nonumberline Literatur}{65}{chapter*.9}%
