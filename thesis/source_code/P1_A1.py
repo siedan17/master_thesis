@@ -1,4 +1,4 @@
-### Import of the used libraries ###
+### importing libraries ###
 
 import sys
 import os
@@ -27,7 +27,9 @@ from tensorflow import keras
 
 scaler = StandardScaler()
 
-# Definieren des path:
+### importing data files ###
+
+# relative path to the data folder
 data_path = '../raw_data'
 cwd = os.path.dirname(__file__)
 raw_data_folder = os.path.abspath(os.path.join(cwd, data_path))
@@ -36,18 +38,18 @@ def load_df(name):
     return pd.read_csv(os.path.join(raw_data_folder, name))
 
 
-# Laden der Daten:
+# loading data
 df = load_df('adapted_data.csv').drop(['Unnamed: 0'], axis =1)
 
 
-# Verwendete Merkmale im ersten Studienjahr: 
+# used features for first study year
 features_year1 = ['styria_dummy', 'not_styria_dummy', 'germany_dummy',
                   'num_parallel_studies', 'cum_ects_pos_before', 'years_since_matura', 'firstGen',
                   'geschlecht', 'AHS_dummy', 'BHS_dummy', 'ausland_vorbildung_dummy',
                   'sonstige_vorbildung_dummy', 'jus_dummy', 'bwl_dummy',
                   'delayed_dummy', 'ECTS_year', 'active_dummy']
 
-# Verwendete Merkmale for Studienjahre:
+# used features for highter study years
 features_years = ['Studienjahr', 'styria_dummy', 'not_styria_dummy', 'germany_dummy',
                   'num_parallel_studies', 'cum_ects_pos_before', 'avgECTS_sem_before', 'ects_year_before',
                   'full_duration_sem_before', 'geschlecht', 'years_since_matura', 'firstGen', 'AHS_dummy',
@@ -55,9 +57,8 @@ features_years = ['Studienjahr', 'styria_dummy', 'not_styria_dummy', 'germany_du
                   'delayed_dummy', 'jus_dummy', 'bwl_dummy',
                   'ECTS_year', 'active_dummy']
 
-###############################################################################################################################
 
-### Help Functions and Training Functions ###
+### helper functions and training functions ###
 
 def active(df_, prediction):
     df = df_.copy(deep = True)
@@ -92,7 +93,7 @@ def display_scores(scores):
 
 
 
-### Erstellt die Daten: ###
+### cerating proper data DataFrames ###
 def create_data1(df):
     df = df.query('Studienjahr == 1')[features_year1].dropna().reset_index(drop = True).copy(deep = True)
     split = StratifiedShuffleSplit(n_splits = 1, test_size = 0.1, random_state = 42)
@@ -122,8 +123,8 @@ def create_data2(df):
 
 
 
-### Trainiert die unterschiedlichen Modelle ###
-def training_regression(df_train, y_train, df_train_copy, model): # df_train is already scaled!
+### training of various models ###
+def training_regression(df_train, y_train, df_train_copy, model): # df_train is already scaled.
     model = sklearn.base.clone(model)
     model.fit(df_train, y_train)
     
@@ -145,9 +146,8 @@ def training_regression(df_train, y_train, df_train_copy, model): # df_train is 
     
     return model
 
-##################################################################################################################
 
-### Generieren der Daten ###
+### generating data ###
 
 # Year 1 :
 df1_train, y1_train, df1_test, y1_test, df1_train_copy = create_data1(df)
@@ -156,9 +156,8 @@ df1_train, y1_train, df1_test, y1_test, df1_train_copy = create_data1(df)
 df2_train, y2_train, df2_test, y2_test, df2_train_copy = create_data2(df)
 
 
-###################################################################################################################
 
-### Lineare Regression ###
+### linear Regression ###
 print('Linear Regression')
 lin_reg = LinearRegression()
 
@@ -196,18 +195,16 @@ svm2 = training_regression(df2_train, y2_train, df2_train_copy, svm_reg)
 print('')
 
 
-
-
-
-
-
-
 ### Random Forest ###
 # Hyperparameters:
 # n_estimators: number of Decsiontrees.
+
 # max_depths: maximal depth of each tree.
+
 # max_leaf_nodes: controls the depths of the trees.
+
 # criterion: mse or msa. function to measure the quality of the split.
+
 # max_samples: (bootstrap = True) How many samples from df_train are drawn to train each regressor.
 
 print('Random Forest')
@@ -222,18 +219,10 @@ forest1 = training_regression(df1_train, y1_train, df1_train_copy, forest_reg)
 forest2 = training_regression(df2_train, y2_train, df2_train_copy, forest_reg)
 print('')
 
-#######################################################################################################################
 
 
 
-
-
-
-
-
-
-
-### Training der KNN ###
+### training of ANN ###
 
 print('KNN')
 def training_ann_regression(df_train, y_train, df_train_copy):
@@ -261,7 +250,7 @@ def training_ann_regression(df_train, y_train, df_train_copy):
     
     return model, history
 
-### Jahr 1 ### 
+### Year 1 ### 
 
 ann1, history1 = training_ann_regression(df1_train, y1_train, df1_train_copy)
 
@@ -271,7 +260,7 @@ plt.gca().set_ylim(0, 25)
 plt.show()
 
 
-### Jahr 2 ###
+### Year 2 ###
 
 ann2, history2 = training_ann_regression(df2_train, y2_train, df2_train_copy)
 
