@@ -1,4 +1,5 @@
 \documentclass[
+    pointlessnumbers,
     fontsize=12pt,
     paper=A4,
     parskip=full, % keine Ahnung, was das bedeutet.
@@ -8,10 +9,9 @@
 ]{scrreprt} % KOMA Documentclass. Till now only for sans serif headings. Should also provide more flexibility.
 
 \setuptoc{toc}{totoc}
-
 \KOMAoptions{twoside = false}
 
-
+% fuer PDF A Format
 \usepackage[a-2b]{pdfx}
 
 \usepackage[utf8]{inputenc}
@@ -26,7 +26,6 @@
 
 
 \usepackage[a4paper,left=3cm, top=2.5cm, bottom=2.5cm, right=2.5cm]{geometry}
-\usepackage{acronym}
 \usepackage{booktabs}
 \usepackage[onehalfspacing]{setspace}
 
@@ -43,7 +42,6 @@
 \usepackage{bbm} % fuer indicator funktion
 \DeclareMathOperator*{\argmin}{argmin}
 \DeclareMathOperator*{\median}{median}
-
 
 \graphicspath{{graphics/}} % for redirecting all graphical inputs to that specific folder.
 
@@ -62,144 +60,84 @@
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
-\lstset{frame=tb,
-  language=Python,
+\renewcommand{\lstlistingname}{Code}
+\lstset{ %
+  language=Python,                  % the language of the code
   aboveskip=3mm,
   belowskip=3mm,
-  showstringspaces=false,
-  columns=flexible,
-  basicstyle={\small\ttfamily},
-  numbers=none,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3
+  basicstyle=\ttfamily\footnotesize\linespread{1.2}\selectfont,       % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line 
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+  tabsize=4,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                 % show the filename of files included with \lstinputlisting;
+                                  % also try caption instead of title
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{mauve},         % string literal style
+  escapeinside={\%*}{*)},            % if you want to add a comment within your code
+  morekeywords={*,...}               % if you want to add more keywords to the set
 }
-%%%% End Code Def %%%%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+% Abkuerzungen:
+\usepackage[automake, acronym, toc]{glossaries}
+
+\newacronym{lqm}{LQM}{Leistungs- und Qualit\"atsmanagement (Abteilung der Universität Graz)}
+\newacronym{ects}{ECTS}{European Credit Transfer and Accumulation System; 1 ECTS enspricht einem f\"ur einen Arbeitsaufwand von 25 Echtstunden \'a 60 Minuten.}
+\newacronym{knn}{KNN}{K\"unstliches Neuronales Netzwerk}
+\newacronym{svm}{SVM}{Support Vector Machine Modell}
+\newacronym{rf}{RF}{Random Forest Modell}
+\newacronym{linR}{lin. Reg.}{lineares Regressionsmodell}
+\newacronym{logR}{log. Reg.}{logistisches Regressionsmodell}
+\newacronym{fp}{FP}{\textit{false positives}; Studierende, die als pr\"ufungsaktiv klassifiziert werden, aber es tats\"achlich nicht waren.}
+\newacronym{fn}{FN}{\textit{false negatives}; Studierende, die als nicht pr\"ufungsaktiv klassifiziert werden, aber es tats\"achlich waren.}
+\newacronym{tp}{TP}{\textit{true positives}; Studierende , die als pr\"ufungsaktiv klassifiziert werden, und es tats\"achlich waren.}
+\newacronym{tn}{TN}{\textit{true negatives}; Studierende , die als nicht pr\"ufungsaktiv klassifiziert werden, und es tats\"achlich nicht waren.}
+\newacronym{p1}{P1}{Problem 1, definiert im Kapitel 2.1.}
+\newacronym{p2}{P2}{Problem 2, definiert im Kapitel 2.1.}
+\newacronym{RMSE}{RMSE}{Root Mean Squared Error}
+\newacronym{MAE}{MAE}{Mean Absolut Error}
+\newacronym{CV}{CV}{Crossvalidierung}
+\makeglossaries
 
 
 
 
 
-
-
-
-
-%%%% Title Page %%%%
-
-    % \titlehead{\begin{flushright} \includegraphics[scale=0.4]{logo.jpg} \end{flushright}}
-
-    \subject{
-        \Huge{\textbf{Daniel Simon Siemmeister}}
-        }
-
-    % \subject{Bericht}
-
-    \title{
-        {Erprobung unterschiedlicher Machine Learning Modelle zur Sch\"atzung der Pr\"ufungsaktivit\"at von Studierenden}
-        }
-
-
-    % \author{
-    %     \large{verfasst von} \\
-    %     \large{\textbf{Daniel Siemmeister}} \\
-    %     \ \\
-    %     \large{im Rahmen einer Masterarbeit am} \\
-    %     \large{\textbf{Institut f\"ur Mathematik und wissenschaftliches Rechnen}}\\
-    %     \ \\
-    %     \large{an der} \\
-    %     \large{\textbf{Karl-Franzens Universit\"at Graz}}\\
-    % }
-    \author{
-        
-        \Huge{\textbf{Masterarbeit}} \\
-        \ \\
-        \large{zur Erlangung des akademischen Grades} \\
-        \large{\textbf{Master of Education}}\\ 
-        \\
-        \large{im Studium Lehramt Sekundarstufe Allgemeinbildung}\\
-        \large{im Entwicklungsverbung Süd-Ost}\\
-        \ \\
-        \large{vorgelegt an der} \\
-        \large{\textbf{Karl-Franzens-Universität Graz}}\\
-        \\
-        \large{unter der Anleitung von} \\
-        \large{\textbf{Univ.-Prof. Dr. Gunther Leobacher}} \\
-        \\
-        \large{ausgef\"uhrt am}\\
-        \large{\textbf{Institut f\"ur Mathematik und wissenschaftliches Rechnen}}
-        \\
-        \\
-        }
-
-    \date{ \normalsize{Graz, \today{}}}
-
-%%%% End Title Page %%%%%
-
-
-
+%%%%%%%%%%%%%%%%%%%%%% Main Document %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-\begin{singlespace}
-    \maketitle
-    \setcounter{page}{2}
-\end{singlespace}
-
-
-
-% \chapter*{Selbstst\"andigkeitserkl\"arung} % * for not including in  table of contents.
-% Ich erkl\"are \dots -> mache ich online???
-\addchap{Eidesstattliche Erklärung}
-Ich erkläre ehrenwörtlich, dass ich die vorliegende Arbeit selbstständig und ohne
-fremde Hilfe verfasst, andere als die angegebenen Quellen nicht benutzt und die den
-Quellen wörtlich oder inhaltlich entnommenen Stellen als solche kenntlich gemacht
-habe. 
-
-Graz, am \today{} \hfill Daniel Simon Siemmeister
-
-
-\addchap{Danksagungen}
-An dieser Stelle m\"ochte ich mich bei Herrn Prof. Gunther Leobacher bedanken, der es mir erm\"oglicht hat, meine Masterarbeit zu
-diesem spannenden Thema zu verfassen. Neben der unb\"urokratischen Zusammenarbeit m\"ochte ich mich f\"ur die fachliche
-Unterst\"utzung und den Fokus auf das Wesentliche bedanken.
-
-Weiters m\"ochte ich mich bei meiner Familie bedanken, die mich w\"ahrend meines Studiums finanziell als auch zwischenmenschlich unterst\"utzt hat, 
-was ich nicht als selbstverst\"andlich empfinde.
-
-Graz, am \today{}
+% Titelseite
+\input{cover/cover}
+% Eidesstattliche Erklärung
+\input{cover/erklaerung}
+% Danksagungen
+\input{cover/danksagung}
 
 
 \tableofcontents % Inhaltsverzeichnis
 
-
-\addchap{Abk\"urzungsverzeichnis}
-\begin{acronym}
-    \acro{lqm}[LQM]{Leistungs- und Qualit\"atsmanagement; Abteilung der Universität Graz.}
-    \acro{ects}[ECTS]{European Credit Transfer and Accumulation System; 1 ECTS enspricht einem f\"ur einen Arbeitsaufwand von 25 Echtstunden \'a 60 Minuten.}
-    \acro{knn}[KNN]{K\"unstliches Neuronales Netzwerk}
-    \acro{svm}[SVM]{Support Vector Machine Modell}
-    \acro{rf}[RF]{Random Forest Modell}
-    \acro{linR}[lin. Reg.]{lineares Regressionsmodell}
-    \acro{logR}[log. Reg.]{logistisches Regressionsmodell}
-    \acro{fp}[FP]{\textit{false positives}; Studierende, die als pr\"ufungsaktiv klassifiziert werden, aber es tats\"achlich nicht waren.}
-    \acro{fn}[FN]{\textit{false negatives}; Studierende, die als nicht pr\"ufungsaktiv klassifiziert werden, aber es tats\"achlich waren.}
-    \acro{tp}[TP]{\textit{true positives}; Studierende , die als pr\"ufungsaktiv klassifiziert werden, und es tats\"achlich waren.}
-    \acro{tn}[TN]{\textit{true negatives}; Studierende , die als nicht pr\"ufungsaktiv klassifiziert werden, und es tats\"achlich nicht waren.}
-    \acro{p1}[P1]{Problem 1, definiert im Kapitel 2.1.}
-    \acro{p2}[P2]{Problem 2, definiert im Kapitel 2.1.}
-    \acro{RMSE}[RMSE]{Root Mean Squared Error}
-    \acro{MAE}[MAE]{Mean Absolut Error}
-    \acro{CV}[CV]{Crossvalidierung}
-
-\end{acronym}
+% Abkuerzungsverzeichnis
+\printglossary[type=\acronymtype,style=long,title={Abkürzungsverzeichnis}]
 
 \listoffigures % Abbildungsverzeichnis
 \listoftables % Tabellenverzeichnis
 
+
+% Chapters
 \input{chapters/abstract_deutsch.tex}
 \input{chapters/abstract_english.tex}
 
@@ -212,11 +150,8 @@ Graz, am \today{}
 \chapter{Methoden und Modelle}
 \input{chapters/ansaetzeP1}
 \input{chapters/ansaetzeP2}
-
 \input{chapters/ml.tex}
-
 \input{chapters/implementation.tex}
-
 \input{chapters/auswertung.tex}
 
 
@@ -227,13 +162,15 @@ Graz, am \today{}
 \chapter{Diskussion}
 \input{chapters/diskussion}
 
+% Literatur
 \begin{doublespace}
     \printbibliography
 \end{doublespace}
 
 
-% \appendix
-% \input{chapters/appendix}
+% Anhang
+\appendix
+\input{appendix.tex}
 
 
 
