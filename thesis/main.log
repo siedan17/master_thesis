@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.2)  23 MAR 2022 19:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.2)  24 MAR 2022 16:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1299,7 +1299,7 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 \openout6 = `main.ist'.
 
 
-]) (./cover/erklaerung.tex
+]) (./cover/danksagung.tex
 chapter without number
 
 Class scrreprt Warning: \float@addtolists detected!
@@ -1316,95 +1316,84 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              a package that still implements the
 (scrreprt)              deprecated \float@addtolist interface .
 
-) (./cover/danksagung.tex [2
-
-]
-chapter without number
-) [3
+) [2
 
 ] (./main.toc
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 22.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 16.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 22.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 16.
  (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 22.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 16.
  (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 22.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 16.
  (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 22.
+(Font)              <12> on input line 16.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 22.
+(Font)              <8> on input line 16.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 22.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
+(Font)              <6> on input line 16.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [4
+) [3
 
 ])
 \tf@toc=\write10
 \openout10 = `main.toc'.
 
- (./main.acr [5]) [6
+ (./main.acr [4]) [5
 
 
 ] (./main.lof)
 \tf@lof=\write11
 \openout11 = `main.lof'.
 
- [7
+ [6
 
 ] (./main.lot)
 \tf@lot=\write12
 \openout12 = `main.lot'.
 
- (./chapters/abstract_deutsch.tex [8
-
-]
-chapter without number
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 13.
-(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) (./chapters/abstract_english.tex [9
-
-]
-chapter without number
-) [10
+ [7
 
 ]
 chapter 1.
-(./chapters/einleitung.tex [11
+(./chapters/einleitung.tex
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 19.
+ (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [8
 
-]) (./chapters/problemstellung.tex [12] [13] [14]) (./chapters/data.tex [15] [16]
-<graphics/pad1.pdf, id=239, 433.62pt x 289.08pt>
+]) (./chapters/problemstellung.tex [9] [10] [11]) (./chapters/data.tex [12] [13]
+<graphics/pad1.pdf, id=248, 433.62pt x 289.08pt>
 File: graphics/pad1.pdf Graphic file (type pdf)
 <use graphics/pad1.pdf>
 Package pdftex.def Info: graphics/pad1.pdf  used on input line 77.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/bwl1.pdf, id=240, 433.62pt x 289.08pt>
+<graphics/bwl1.pdf, id=249, 433.62pt x 289.08pt>
 File: graphics/bwl1.pdf Graphic file (type pdf)
 <use graphics/bwl1.pdf>
 Package pdftex.def Info: graphics/bwl1.pdf  used on input line 78.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/jus1.pdf, id=241, 433.62pt x 289.08pt>
+<graphics/jus1.pdf, id=250, 433.62pt x 289.08pt>
 File: graphics/jus1.pdf Graphic file (type pdf)
 <use graphics/jus1.pdf>
 Package pdftex.def Info: graphics/jus1.pdf  used on input line 79.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/ges1.pdf, id=242, 433.62pt x 289.08pt>
+<graphics/ges1.pdf, id=251, 433.62pt x 289.08pt>
 File: graphics/ges1.pdf Graphic file (type pdf)
 <use graphics/ges1.pdf>
 Package pdftex.def Info: graphics/ges1.pdf  used on input line 80.
@@ -1419,7 +1408,7 @@ Overfull \hbox (2.61107pt too wide) in paragraph at lines 77--83
 [] [] 
  []
 
-[17 <./graphics/pad1.pdf> <./graphics/bwl1.pdf
+[14 <./graphics/pad1.pdf> <./graphics/bwl1.pdf
 
 pdfTeX warning: pdflatex (file ./graphics/bwl1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./graphics/jus1.pdf
@@ -1429,22 +1418,22 @@ pdfTeX warning: pdflatex (file ./graphics/jus1.pdf): PDF inclusion: multiple pdf
 
 pdfTeX warning: pdflatex (file ./graphics/ges1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<graphics/pad2.pdf, id=380, 433.62pt x 289.08pt>
+<graphics/pad2.pdf, id=389, 433.62pt x 289.08pt>
 File: graphics/pad2.pdf Graphic file (type pdf)
 <use graphics/pad2.pdf>
 Package pdftex.def Info: graphics/pad2.pdf  used on input line 93.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/bwl2.pdf, id=381, 433.62pt x 289.08pt>
+<graphics/bwl2.pdf, id=390, 433.62pt x 289.08pt>
 File: graphics/bwl2.pdf Graphic file (type pdf)
 <use graphics/bwl2.pdf>
 Package pdftex.def Info: graphics/bwl2.pdf  used on input line 94.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/jus2.pdf, id=382, 433.62pt x 289.08pt>
+<graphics/jus2.pdf, id=391, 433.62pt x 289.08pt>
 File: graphics/jus2.pdf Graphic file (type pdf)
 <use graphics/jus2.pdf>
 Package pdftex.def Info: graphics/jus2.pdf  used on input line 95.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/ges2.pdf, id=383, 433.62pt x 289.08pt>
+<graphics/ges2.pdf, id=392, 433.62pt x 289.08pt>
 File: graphics/ges2.pdf Graphic file (type pdf)
 <use graphics/ges2.pdf>
 Package pdftex.def Info: graphics/ges2.pdf  used on input line 96.
@@ -1459,22 +1448,22 @@ Overfull \hbox (2.61107pt too wide) in paragraph at lines 93--99
 [] [] 
  []
 
-<graphics/pad3.pdf, id=385, 433.62pt x 289.08pt>
+<graphics/pad3.pdf, id=394, 433.62pt x 289.08pt>
 File: graphics/pad3.pdf Graphic file (type pdf)
 <use graphics/pad3.pdf>
 Package pdftex.def Info: graphics/pad3.pdf  used on input line 107.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/bwl3.pdf, id=386, 433.62pt x 289.08pt>
+<graphics/bwl3.pdf, id=395, 433.62pt x 289.08pt>
 File: graphics/bwl3.pdf Graphic file (type pdf)
 <use graphics/bwl3.pdf>
 Package pdftex.def Info: graphics/bwl3.pdf  used on input line 108.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/jus3.pdf, id=387, 433.62pt x 289.08pt>
+<graphics/jus3.pdf, id=396, 433.62pt x 289.08pt>
 File: graphics/jus3.pdf Graphic file (type pdf)
 <use graphics/jus3.pdf>
 Package pdftex.def Info: graphics/jus3.pdf  used on input line 109.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/ges3.pdf, id=388, 433.62pt x 289.08pt>
+<graphics/ges3.pdf, id=397, 433.62pt x 289.08pt>
 File: graphics/ges3.pdf Graphic file (type pdf)
 <use graphics/ges3.pdf>
 Package pdftex.def Info: graphics/ges3.pdf  used on input line 110.
@@ -1564,22 +1553,22 @@ Overfull \hbox (2.10434pt too wide) in paragraph at lines 153--153
 []\T1/lmr/bx/n/12 Gesamt| 
  []
 
-<graphics/pad4.pdf, id=390, 433.62pt x 289.08pt>
+<graphics/pad4.pdf, id=399, 433.62pt x 289.08pt>
 File: graphics/pad4.pdf Graphic file (type pdf)
 <use graphics/pad4.pdf>
 Package pdftex.def Info: graphics/pad4.pdf  used on input line 165.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/bwl4.pdf, id=391, 433.62pt x 289.08pt>
+<graphics/bwl4.pdf, id=400, 433.62pt x 289.08pt>
 File: graphics/bwl4.pdf Graphic file (type pdf)
 <use graphics/bwl4.pdf>
 Package pdftex.def Info: graphics/bwl4.pdf  used on input line 166.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/jus4.pdf, id=392, 433.62pt x 289.08pt>
+<graphics/jus4.pdf, id=401, 433.62pt x 289.08pt>
 File: graphics/jus4.pdf Graphic file (type pdf)
 <use graphics/jus4.pdf>
 Package pdftex.def Info: graphics/jus4.pdf  used on input line 167.
 (pdftex.def)             Requested size: 220.50887pt x 147.00539pt.
-<graphics/ges4.pdf, id=393, 433.62pt x 289.08pt>
+<graphics/ges4.pdf, id=402, 433.62pt x 289.08pt>
 File: graphics/ges4.pdf Graphic file (type pdf)
 <use graphics/ges4.pdf>
 Package pdftex.def Info: graphics/ges4.pdf  used on input line 168.
@@ -1594,7 +1583,7 @@ Overfull \hbox (2.61107pt too wide) in paragraph at lines 165--170
 [] [] 
  []
 
-) [18 <./graphics/pad2.pdf> <./graphics/bwl2.pdf
+) [15 <./graphics/pad2.pdf> <./graphics/bwl2.pdf
 
 pdfTeX warning: pdflatex (file ./graphics/bwl2.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./graphics/jus2.pdf
@@ -1603,7 +1592,7 @@ pdfTeX warning: pdflatex (file ./graphics/jus2.pdf): PDF inclusion: multiple pdf
 > <./graphics/ges2.pdf
 
 pdfTeX warning: pdflatex (file ./graphics/ges2.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [19 <./graphics/pad3.pdf> <./graphics/bwl3.pdf
+>] [16 <./graphics/pad3.pdf> <./graphics/bwl3.pdf
 
 pdfTeX warning: pdflatex (file ./graphics/bwl3.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./graphics/jus3.pdf
@@ -1624,21 +1613,21 @@ pdfTeX warning: pdflatex (file ./graphics/jus4.pdf): PDF inclusion: multiple pdf
 > <./graphics/ges4.pdf
 
 pdfTeX warning: pdflatex (file ./graphics/ges4.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [20]
+>] [17]
 chapter 2.
-(./chapters/ansaetzeP1.tex [21
+(./chapters/ansaetzeP1.tex [18
 
-] [22] [23] (./figures/fig1.tikz)
+] [19] [20] (./figures/fig1.tikz)
 Underfull \hbox (badness 10000) in paragraph at lines 143--148
 
  []
 
-[24] [25] [26]) (./chapters/ansaetzeP2.tex [27]) (./chapters/ml.tex [28] [29] [30]
+[21] [22] [23]) (./chapters/ansaetzeP2.tex [24]) (./chapters/ml.tex [25] [26] [27]
 Underfull \hbox (badness 10000) in paragraph at lines 73--78
 
  []
 
-[31] [32] [33] [34] [35] [36] [37] [38] [39] (./figures/fig3.tikz) [40]
+[28] [29] [30] [31] [32] [33] [34] [35] [36] (./figures/fig3.tikz) [37]
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 483.
  (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
@@ -1647,21 +1636,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 483--485
 
  []
 
-[41] (./figures/fig4.tikz) [42]
+[38] (./figures/fig4.tikz) [39]
 Overfull \hbox (48.04942pt too wide) in paragraph at lines 550--556
 \T1/lmr/m/n/12 schaf-ten li-ne-ar zu se-pa-rie-ren. Das be-deu-tet, man ver-sucht für die Da-ten $\OML/lmm/m/it/12 S \OT1/lmr/m/n/12 = (\OT1/lmr/bx/n/12 x[]\OML/lmm/m/it/12 ; y[]\OT1/lmr/m/n/12 )\OML/lmm/m/it/12 ; [] ; \OT1/lmr/m/n/12 (\OT1/lmr/bx/n/12 x[]\OML/lmm/m/it/12 ; y[]\OT1/lmr/m/n/12 )$
  []
 
-(./figures/fig6.tikz) [43] (./figures/fig5.tikz) [44] [45] [46] (./figures/fig2.tikz)
+(./figures/fig6.tikz) [40] (./figures/fig5.tikz) [41] [42] [43] (./figures/fig2.tikz)
 Overfull \hbox (1.52408pt too wide) in paragraph at lines 70--712
  [] 
  []
 
-) (./chapters/implementation.tex [47] [48]
+) (./chapters/implementation.tex [44] [45]
 Overfull \vbox (14.50002pt too high) detected at line 74
  []
 
-) (./chapters/auswertung.tex [49] [50] [51] [52]) [53]
+) (./chapters/auswertung.tex [46] [47] [48] [49]) [50] [51]
 chapter 3.
 (./chapters/ergebnisse.tex
 Underfull \hbox (badness 10000) in paragraph at lines 11--11
@@ -1693,14 +1682,14 @@ Overfull \hbox (18.59985pt too wide) in paragraph at lines 28--28
 \T1/lmr/m/n/12 Accurancy|  
  []
 
-[54
+[52
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 62--64
 
  []
 
-[55]
+[53]
 Overfull \hbox (14.22638pt too wide) in paragraph at lines 94--95
 [][]| 
  []
@@ -1755,7 +1744,7 @@ Overfull \hbox (15.88611pt too wide) in paragraph at lines 101--102
 []$[]$| 
  []
 
-[56]
+[54]
 Underfull \hbox (badness 10000) in paragraph at lines 160--160
 []\T1/lmr/m/n/12 Zeitspanne
  []
@@ -1770,84 +1759,34 @@ Underfull \hbox (badness 1024) in paragraph at lines 160--160
 []\T1/lmr/m/n/12 Prediction rea-le
  []
 
-[57]) [58]
+[55]) [56]
 chapter 4.
-(./chapters/diskussion.tex [59
+(./chapters/diskussion.tex [57
 
-] [60] [61]) [62]
+] [58] [59]) [60]
 chapter without number
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 167.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 168.
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [63
+) [61
 
-] [64] (./appendix.tex [65]
+] [62] (./appendix.tex [63]
 chapter A.
 (./source_code/python_files.tex
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 2.
- (./source_code/data.py [66
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 3.
+ (./source_code/folder.md) (./source_code/data.py [64
 
-] [67] [68] [69]) (./source_code/P1_A1.py [70] [71] [72] [73] [74] [75]) (./source_code/P1_A2.py [76]
-Overfull \hbox (196.38855pt too wide) in paragraph at lines 31--33
-[][][][] 
- []
-
-[77] [78] [79]
-Overfull \hbox (316.08977pt too wide) in paragraph at lines 149--153
-[][][][] 
- []
-
-)
-Overfull \hbox (372.79034pt too wide) in paragraph at lines 174--6
-[][][][] 
- []
-
-[80] (./source_code/P1_A3.py [81]
-Overfull \hbox (360.19022pt too wide) in paragraph at lines 59--63
-[][][][] 
- []
-
-[82]
-Overfull \hbox (423.19086pt too wide) in paragraph at lines 94--97
-[][][][] 
- []
-
-[83]
-Overfull \hbox (366.49028pt too wide) in paragraph at lines 139--141
-[][][][] 
- []
-
-[84]
-Overfull \hbox (429.49092pt too wide) in paragraph at lines 179--181
-[][][][] 
- []
-
-[85] [86]) (./source_code/P2.py [87] [88]
-Overfull \hbox (706.69374pt too wide) in paragraph at lines 51--53
-[][][][] 
- []
-
-
-Overfull \hbox (687.79355pt too wide) in paragraph at lines 83--85
-[][][][] 
- []
-
-[89] [90]
-Overfull \hbox (605.89272pt too wide) in paragraph at lines 131--133
-[][][][] 
- []
-
-[91]))) [92
+] [65] [66] [67] [68]) (./source_code/P1_A1.py [69] [70] [71] [72] [73] [74]) (./source_code/P1_A2.py [75] [76] [77] [78]) (./source_code/P1_A3.py [79] [80] [81] [82] [83] [84] [85]) (./source_code/P2.py [86] [87] [88] [89]))) [90
 runsystem(makeindex -s main.ist -t main.glg -o main.gls main.glo)...executed safely (allowed).
 
 runsystem(makeindex -s main.ist -t main.alg -o main.acr main.acn)...executed safely (allowed).
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 177.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 177.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 178.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 178.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 177.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 177.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 178.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 178.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1857,21 +1796,21 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 177.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 178.
  ) 
 Here is how much of TeX's memory you used:
- 48518 strings out of 481239
- 893750 string characters out of 5920378
- 1839987 words of memory out of 5000000
- 61626 multiletter control sequences out of 15000+600000
+ 48388 strings out of 481239
+ 891805 string characters out of 5920378
+ 1855396 words of memory out of 5000000
+ 61455 multiletter control sequences out of 15000+600000
  606574 words of font info for 68 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 73i,27n,90p,10095b,3844s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,27n,90p,10095b,3731s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc} </home/siedan/.texlive2019/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk>{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (92 pages, 814537 bytes).
+Output written on main.pdf (90 pages, 811332 bytes).
 PDF statistics:
- 2853 PDF objects out of 2984 (max. 8388607)
- 2199 compressed objects within 22 object streams
- 1254 named destinations out of 1440 (max. 500000)
- 529 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2923 PDF objects out of 2984 (max. 8388607)
+ 2270 compressed objects within 23 object streams
+ 1300 named destinations out of 1440 (max. 500000)
+ 513 words of extra memory for PDF output out of 10000 (max. 10000000)
 

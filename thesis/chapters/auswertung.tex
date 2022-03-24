@@ -17,11 +17,11 @@ auch immer in diese beiden Gruppen unterteilt.
 \subsection{Machine Learning Modelle}
 In Ansatz 1 f\"ur P1 handelt es sich um ein Regressionsproblem. Man versucht anhand von Eigenschaften einer studierenden Person am Beginn eines Studienjahres
 die erreichte ECTS Anzahl am Ende dieses Jahres vorherzusagen. Es werden erstens der
-\textit{Root Mean Squared Error}:
+\gls{RMSE}:
 
 $$ \operatorname{RMSE} = \sqrt{\frac{1}{n}\sum_{i = 1}^{n}(h(\mathbf{x}_i)-y_i)^2} $$
 
-(wobei n die Anzahl der Testbeispiele ist), zweitens der \textit{Mean Absolute Error}:
+(wobei n die Anzahl der Testbeispiele ist), zweitens der \gls{MAE}:
 
 $$ \operatorname{MAE} = \frac{1}{n}\sum_{i = 1}^{n}|h(\mathbf{x}_i) - y_i| $$
 
@@ -45,6 +45,7 @@ Man hat f\"ur die Auswertung aller Modelle eine \textit{Confusion Matrix} gebild
 
 $$ \left[ \begin{array}{rr} \text{True Negatives} & \text{False Positives}  \\  \text{False Negatives} & \text{True Positives} \\  \end{array}\right] .$$
 
+Wobei True Negatives \gls{tn}, True Positives \gls{tp}, False Negatives \gls{fn} und False Positives \gls{fp} entsprechen.
 Diese wird wiederum anhand von Testdaten gebildet, die der Algorithmus w\"ahrend des Trainings nicht gesehen hat. Weiters wird die \textit{Accuracy} anhand dieser Daten berechnet:
 
 $$ Accuracy = \frac{TP + TN}{TP + TN + FP + FN}.$$

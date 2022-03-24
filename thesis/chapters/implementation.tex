@@ -26,7 +26,7 @@ F\"ur das Training der Machine Learning Algorithmen wird der von den Anpassungen
 in \textit{Trainigsdaten}, in \textit{Testdaten} und gegebenenfalls in \textit{Valiedierungsdaten} unterteilt.
 Diese Unterteilung wurde so durchgef\"uhrt, dass die jeweiligen Datens\"atze pseudo-randomisiert zusammengestellt wurden,
 und auch der Anteil an pr\"ufungsaktiven Studierenden \"uberall gleich ist. Diesen Vorgang nennt man \textit{Stratifizierung} \cite[Seite 53]{handson}. Zus\"atzlich wurde bei der Auswertung des Trainings der
-Algorithmen \textit{Crossvalidation} verwendet.
+Algorithmen \gls{CV} verwendet.
 
 Crossvalidation bedeuted, dass der Trainingsdatensatz in $k$ gleichm\"achtige Mengen zerteilt wird, die zuf\"allig gebildet werden.
 Anschlie{\ss}end wird das Modell $k$-mal trainiert, wobei immer eine Menge ausgelassen wird, auf der das Modell danach validiert wird. Somit bekommt man mehrere Validierungswerte

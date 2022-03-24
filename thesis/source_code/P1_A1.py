@@ -43,19 +43,32 @@ df = load_df('adapted_data.csv').drop(['Unnamed: 0'], axis =1)
 
 
 # used features for first study year
-features_year1 = ['styria_dummy', 'not_styria_dummy', 'germany_dummy',
-                  'num_parallel_studies', 'cum_ects_pos_before', 'years_since_matura', 'firstGen',
-                  'geschlecht', 'AHS_dummy', 'BHS_dummy', 'ausland_vorbildung_dummy',
-                  'sonstige_vorbildung_dummy', 'jus_dummy', 'bwl_dummy',
-                  'delayed_dummy', 'ECTS_year', 'active_dummy']
+features_year1 = [
+    'styria_dummy', 'not_styria_dummy',
+    'germany_dummy', 'num_parallel_studies',
+    'cum_ects_pos_before', 'years_since_matura',
+    'firstGen', 'geschlecht',
+    'AHS_dummy', 'BHS_dummy',
+    'ausland_vorbildung_dummy', 'sonstige_vorbildung_dummy',
+    'jus_dummy', 'bwl_dummy',
+    'delayed_dummy', 'ECTS_year',
+    'active_dummy'
+    ]
 
 # used features for highter study years
-features_years = ['Studienjahr', 'styria_dummy', 'not_styria_dummy', 'germany_dummy',
-                  'num_parallel_studies', 'cum_ects_pos_before', 'avgECTS_sem_before', 'ects_year_before',
-                  'full_duration_sem_before', 'geschlecht', 'years_since_matura', 'firstGen', 'AHS_dummy',
-                  'BHS_dummy', 'ausland_vorbildung_dummy', 'sonstige_vorbildung_dummy',
-                  'delayed_dummy', 'jus_dummy', 'bwl_dummy',
-                  'ECTS_year', 'active_dummy']
+features_years = [
+    'Studienjahr', 'styria_dummy',
+    'not_styria_dummy', 'germany_dummy',
+    'num_parallel_studies', 'cum_ects_pos_before',
+    'avgECTS_sem_before', 'ects_year_before',
+    'full_duration_sem_before', 'geschlecht',
+    'years_since_matura', 'firstGen',
+    'AHS_dummy', 'BHS_dummy',
+    'ausland_vorbildung_dummy', 'sonstige_vorbildung_dummy',
+    'delayed_dummy', 'jus_dummy',
+    'bwl_dummy', 'ECTS_year',
+    'active_dummy'
+    ]
 
 
 ### helper functions and training functions ###
@@ -157,6 +170,7 @@ df2_train, y2_train, df2_test, y2_test, df2_train_copy = create_data2(df)
 
 
 
+
 ### linear Regression ###
 print('Linear Regression')
 lin_reg = LinearRegression()
@@ -170,7 +184,6 @@ reg1 = training_regression(df1_train, y1_train, df1_train_copy, lin_reg)
 reg2 = training_regression(df2_train, y2_train, df2_train_copy, lin_reg)
 
 print('')
-
 
 
 
@@ -193,6 +206,7 @@ svm1 = training_regression(df1_train, y1_train, df1_train_copy, svm_reg)
 # Year >=2:
 svm2 = training_regression(df2_train, y2_train, df2_train_copy, svm_reg)
 print('')
+
 
 
 ### Random Forest ###
@@ -218,7 +232,6 @@ forest1 = training_regression(df1_train, y1_train, df1_train_copy, forest_reg)
 # Year >= 2:
 forest2 = training_regression(df2_train, y2_train, df2_train_copy, forest_reg)
 print('')
-
 
 
 

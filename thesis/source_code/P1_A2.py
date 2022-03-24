@@ -1,5 +1,5 @@
 
-### Import of used libraries ###
+### importing libraries ###
 
 import sys
 import os
@@ -24,13 +24,17 @@ df = load_df('adapted_data.csv').drop(['Unnamed: 0'], axis =1)
 df1 = df.copy(deep = True)
 
 
-features = ['year','Studienjahr', 'active_year_before', 'geschlecht', 
-            'status_year_before', 'country', 'school', 'subject', 'active_dummy', 
-            'status_key']
+features = [
+    'year','Studienjahr', 'active_year_before',
+    'geschlecht', 'status_year_before',
+    'country', 'school',
+    'subject', 'active_dummy', 
+    'status_key'
+    ]
 
-###################################################################################################
 
-### Helper Functions ###
+
+### helper Functions ###
 
 def active_year_before(df): 
     list_studienjahre = list(df['year'].unique())
@@ -80,8 +84,7 @@ def subject(df):
     return df
 
 
-### Applying them ###
-
+### applying them ###
 active_year_before(df)
 country(df)
 school(df)
@@ -89,7 +92,7 @@ subject(df)
 
 df_working = df[features]
 
-### Helper Function for creating all combinations ###
+### helper Function for creating all combinations ###
 
 def create_combinations():
     return_list = []
@@ -115,13 +118,13 @@ def split(df, combinations):
         return_list.append((i, df_append))
     return return_list
         
-### Studienjahr hier festlegen !!!!! ###
-### Aktuell Studienjahr 2 ###
+
+
+# setting concrete year of study: in this case 2 #
 df_list = split(df_working.query('Studienjahr == 2'), numerical_combinations)
 
 
-### Helper Functions for calculating probabilities ###
-
+### helper Functions for calculating probabilities ###
 
 def prob_year(df): # returns a list with probabilities
     a = len(df.query("active_dummy == 1 and status_key != 'I'"))
@@ -146,29 +149,19 @@ def print_matrix(df):
 
 
 
-######################################################################################################################
-
-
-
-### Calculating probability for 1st Year for the first class (0,0,0,0)
+### calculating probability for 1st Year for the first class (0,0,0,0)
 # This is: weiblich, Steiermark, JUS, AHS Vorbildung.
-
-# Could be solved more elegant!!!
 
 print('--------')
 print(prob_year(df_working.query('Studienjahr == 1 and subject == 0 and country == 0 and geschlecht == 0 and school == 0')))
 
 
 
-
-
-### Calculating all probabilities for All classes for year 2 ###
-
+### calculating all probabilities for all classes for year 2 ###
 
 for i in df_list:
-    print(i[0]) # Welche Kombination es ist.
-    print(len(i[1])) # Wie viele Eintrge die Klasse hat.
-    print_matrix(i[1]) # Wahrscheinlichkeitsvektoren wie im Bericht beschrieben. 
+    print(i[0]) # combination
+    print(len(i[1]))
+    print_matrix(i[1]) 
 
 
-###############################################################################################################################

@@ -21,15 +21,24 @@ raw_data_folder = os.path.abspath(os.path.join(cwd, data_path))
 
 # labels of features, which will be used later on
 
-columns = ['matrikel_num', 'Studienjahr', 'geschlecht', 'avgECTS_sem_before',
-           'ects_year_before', 'year', 'first_exam_negative', 'AHS_dummy',
-           'BHS_dummy', 'ausland_vorbildung_dummy', 'sonstige_vorbildung_dummy', 'delayed_dummy',
-           'num_parallel_studies', 'jus_dummy', 'bwl_dummy', 'years_since_matura',
-           'styria_dummy', 'not_styria_dummy', 'germany_dummy', 'other_foreign_dummy',
-           'years_since_18', 'planned_duration','full_duration_sem', 'full_duration_sem_before',
-           'firstGen', 'cum_ects_pos_before', 'status_key', 'ECTS_year',
-           'SWS_year', 'active_dummy', 'subject'
-           ]
+columns = [
+    'matrikel_num', 'Studienjahr',
+    'geschlecht', 'avgECTS_sem_before',
+    'ects_year_before', 'year',
+    'first_exam_negative', 'AHS_dummy',
+    'BHS_dummy', 'ausland_vorbildung_dummy',
+    'sonstige_vorbildung_dummy', 'delayed_dummy',
+    'num_parallel_studies', 'jus_dummy',
+    'bwl_dummy', 'years_since_matura',
+    'styria_dummy', 'not_styria_dummy',
+    'germany_dummy', 'other_foreign_dummy',
+    'years_since_18', 'planned_duration',
+    'full_duration_sem', 'full_duration_sem_before',
+    'firstGen', 'cum_ects_pos_before',
+    'status_key', 'ECTS_year',
+    'SWS_year', 'active_dummy',
+    'subject'
+    ]
 
 
 
@@ -140,7 +149,6 @@ def subject(df):
 
 
 ### here I am actually manipulating the data with the helper functions. ###
-
 # functions for saving manipulated DataFrame
 def saving(df, name):
     df.to_csv(os.path.join(raw_data_folder, name))

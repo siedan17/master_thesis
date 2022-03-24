@@ -1,6 +1,6 @@
 
 
-### Import of used libraries ###
+### importing libraries ###
 
 
 import os
@@ -34,33 +34,43 @@ def load_df(name):
 
 
 
-# Laden der Daten
+# loaging data
 df_working = load_df('adapted_data.csv').drop(['Unnamed: 0'], axis =1)
 
 df_test = df_working.copy(deep = True)
 
-# Merkmale fr erstes Jahr 
-features_year1 = ['styria_dummy', 'not_styria_dummy', 'germany_dummy',
-                  'num_parallel_studies', 'years_since_matura', 'firstGen',
-                  'geschlecht', 'AHS_dummy', 'BHS_dummy', 'ausland_vorbildung_dummy',
-                  'sonstige_vorbildung_dummy', 'jus_dummy', 'bwl_dummy',
-                  'delayed_dummy','active_3years', 'ECTS_year', 'active_dummy']
+# features for Year = 1 
+features_year1 = [
+    'styria_dummy', 'not_styria_dummy',
+    'germany_dummy', 'num_parallel_studies',
+    'years_since_matura', 'firstGen',
+    'geschlecht', 'AHS_dummy',
+    'BHS_dummy', 'ausland_vorbildung_dummy',
+    'sonstige_vorbildung_dummy', 'jus_dummy',
+    'bwl_dummy', 'delayed_dummy',
+    'active_3years', 'ECTS_year',
+    'active_dummy'
+    ]
 
 
-# Merkamle fr Jahr >= 2
-features_years = ['Studienjahr', 'styria_dummy', 'not_styria_dummy', 'germany_dummy',
-                  'num_parallel_studies', 'cum_ects_pos_before', 'avgECTS_sem_before', 'ects_year_before',
-                  'full_duration_sem_before', 'geschlecht', 'years_since_matura', 'firstGen', 'AHS_dummy',
-                  'BHS_dummy', 'ausland_vorbildung_dummy', 'sonstige_vorbildung_dummy', 'delayed_dummy',
-                  'jus_dummy', 'bwl_dummy', 'active_3years', 'ECTS_year', 'active_dummy']
+# features for Year >= 2
+features_years = [
+    'Studienjahr', 'styria_dummy',
+    'not_styria_dummy', 'germany_dummy',
+    'num_parallel_studies', 'cum_ects_pos_before',
+    'avgECTS_sem_before', 'ects_year_before',
+    'full_duration_sem_before', 'geschlecht',
+    'years_since_matura', 'firstGen',
+    'AHS_dummy', 'BHS_dummy',
+    'ausland_vorbildung_dummy', 'sonstige_vorbildung_dummy',
+    'delayed_dummy', 'jus_dummy',
+    'bwl_dummy', 'active_3years',
+    'ECTS_year', 'active_dummy'
+    ]
 
 
 
-#############################################################################################################################
-
-
-
-### Helper Function, for getting labels or 3 Years in the future ###
+### helper Function, for getting labels of 3 Years in the future ###
 
 def active_3years(df):
     count = 0
@@ -79,7 +89,7 @@ def active_3years(df):
             active = student_in_3_years.loc[0, 'active_dummy']
             df.loc[i, 'active_3years'] = active
         else:
-            df.loc[i, 'active_3years'] = 0 # mache ich auch null, weil er ja nicht aktiv ist, wenn er nicht mehr da ist.
+            df.loc[i, 'active_3years'] = 0
         
         
     # print(count)  
@@ -90,13 +100,9 @@ df_new = active_3years(df_test).query('year <= 17')
 
 
 
+### helper Functions for creating appropriate data ###
 
-#######################################################################################################################################
-
-
-### Helper Functions fr zusammenstellen der Daten ###
-
-# Jahr 1
+# Year 1
 def create_data1(df):
     df = df.query('Studienjahr == 1')[features_year1].copy(deep = True)
     df = df.dropna().reset_index(drop = True)
@@ -112,7 +118,7 @@ def create_data1(df):
     return df_train, y_train, df_test, y_test, df_train_copy
 
 
-# Jahre >= 2
+# Years >= 2
 def create_data2(df):
     df = df.query('Studienjahr > 1')[features_years].copy(deep = True)
     df = df.dropna().reset_index(drop = True)
@@ -129,16 +135,13 @@ def create_data2(df):
     return df_train, y_train, df_test, y_test, df_train_copy
 
 
-# Tatschliches Erstellen
+# concrete creation of data:
 df1_train, y1_train, df1_test, y1_test, df1_train_copy = create_data1(df_new)
 df2_train, y2_train, df2_test, y2_test, df2_train_copy = create_data2(df_new)
 
-# print(len(df1_train))
-# print(len(df2_train))
 
-##############################################################################################################################
 
-### Helper Functions fr das Trainieren und Auswerten ###
+### helper Functions for training and creating results ###
 
 def display_scores(scores):
     print('Scores: ', scores)
@@ -176,11 +179,8 @@ def probability_classification(classifier, df_train, y_train, df_test, y_test):
 
 
 
-########################################################################################################################################
-
 ### Logistic Regression ### 
 from sklearn.linear_model import LogisticRegression
-
 
 print('Logistic Regression')
 log_clf1 = LogisticRegression(random_state=0, multi_class = 'multinomial')
@@ -193,6 +193,7 @@ probability_classification(log_clf2, df2_train, y2_train, df2_test, y2_test)
 perform_classification(log_clf1, df1_train, y1_train)
 perform_classification(log_clf2, df2_train, y2_train)
 print('')
+
 
 
 ### Support Vector Machines ###
@@ -213,6 +214,7 @@ print('')
 
 
 ### Random Forest ###
+
 from sklearn.ensemble import RandomForestClassifier
 
 forest_clf1 = RandomForestClassifier()
@@ -226,6 +228,7 @@ probability_classification(forest_clf2, df2_train, y2_train, df2_test, y2_test)
 perform_classification(forest_clf1, df1_train, y1_train)
 perform_classification(forest_clf2, df2_train, y2_train)
 print('')
+
 
 
 ### KNN ###

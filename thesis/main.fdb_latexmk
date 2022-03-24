@@ -1,5 +1,5 @@
 # Fdb version 3
-["latex"] 1648060661 "main.tex" "main.dvi" "main" 1648060661
+["latex"] 1648132701 "main.tex" "main.dvi" "main" 1648132701
   "/etc/texmf/web2c/texmf.cnf" 1612881315 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
@@ -20,8 +20,8 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/web2c/pdftex/latex.fmt" 1643785747 8255644 a1df998f1d3e1b0673b9f8e2052018f8 ""
-  "main.aux" 1648060372 29918 6a233b8e595a39a800a937fe36ca3f5b "latex"
-  "main.tex" 1648060608 6033 ddb7f975f2c7136984e91f30eb153f16 ""
+  "main.aux" 1648132624 25387 4bb318a1b8d7ba1551190870bc8c7251 "latex"
+  "main.tex" 1648132566 6060 578e4f574d38d7c9b37c0dbade5279c8 ""
   (generated)
   "main.dvi"
   "main.log"

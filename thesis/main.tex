@@ -94,19 +94,19 @@
 % Abkuerzungen:
 \usepackage[automake, acronym, toc]{glossaries}
 
-\newacronym{lqm}{\textbf{LQM}}{Leistungs- und Qualit\"atsmanagement (Abteilung der Universität Graz)}
-\newacronym{ects}{ECTS}{European Credit Transfer and Accumulation System; 1 ECTS enspricht einem f\"ur einen Arbeitsaufwand von 25 Echtstunden \'a 60 Minuten.}
-\newacronym{knn}{KNN}{K\"unstliches Neuronales Netzwerk}
-\newacronym{svm}{SVM}{Support Vector Machine Modell}
-\newacronym{rf}{RF}{Random Forest Modell}
-\newacronym{linR}{lin. Reg.}{lineares Regressionsmodell}
-\newacronym{logR}{log. Reg.}{logistisches Regressionsmodell}
-\newacronym{fp}{FP}{\textit{false positives}; Studierende, die als pr\"ufungsaktiv klassifiziert werden, aber es tats\"achlich nicht waren.}
-\newacronym{fn}{FN}{\textit{false negatives}; Studierende, die als nicht pr\"ufungsaktiv klassifiziert werden, aber es tats\"achlich waren.}
-\newacronym{tp}{TP}{\textit{true positives}; Studierende , die als pr\"ufungsaktiv klassifiziert werden, und es tats\"achlich waren.}
-\newacronym{tn}{TN}{\textit{true negatives}; Studierende , die als nicht pr\"ufungsaktiv klassifiziert werden, und es tats\"achlich nicht waren.}
-\newacronym{p1}{P1}{Problem 1, definiert im Kapitel 2.1.}
-\newacronym{p2}{P2}{Problem 2, definiert im Kapitel 2.1.}
+\newacronym{lqm}{LQM}{Leistungs- und Qualit\"atsmanagement (Abteilung der Universität Graz)}
+\newacronym{ects}{ECTS}{European Credit Transfer and Accumulation System. (1 ECTS enspricht einem f\"ur einen Arbeitsaufwand von 25 Echtstunden à 60 Minuten)}
+\newacronym{knn}{KNN}{K\"unstliche Neuronale Netzwerke}
+% \newacronym{svm}{SVM}{Support Vector Machine Modell}
+% \newacronym{rf}{RF}{Random Forest Modell}
+% \newacronym{linR}{lin. Reg.}{lineares Regressionsmodell}
+% \newacronym{logR}{log. Reg.}{logistisches Regressionsmodell}
+\newacronym{fp}{FP}{Studierende, die als pr\"ufungsaktiv klassifiziert werden, aber es tats\"achlich nicht waren}
+\newacronym{fn}{FN}{Studierende, die als nicht pr\"ufungsaktiv klassifiziert werden, aber es tats\"achlich waren}
+\newacronym{tp}{TP}{Studierende , die als pr\"ufungsaktiv klassifiziert werden, und es tats\"achlich waren}
+\newacronym{tn}{TN}{Studierende , die als nicht pr\"ufungsaktiv klassifiziert werden, und es tats\"achlich nicht waren}
+% \newacronym{p1}{P1}{Problem 1, definiert im Kapitel 2.1.}
+% \newacronym{p2}{P2}{Problem 2, definiert im Kapitel 2.1.}
 \newacronym{RMSE}{RMSE}{Root Mean Squared Error}
 \newacronym{MAE}{MAE}{Mean Absolut Error}
 \newacronym{CV}{CV}{Crossvalidierung}
@@ -123,7 +123,7 @@
 % Titelseite
 \input{cover/cover}
 % Eidesstattliche Erklärung
-\input{cover/erklaerung}
+% \input{cover/erklaerung}
 % Danksagungen
 \input{cover/danksagung}
 
@@ -137,10 +137,11 @@
 \listoftables % Tabellenverzeichnis
 
 
-% Chapters
-\input{chapters/abstract_deutsch.tex}
-\input{chapters/abstract_english.tex}
+% Abstract
+% \input{abstract/abstract_d.tex}
+% \input{abstract/abstract_e.tex}
 
+% Chapters
 \chapter{Einleitung}
 \input{chapters/einleitung}
 \input{chapters/problemstellung.tex}
