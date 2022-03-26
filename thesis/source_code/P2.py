@@ -141,21 +141,21 @@ def predict_sum(classifier, df):
 
 ### Making actually Predictions ###
 
-print('Schtzung echte Daten: ')
+print('Schaetzung echte Daten: ')
 predict_sum(svm_clf1year, df1_16)
-print('Schtzung dummy Daten: ')
+print('Schaetzung dummy Daten: ')
 predict_sum(svm_clf1year, df1_dummy16)
 
-print('Tatschliche Anzahl: ')
+print('Tatsaechliche Anzahl: ')
 print(len(df.query('Studienjahr == 1 and year == 16 and active_dummy == 1')))
 print('')
 
-print('Schtzung echte Daten: ')
+print('Schaetzung echte Daten: ')
 predict_sum(svm_clf1year, df1_17)
-print('Schtzung dummy Daten: ')
+print('Schaetzung dummy Daten: ')
 predict_sum(svm_clf1year, df1_dummy17)
 
-print('Tatschliche Anzahl: ')
+print('Tatsaechliche Anzahl: ')
 print(len(df.query('Studienjahr == 1 and year == 17 and active_dummy == 1')))
 print('')
 
@@ -174,20 +174,20 @@ df2_dummy17 = df2_16.sample(n = 1249)
 
 ### Making actually Predicitions ###
 
-print('Schtzung echte Daten: ')
+print('Schaetzung echte Daten: ')
 predict_sum(svm_clf2years, df2_16)
-print('Schtzung dummy Daten: ')
+print('Schaetzung dummy Daten: ')
 predict_sum(svm_clf2years, df2_dummy16)
 
-print('Tatschliche Anzahl: ')
+print('Tatsaechliche Anzahl: ')
 print(len(df.query('Studienjahr == 2 and year == 17 and active_dummy == 1')))
 print('')
 
-print('Schtzung echte Daten: ')
+print('Schaetzung echte Daten: ')
 predict_sum(svm_clf2years, df2_17)
-print('Schtzung dummy Daten: ')
+print('Schaetzung dummy Daten: ')
 predict_sum(svm_clf2years, df2_dummy17)
 
-print('Tatschliche Anzahl: ')
+print('Tatsaechliche Anzahl: ')
 print(len(df.query('Studienjahr == 2 and year == 18 and active_dummy == 1')))
 print('')

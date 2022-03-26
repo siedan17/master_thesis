@@ -4,7 +4,7 @@
 \section{Machine Learning Modelle}
 \label{sec:ml}
 
-In P1 und P2 ist das Ziel, von Daten aus der Vergangenheit Informationen zu gewinnen, und diese f\"ur Vorhersagen in die Zunkunft zu verwenden.
+In P1 und P2 ist das Ziel, von Daten aus der Vergangenheit Informationen zu gewinnen und diese f\"ur Vorhersagen in die Zunkunft zu verwenden.
 Man versucht gewisse Muster in den Daten der Studierenden zu erkennen und anhand dieser eine Aussage \"uber deren Pr\"ufungsaktivit\"at in den kommenden Jahren zu treffen.
 Diese Aufgabe ist f\"ur Menschen aufgrund der gro{\ss}en Anzahl an Daten schwer bew\"altigbar. Aus diesem Grund werden Machine Learning Modelle verwendet,
 um dieses Ziel zu erreichen.
@@ -19,63 +19,54 @@ Man spricht dabei vom \textit{Training} des Modells \cite[Seiten 19 bis 25]{shal
 Das Ziel eines jeden Machine Learning Modells ist es, eine passende Regel zu erkennen, die nicht nur m\"oglichst viele Trainigsdaten richtig abbilden kann, sondern vor allem
 gut auf neue, unbekannte Daten generalisiert \cite[Seite 371]{strang}. 
 
-Die Inputdaten in der vorliegenden Problemstellung sind die Eigenschaftsvektoren der individuellen Studierenden in dem jeweiligen Studienjahr. Die Outputklassen oder
+Die Inputdaten in der vorliegenden Problemstellung sind die Eigenschaftsvektoren der Studierenden in dem jeweiligen Studienjahr. Die Outputklassen oder
 Outputwerte sind entweder die Klassifizierung \textit{pr\"ufungsaktiv}, \textit{nicht pr\"ufungsaktiv} oder die erreichten \textit{ECTS pro Jahr}.
 In den folgenden Abs\"atzen wird Machine Learning genauer erkl\"art und formal beschrieben.
-
-
 
 Wir bezeichnen $\mathcal{X}$ als Menge der Inputdaten und $\mathcal{Y}$ als Menge der Outputdaten. Es wird eine unbekannte Verteilung $\mathcal{D}_{\mathbf{X}}$ \"uber
 $\mathcal{X}$ und zus\"atzlich eine Funktion $f(\cdot)$ angenommen mit der $Y = f(\mathbf{X}) + \epsilon$ gilt, wobei $\epsilon$ als \textit{Rauschen} bezeichnet wird.
 Dabei wird $\epsilon$ f\"ur jeden Datenpunkt als unabh\"angig und identisch verteilt angenommen mit
 $\mathbb{E}[\epsilon] = 0$, $\operatorname{Var}(\epsilon) = \sigma^2 \geq 0$.
 Um Trainingsdaten zu bekommen, wird eine zuf\"allige Stichprobe $S = \{(\mathbf{x}_1, y_1), \dots ,
-	(\mathbf{x}_n, y_n)\}$ mit $n$ Datenpunkten gebildet. Es werden alle $\mathbf{x}_i$ aus der Verteilung $\mathcal{D}$ gezogen und es wird
+	(\mathbf{x}_n, y_n)\}$ mit $n$ Datenpunkten gebildet. Es werden alle $\mathbf{x}_i$ aus der Verteilung $\mathcal{D}_\mathbf{X}$ gezogen und es wird
 angenommen, dass $y_i = f(\mathbf{x}_i) + \epsilon_i $ gilt.
 
-
-Wenn $\mathbf{X}$ eine Zufallsvariable mit Verteilung $\mathcal{D}_{\mathbf{X}}$ ist, und $\epsilon$ eine Zufallsvariable ist, dann wird durch
+Wenn $\mathbf{X}$ eine Zufallsvariable mit Verteilung $\mathcal{D}_{\mathbf{X}}$ ist und $\epsilon$ eine Zufallsvariable ist, dann wird durch
 $Y = f(\mathbf{X}) + \epsilon$ eine weitere Zufallsvariable definiert. Wir nehmen also an, dass $S$ eine n-elementige Stichprobe der Verteilung
-von $(\mathbf{X},Y)$ ist. Wenn $Y$ eine diskrete Verteilung hat, spricht man von einem Klassifizierungsproblem, sonst von einem Regressionsproblem.
+von $(\mathbf{X},Y)$ ist. Wenn $Y$ eine diskrete Verteilung hat, spricht man von einem Klassifizierungsproblem. Ansonsten, wenn $Y$ eine stetige Verteilung besitzt,
+nennt man es Regressionsproblem.
 Die gemeinsame Verteilung von $\mathbf{X}$ und $Y$ nennen wir $\mathcal{D}$.
 
-
-Die folgenden Definitionen sind anglehnt an Shalev (2014) \cite[Seiten 33 bis 35]{shalev}.
+Die folgenden Definitionen sind angelehnt an Shalev (2014) \cite[Seiten 33 bis 35]{shalev}.
 Ausgehend davon soll eine Vorhersagefunktion $h(\cdot;\mathbf{w})$ innerhalb einer parametrisierten Funktionenklasse $\mathcal{H} = \{ h(\cdot; \mathbf{w})
 	|\mathbf{w} \in \mathbf{W}\}$ gefunden werden. $h_S$ h\"angt zum einen von der Wahl der Funktionenklasse und zum anderen von der Auswahlmethode aus dieser Klasse ab.
 Diese Faktoren werden durch einen \textit{Algorithmus} $\mathcal{A}$ zusammengefasst. Damit definiert man $h_S = \mathcal{A}(S)$, wobei die Menge $S$ eine
 Stichprobe der Verteilung $\mathcal{D}$ mit der Gr\"o{\ss}e $n$ darstellt.
 
-
 Um eine Vorhersagefunktion $h_S$ zu finden, welche die wahre Funktion $f$ m\"oglichst gut ann\"ahert, muss definiert werden, was es bedeutet, dass
 $h_S$ \textit{nahe} an $f$ liegt. 
 Um zu beschreiben, wie nahe $h_S$ an $f$ liegt, wird die \textit{loss}-Funktion $\ell$ mit
 $$ \ell : \mathcal{H} \times \mathcal{Z} \to \mathbb{R}_+ $$
-definiert. $\mathcal{H}$ entspricht der Funktionklasse, aus der $h_S$ gew\"ahlt werden soll, und $\mathcal{Z} =
-	\mathcal{X} \times \mathcal{Y}$, der Menge aller m\"oglichen Daten. Mithilfe von $\ell$ l\"asst sich die \textit{wahre risk}-Funktion $L_{\mathcal{D}}$ mit
-
+definiert. $\mathcal{H}$ entspricht der Funktionklasse, aus der $h_S$ gew\"ahlt werden soll und $\mathcal{Z} =
+	\mathcal{X} \times \mathcal{Y}$ der Menge aller m\"oglichen Daten. Mithilfe von $\ell$ l\"asst sich die \textit{wahre risk}-Funktion $L_{\mathcal{D}}$ mit
 $$ L_{\mathcal{D}}(\mathcal{A}) = \mathbb{E}[\ell(\mathcal{A}(S), (X,Y))]$$
-
 definieren, wobei mit $S \backsim \mathcal{D}^{\otimes n}$, $\mathcal{A}(S) \in \mathcal{H}$ und $(\mathbf{X},Y) \in \mathcal{Z}$. Jeder Machine Learning Algorithmus versucht diese Funktion so klein wie m\"oglich zu halten.
-
 
 Da f\"ur die Bildung von $h_S$ nur die endliche Menge $S\in\mathcal{Z}^n$ an Trainingsdaten zur Verf\"ugung steht, wird die
 \textit{empirische risk}-Funktion $L_S$ mit
 $$ L_S(h_S) = \frac{1}{n}\sum_{i=1}^n \ell(h_S, (\mathbf{x}_i,y_i))$$
-gebildet. Oft ist ein Algorithmus dahingehend gebildet, dass er das empirische Risiko minimiert, mit der Hoffnung, dass damit auch das wahre Risiko klein wird.
+gebildet. Oft ist ein Algorithmus dahingehend gebildet worden, dass er das empirische Risiko minimiert mit der Hoffnung, dass damit auch das wahre Risiko klein wird.
 
 
-Es h\"angt nun vom Algorithmus ab wie gut die wahre risk-Funktion approximiert werden kann. Je nach Wahl der Funktionenklasse und des
-Auswahlverfahrens kann man ein Vorwissen \"uber die Problemstellung mit einflie{\ss}en lassen. Wenn Einschr\"ankungen f\"ur die
+Es h\"angt nun vom Algorithmus ab, wie gut die wahre risk-Funktion approximiert werden kann. Je nach Wahl der Funktionenklasse und des
+Auswahlverfahrens kann man ein Vorwissen \"uber die Problemstellung miteinflie{\ss}en lassen. Wenn Einschr\"ankungen f\"ur die
 Funktionenklasse aufgrund des Vorwissens vorgenommen werden, kann ein systematischer Approximationsfehler, auch \textit{Bias} genannt, entstehen.
 
-
-Einerseits kann man eine sehr allgemeine Funktionenklasse ausw\"ahlen, wodurch $\mathcal{A}(S)$ alle Daten innerhalb $S$ korrekt reproduziert. Somit
-h\"angt die Bildung von $h_S$ stark von der Stichprobe $S$ ab, und $h_{S_1}$ und $h_{S_2}$, wobei $S_1, S_2$ disjunkt sind, liefern unterschiedliche Werte f\"ur Inputdaten,
+Einerseits kann man eine sehr allgemeine Funktionenklasse ausw\"ahlen, wodurch $\mathcal{A}(S)$ alle Daten innerhalb von $S$ korrekt reproduziert. Somit
+h\"angt die Bildung von $h_S$ stark von der Stichprobe $S$ ab, und $h_{S_1}$ und $h_{S_2}$, wobei $S_1 und S_2$ disjunkt sind, liefern unterschiedliche Werte f\"ur Inputdaten,
 die in keiner der beiden Stichproben enthalten sind. Zwar kann der Wert der empirischen risk-Funktion klein gehalten werden, aber dennoch liefert die gebildete
-Vorhersagefunktion gro{\ss}e Werte f\"ur die wahre risk-Funktion. Das ist ein Beispiel daf\"ur, dass es mehr ben\"otigt, eine gute Vorhersagefunktion zu bilden, als
-die empirische risk-Funktion zu minimieren. \\
-
+Vorhersagefunktion gro{\ss}e Werte f\"ur die wahre risk-Funktion. Das ist ein Beispiel daf\"ur, dass es mehr ben\"otigt, um eine gute Vorhersagefunktion zu bilden, als
+die empirische risk-Funktion zu minimieren.
 
 Andererseits kann man die Funktionenklasse zu sehr beschr\"anken, sodass der Bias gro{\ss} ist und dadurch auch die empirische risk-Funktion f\"ur die
 Vorhersagefunktion hohe Werte liefert. Es k\"onnen zwei F\"alle auftreten \cite[Seite 374]{strang}:
@@ -84,11 +75,10 @@ Vorhersagefunktion hohe Werte liefert. Es k\"onnen zwei F\"alle auftreten \cite[
 	\item Wenn f\"ur $h_S$ selbst das empirische Risiko (und somit auch das wahre Risiko) hoch ist, spricht man von \textit{Underfitting}.
 \end{itemize}
 
-Um Overfitting und Underfitting und eine m\"ogliche Herangehensweisen daran n\"aher zu beschreiben, beschr\"ankt sich die Argumentation ab hier auf Regressionsprobleme und somit gilt
+Um Overfitting und Underfitting und eine m\"ogliche Herangehensweise daran n\"aher zu beschreiben, beschr\"ankt sich die Argumentation ab hier auf Regressionsprobleme und somit gilt
 $y \in \mathbb{R}$. Es wird zuerst der Zusammenhang zwischen der loss-Funktion und der Verteilung $\mathcal{D}_{Y|\mathbf{X}}$ beschrieben. Danach
 wird das wahre Risiko umgeformt, um es intuitiver verstehen zu k\"onnen. Wenn man anschlie{\ss}end f\"ur einen Algorithmus das wahre Risiko berechnen will,
 kann man durch diese Umformung zwischen Overfitting und Underfitting unterscheiden.
-
 
 Man legt mit der Wahl von $\epsilon$ eine Klasse von Verteilungen fest, deren Elemente durch Parameter, wie beispielsweise dem Erwartungswert oder dem Median,
 beschrieben werden. $\epsilon$ soll entsprechend der realen Problemstellung angenommen werden.
@@ -97,13 +87,11 @@ Die Vorhersagefunktion $h_S$ approximiert schlussendlich einen
 der Parameter von $\mathcal{D}_{Y|\mathbf{X}}$. Welchen Parameter der bedingten Verteilung die Vorhersagefunktion approximieren soll, h\"angt
 mit der angenommenen Form von $\epsilon$ zusammen. Es ist sinnvoll, dass bei normalverteiltem Rauschen
 $h_S$ den bedingten Erwartungswert von $\mathcal{D}_{Y|\mathbf{X}}$ approximiert, weil die Normalverteilung mit dem Erwartungswert parametrisiert wird.
-Andererseits soll bei laplaceverteiltem Rauschen $h_S$ den bedingten Median von $\mathcal{D}_{Y|\mathbf{X}}$ approximieren, weil die
+Andererseits soll $h_S$ bei laplaceverteiltem Rauschen den bedingten Median von $\mathcal{D}_{Y|\mathbf{X}}$ approximieren, weil die
 Laplaceverteilung mit dem Median parametrisiert wird.
-
 
 Es ist wichtig hervorzuheben, dass die Wahl des entsprechenden Parameters auch mit der Wahl der loss-Funktion zusammenh"angt.
 Im Folgenden wird gezeigt, welche loss-Funktionen f\"ur den bedingten Erwartungswert und bedingten Median gew\"ahlt werden m"ussen.
-
 
 Wenn f\"ur eine Zufallsvariable $U$ mit einer stetigen Dichte $f_U(u) > 0$ und einem endlichen Erwartungswert die Funktion $g(\phi) = \mathbb{E}[r(U - \phi)]$ minimiert wird,
 kann man mit der Wahl von $r(\cdot)$
@@ -119,8 +107,7 @@ nach Elstrodt (1996) erf\"ullt sind \cite[Kapitel 4, Satz 5.7]{elstrodt}.
 Der oben berechnete Ausdruck wird an der Stelle $\phi = \mathbb{E}[U]$ null und ist dadurch ein kritischer Punkt. Dar\"uber hinaus ist die zweite
 Ableitung nach $\phi$ gr\"o{\ss}er null:
 $$g''(\phi) = \frac{d}{d\phi}(-2\mathbb{E}[U]+2\phi) = 2 > 0$$
-Somit ist die gefunde Stelle ein Minimum. $\square$
-
+Somit ist die gefundenw Stelle ein Minimum von $g(\phi)$. $\square$
 
 \textit{Beweis zu (2)}: \\
 Zuerst setzen wir f\"ur den Ausdruck $g(\phi) = \mathbb{E}[|U-\phi|]$ die Definition des Erwartungswertes ein und formen diese um.
@@ -132,7 +119,6 @@ Zuerst setzen wir f\"ur den Ausdruck $g(\phi) = \mathbb{E}[|U-\phi|]$ die Defini
 		& \quad - \int_{-\infty}^{\phi}uf_U(u) \,du - \phi \bigl(1 - \int_{-\infty}^{\phi}f_U(u) \,du \bigr)
 	\end{split}
 \end{equation*}
-
 Nun leiten wir diesen Ausdruck nach $\phi$ ab und setzen ihn gleich null:
 \begin{equation*}
 	\begin{split}
@@ -144,41 +130,35 @@ Nun leiten wir diesen Ausdruck nach $\phi$ ab und setzen ihn gleich null:
 \end{equation*}
 Dieser Ausdruck entspricht der Definition des Medians von $U$ und einem kritischen Punkt von $\phi \mapsto \mathbb{E}[|U - \phi|]$. Weil die zweite Ableitung
 $$ g''(\phi) = f_U(\phi) > 0 $$
-die Dichte von $U$ ist, die immer positiv ist, handelt es sich um ein Minimum. $\square$
-
-
+die Dichte von $U$ ist, die immer positiv ist, handelt es sich um ein Minimum von $g(\phi)$. $\square$
 
 Im folgenden Abschnitt versucht man das wahre Risiko besser zu verstehen. Es wird der Argumentation von Bishop (2006) gefolgt \cite[Seiten 147 bis 152]{bishop}.
 Daf\"ur ist es notwendig einerseits den \textit{erwarteten Output} $\bar{y}$ zu definieren:
-
 $$ \bar{y}(\mathbf{x}) = \mathbb{E}[Y|\mathbf{X}=\mathbf{x}] = \int_y y f_{Y|\mathbf{X}}(y|\mathbf{x}) \, dy.$$
-
-Andererseits ben\"otigt man die \textit{erwartete Vorhersagefunktion} $\bar{h}$, welche, vorausgesetzt eines Algorithmus, gegeben ist mit:
+Andererseits ben\"otigt man die \textit{erwartete Vorhersagefunktion} $\bar{h}$, welche, vorausgesetzt eines Algorithmus mit:
 \begin{equation*}
 	\begin{split}
 		\bar{h} & = \mathbb{E}[\mathcal{A}(S)] = \int_{\mathbb{R}^{(d+1)n}} h_s p_S(s)  \,ds  \\\
-		& = \int_{\mathcal{Z}^n}\mathcal{A}(\{ (\mathbf{x}_1, y_1), \dots ,(\mathbf{x}_n, y_n)\}) \prod_{k=1}^n f_{\mathbf{X},Y}(\mathbf{x}_k, y_k) \, d\mathbf{x}_1 dy_1 \dots d\mathbf{x}_n dy_n.
+		& = \int_{\mathcal{Z}^n}\mathcal{A}(\{ (\mathbf{x}_1, y_1), \dots ,(\mathbf{x}_n, y_n)\}) \prod_{k=1}^n f_{\mathbf{X},Y}(\mathbf{x}_k, y_k) \, d\mathbf{x}_1 dy_1 \dots d\mathbf{x}_n dy_n
 	\end{split}
 \end{equation*}
-
+gegeben ist.
 
 Den erwarteten Output kann man verstehen als Erwartungswert aller m\"oglichen $y$, gegeben ein festes $\mathbf{x}$.
 Um die erwartete Vorhersagefunktion zu bilden, geht man davon aus, dass
 die Funktion $h_S$ von der zuf\"alligen Stichprobe $S$ abh\"angig ist. Man kann sich vorstellen, dass man unendlich viele Stichproben $S$ zieht und
 f\"ur jedes $S$ bekommt man eine andere Funktion $h_S$. Danach wird auf ein $\mathbf{x}$ jede dieser unterschiedlichen Funktionen $h_S$ angewendet und
-anschlie{\ss}end gemittelt.
-
+der Funktionswert wird anschlie{\ss}end gemittelt.
 
 Ab hier beschr\"anken wir uns auf die loss-Funktion $ \ell(h, (\mathbf{x},y)) = (h(\mathbf{x}) - y)^2 $, weil dadurch die Argumentation vereinfacht wird.
-Das bedeutet, $h_S$ approximiert den bedingten Erwartungswert von
-$Y$ gegeben $\mathbf{X}$, wie oben gezeigt wurde. Nun wollen wir die wahre risk-Funktion von $\mathcal{A}$ betrachten:
-
+Das bedeutet, dass $h_S$ den bedingten Erwartungswert von
+$Y$ gegeben $\mathbf{X}$ approximiert, wie oben gezeigt wurde. Nun wollen wir die wahre risk-Funktion von $\mathcal{A}$ betrachten:
 $$ \mathcal{L}_{\mathcal{D}}(\mathcal{A}) = \mathbb{E}[(h_S(\mathbf{\mathbf{X}})-Y)^2)],$$
 wobei gilt, dass $(\mathbf{X}, Y) \backsim \mathcal{D}$ und $S \backsim \mathcal{D}^{\otimes n}$.
 Das Ziel ist es, diesen erwarteten Fehler so umzuformen, dass wir ihn in Teile zerlegen k\"onnen, die verst\"andlicher sind.
 \begin{equation*}
 	\begin{split}
-		\lefteqn{ \mathbb{E}[(h_S(\mathbf{X})-Y)^2)] } \\\
+		\lefteqn{ \mathbb{E}[(h_S(\mathbf{X})-Y)^2] } \\\
 		& = \mathbb{E}[\bigl((h_S(\mathbf{X})-\bar{h}(\mathbf{X}))+(\bar{h}(\mathbf{X})-Y)\bigr)^2] \\\
 		& = \mathbb{E}[(h_S(\mathbf{X})- \bar{h}(\mathbf{X}))^2] + \mathbb{E}[(\bar{h}(\mathbf{X})-Y)^2] + 2\underbrace{\mathbb{E}[(h_S(\mathbf{X})-\bar{h}(\mathbf{X}))(\bar{h}(\mathbf{X})-Y)]}_{=0} \\\
 		& = \mathbb{E}[(h_S(\mathbf{X})- \bar{h}(\mathbf{X}))^2] + \mathbb{E}[(\bar{h}(\mathbf{X})-Y)^2] \\\
@@ -188,7 +168,6 @@ Das Ziel ist es, diesen erwarteten Fehler so umzuformen, dass wir ihn in Teile z
 		& = \underbrace{\mathbb{E}[(h_S(\mathbf{X})- \bar{h}(\mathbf{X}))^2]}_{\text{Variance}}+\underbrace{\mathbb{E}[(\bar{h}(\mathbf{X})-\bar{y}(\mathbf{X}))^2]}_{\text{Bias}^2} + \underbrace{\mathbb{E}[(\bar{y}(\mathbf{X})-Y)^2]}_{\text{Noise}}
 	\end{split}
 \end{equation*}
-
 Der letzte Summand in Zeile 3 ist null, weil:
 \begin{equation*}
 	\begin{split}
@@ -200,8 +179,6 @@ Der letzte Summand in Zeile 3 ist null, weil:
 		& = 0
 	\end{split}
 \end{equation*}
-
-
 Weiters ist der letzte Summand in Zeile 7 null, weil:
 \begin{equation*}
 	\begin{split}
@@ -213,8 +190,6 @@ Weiters ist der letzte Summand in Zeile 7 null, weil:
 		& = 0
 	\end{split}
 \end{equation*}
-
-
 Diese drei verbliebenen Terme sind:
 \begin{itemize}
 	\item Die Varianz der Vorhersagefunktion an sich. Je nach Ziehung der Stichprobe $S$ kann $h_S$ unterschiedlich sein.
@@ -228,16 +203,14 @@ und das wahre Risiko kann in drei verst\"andliche Teile eingeteilt werden. Da al
 versucht man die \textit{Hyperparameter} so zu w\"ahlen, dass das wahre Risiko so klein wie
 m\"oglich wird. Das ist jener Bereich an Komplexit\"at der Funktionenklasse, der zwischen Overfitting und Underfitting liegt.
 
-
 Bei Machine Learning Algorithmen und Modellen versucht man neben der Optimierung der Parameter des entsprechenden Modells,
 auch die Hyperparameter der Modellarchitektur zu optimieren. Der entscheidende Unterschied zwischen Hyperparametern
 und Parametern ist, dass die Hyperparameter vor dem Training des Modells festgelegt werde m\"ussen und die Parameter w\"ahrend des Trainings
 optimiert werden \cite{hyper}.
 
-Formal legen Hyperparamter eine Klasse von Funktionen \textit{innerhalb} der zuvor festgelegten Funktionenklasse $\mathcal{H}$ eines Machine
-Learning Algorithmus fest. Beispielsweise wird festgelegt, ob man bei einer linearen Regression eine Linearkombination der Inputvariablen, oder auch deren Quadrate
+Formal legen Hyperparameter eine Klasse von Funktionen, \textit{innerhalb} der zuvor festgelegten Funktionenklasse $\mathcal{H}$ eines Machine
+Learning Algorithmus, fest. Beispielsweise wird festgelegt, ob man bei einer linearen Regression eine Linearkombination der Inputvariablen, oder auch deren Quadrate
 zul\"asst. Diese Entscheidung muss vor dem Training getroffen werden.
-
 
 Sowohl bei einer Regressions- als auch bei einer Klassifikationsaufgabe ist das Ziel der jeweiligen Prediktorfunktion $h_S$ eines Machine Learning Algorithmus,
 ein Muster in den Daten zu finden, welches f\"ur Menschen nicht erkennbar w\"are. Oft ist es f\"ur Menschen schwierig die Vorgehensweise des trainierten Algorithmus
@@ -275,62 +248,58 @@ Nun werden jene Machine Learning Algorithmen kurz beschrieben, welche in der vor
 
 \subsection{Multiple Lineare Regression}
 
-Das folgende Kapitel folgt der Argumentation von Bishop, 2006 \cite[Kapitel 3.1]{bishop}. Hier wird versucht die bedingte Verteilung von $\mathcal{D}_{Y|X}$ mit einer bestimmten Klasse an Vorhersagefunktion bestm\"oglich zu beschreiben.
+Das folgende Kapitel folgt der Argumentation von Bishop, 2006 \cite[Kapitel 3.1]{bishop}. Hier wird versucht die bedingte Verteilung von $\mathcal{D}_{Y|\mathbf{X}}$ mit einer bestimmten Klasse an Vorhersagefunktionen bestm\"oglich zu beschreiben.
 Wiederum folgen $\mathbf{X}$ und $Y$ einer gemeinsamen Verteilung $\mathcal{D}$, wobei man $Y$ mit $Y = f(\mathbf{X}) + \epsilon$ darstellen kann.
 Ab hier beschränken wir uns darauf, dass $\mathbf{X}$ nur eindimensional ist, um die Notation zu vereinfachen.
 
-Es gibt viele M\"oglichkeiten um die Verteilung von $Y$ zu beschreiben. Die einfachste Wahl w\"are es, $\mathbb{E}[Y]$ zu verwenden. Nur so verwendet man nicht die
-Information, die man durch ein Realisierung von $X$ erh\"alt. Eine bessere L\"osung ist es, den bedingten Erwartungswert $\mathbb{E}[Y|X]$ zu verwenden. Somit ben\"utzt man auch die Information aus der
-Realisierung von $X$. Man kann beispielsweise auch, wie oben gezeigt, den bedingten Median verwenden. Diese Entscheidung sollte von der vorliegenden Problemstellung,
+Es gibt viele M\"oglichkeiten die Verteilung von $Y$ zu beschreiben. Die einfachste Wahl w\"are es, $\mathbb{E}[Y]$ zu verwenden. Nur so verwendet man nicht die
+Information, die man durch eine Realisierung von $X$ erh\"alt. Eine bessere L\"osung ist es, den bedingten Erwartungswert $\mathbb{E}[Y|X]$ zu verwenden. Somit ben\"utzt man auch die Information aus der
+Realisierung von $X$. Man kann beispielsweise auch, wie oben gezeigt, den bedingten Median verwenden. Diese Entscheidung sollte von der vorliegenden Problemstellung
 abh\"angen. Die Funktion
 $$ x \mapsto f(x) := \mathbb{E}[Y|X = x] = \int y \cdot p_{Y|X}(y|x) \,dy $$
 wird als Regressionsfunktion bezeichnet \cite[Seite 209]{wasserman}. Im Folgenden wird nun versucht, die Funktion $f$ m\"oglichst gut zu sch\"atzen.
 
-Nun gibt es viele M\"oglichkeiten die Funktionklasse f\"ur den Prediktor $h_S$ zu w\"ahlen. Bei der linearen
+Nun gibt es viele M\"oglichkeiten, die Funktionklasse f\"ur den Prediktor $h_S$ zu w\"ahlen. Bei der linearen
 Regression nimmt man an, dass die Funktion linear in wenigen Parametern ist. Beispiele sind:
 $$ h_S(x) = a + bx $$
 oder
-$$ h_S(x) = a + bx + cx^2$$
-wobei beide zur linearen Regression geh\"oren. Man sieht, dass die Funktion eine Linearkombination von sogenannten \textit{Basis Functions}, und somit
+$$ h_S(x) = a + bx + cx^2.$$
+Beide geh\"oren zur linearen Regression. Man sieht, dass die Funktion eine Linearkombination von sogenannten \textit{Basis Functions} ist, und somit
 linear in ihren Parametern ist. Von nun an wird die Argumentation am einfachsten Beispiel von $ h_S(x) = a + bx $ fortgef\"uhrt.
 
-Die Klasse von Funktionen aus der ein passender Sch\"atzer $h_S$ gefunden werden kann wird durch diese Annahme sehr eingeschr\"ankt. Das f\"uhrt zu einer
-Reduktion der Varianz, was m\"oglichem Overfitting entgegenwirkt. Es kann aber sein, dass die Funktion aus dieser Klasse f\"ur die Problemstellung zu simpel ist, und
+Die Klasse von Funktionen, aus der ein passender Sch\"atzer $h_S$ gefunden werden kann, wird durch diese Annahme sehr eingeschr\"ankt. Das f\"uhrt zu einer
+Reduktion der Varianz, was m\"oglichem Overfitting entgegenwirkt. Es kann aber sein, dass die Funktion aus dieser Klasse f\"ur die Problemstellung zu simpel ist und
 man dadurch die wahre Funktion $f$ nicht genau genug beschreiben kann.
 
 Nun kann man einen Sch\"atzer f\"ur den bedingten Erwartungswert bilden.
 Weil der Erwartungswert von $X$ die Funktion $g(\phi) = \mathbb{E}[(X - \phi)^2]$ minimiert, kann man den \textit{Least Squares Sch\"atzer} wie folgt definieren:
 $$ (\hat{a}, \hat{b}) = \argmin_{(a,b) \in \mathbb{R}^2} \sum_{i=1}^n (Y_i - a - bX_i)^2$$
-wobei $S = \{(X_1, Y_1), \dots , (X_n,Y_n)\}$.
+wobei $S = \{(X_1, Y_1), \dots , (X_n,Y_n)\}$ ist.
 
-Wie oben gezeigt, berechnet man mit dem Least Squares Sch\"atzer den bedingten Erwartungswert von $y$, gegeben $x$.
+Wie oben gezeigt, berechnet man mit dem Least Squares Sch\"atzer den bedingten Erwartungswert von $Y$, gegeben $X$.
 Wenn man die Summe der absoluten Abst\"ande minimiert, bekommt man einen Sch\"atzer f\"ur den bedingten Median. Man verwendet die Tatsache, dass
-der Median die Funktion $g(\phi) = \mathbb{E}[|X - \phi|]$ minimiert. Hierfür müsste aber die Regressionsfunktion anders definiert sein.
+der Median von $Y|X$ die Funktion $g(\phi) = \mathbb{E}[|Y|X - \phi|]$ minimiert. Hierfür müsste aber die Regressionsfunktion anders definiert werden.
 
 Es ist hilfreich, dass es L\"osungen in geschlossener Form gibt, die $\sum_{i=1}^n (Y_i - a - bX_i)^2 $ minimieren. Somit kann man die Sch\"atzer leicht berechnen.
 Weiters ist es, wie oben erw\"ahnt, m\"oglich, die abh\"angige Variable $Y$ auch von mehreren unabh\"angigen Variablen beschreiben zu lassen, indem $\mathbf{X}$ einen Zufallsvektor beschreibt.
 Dadurch erh\"alt man die \textit{Multiple Lineare Regression}
 mit der Form
 $$ Y = \mathbf{X}^T\mathbf{\beta} + c. $$
-Die Vorgehensweise um einen Sch\"atzer zu finden ist analog zu der im eindimensionalen Fall, indem man die Rechenregeln f\"ur Vektoren beachtet.
+Die Vorgehensweise, um einen Sch\"atzer zu finden, ist analog zu der im eindimensionalen Fall, indem man die Rechenregeln f\"ur Vektoren beachtet.
 
 Im Falle des mehrdimensionalen Modells ist die Annahme, dass die \glqq abh\"angige\grqq{} Variable $Y$ eine Linearkombination der \glqq unabh\"angigen\grqq{} Variablen
-(Eintr\"age von $\mathbf{X}$), oder \textit{Basis Functions} von ihnen ist. Diese Annahme ist sehr einschr\"ankend, da man im Vorhinein wenig \"uber die gegenseitige Beeinflussung der
+(Eintr\"age von $\mathbf{X}$), oder der \textit{Basis Functions} von ihnen ist. Diese Annahme ist sehr einschr\"ankend, da man im Vorhinein wenig \"uber die gegenseitige Beeinflussung der
 \glqq unab\"angigen\grqq{} Variablen untereinander aussagen kann.
 
 Die L\"osungen f\"ur den eindimensionalen Fall sind \cite[Kapitel 13, Satz 13.4]{wasserman}:
-
 $$ \hat{b} = \frac{\overline{XY} - \bar{X}\bar{Y}}{\overline{X^2} - (\bar{X})^2} $$
 $$ \hat{a} = \bar{Y} - \hat{b}\bar{X} $$
 mit $\bar{X} = \frac{1}{n} \sum_{i = 1}^n X_i$, $\bar{Y} = \frac{1}{n} \sum_{i = 1}^n Y_i$, $\overline{X^2} = \frac{1}{n} \sum_{i = 1}^n X_i^2$ und $\overline{XY} = \frac{1}{n} \sum_{i = 1}^n X_iY_i$.
 
 Die L\"osungen f\"ur den mehrdimensionalen Fall sind \cite[Kapitel 13, Satz 13.13]{wasserman}:
-
 $$  \hat{\beta} = (\mathbb{X}^T\mathbb{X})^{-1}\mathbb{X}^T\mathbf{Y} .$$
-Wobei $\mathbb{X} = [\mathbf{x}_1, \dots, \mathbf{x}_n]^T$. Man kann die letzte Gleichung wie folgt umformen:
-
+Wobei $\mathbb{X} = [\mathbf{x}_1, \dots, \mathbf{x}_n]^T$ ist. Man kann die letzte Gleichung wie folgt umformen:
 $$ \mathbb{X}\hat{\beta} = P\mathbf{Y}, P = \mathbb{X}(\mathbb{X}^T\mathbb{X})^{-1}\mathbb{X}^T $$
-
 Somit erh\"alt man eine geometrische Interpretation der Regression. $\mathbb{X}\hat{\beta}$ stellt die Orthogonalprojektion des Punktes $\mathbf{Y}$ auf jener
 Hyperebene dar, die von den unterschiedlichen Dimensionen in $\mathbb{X}$ aufgespannt wird.
 
@@ -371,7 +340,7 @@ Bei der logistischen Regression wird angenommen, dass $Y \in \{0,1\}$ und somit 
 Dadurch ist sie ein Klassifizierungsmodell. ($\mathbf{X}$ kann auch vektorwertig sein.)
 
 Somit ist auch $Y$ gegeben $\mathbf{X}$ eine Bernoulli Zufallsvariable mit ihrem Erwartungswert $\mu(x) = \mathbb{E}[Y|\mathbf{X} = \mathbf{x}] \in (0,1)$. Man kann nicht die Annahme treffen, dass
-$\mu(\mathbf{x}) = \mathbf{x}^T\beta$, weil diese Funktion nach $\mathbb{R}$ abbilden w\"urde. Bei der logistischen Regression ben\"utzt man eine invertierbare Funktion $\gamma$ mit
+$\mu(\mathbf{x}) = \mathbf{x}^T\beta$ ist, weil diese Funktion nach $\mathbb{R}$ abbilden w\"urde. Bei der logistischen Regression ben\"utzt man eine invertierbare Funktion $\gamma$ mit
 $\gamma(\mathbf{x}^T\beta) = \mu(\mathbf{x}) \in (0,1)$.
 
 Somit ist die Funktionenklasse, aus welcher ein Prediktor $h_S$ gew\"ahlt wird, nicht mehr auf $h_S(\mathbf{x}) = \mathbf{x}^T\beta$ beschr\"ankt,
@@ -389,15 +358,13 @@ Daher kommt auch der Name \glqq logistische Regression\grqq{}.
 
 Man kann nun das Modell der logistischen Regression wie folgt formulieren:
 Seien $(\mathbf{X}_i, Y_i) \in \mathbb{R}^m \times \mathbb{R}$, $i = 1, \dots , n$  unabh\"angige Paare von Zufallsvariablen, sodass die bedingte Verteilung von
-$Y_i$ gegeben $\mathbf{X}_i = \mathbf{x}_i$ die Wahrscheinlichkeitsfunktion
-
+$Y_i$ gegeben $\mathbf{X}_i = \mathbf{x}_i$ die Wahrscheinlichkeitsdichtefunktion
 $$ f_{\mathbf{x}_i^T\beta}(y_i) = \exp( y_i(\mathbf{x}_i^T\beta) - \log(1 + e^{(\mathbf{x}_i^T\beta)})) = \frac{e^{y_i(\mathbf{x}_i^T\beta)}}{1 + e^{(\mathbf{x}_i^T\beta)}}$$
-
 besitzt \cite[Seite 223]{wasserman}. % (Man hat hier die Tatsache verwendet, dass die Bernoulli Verteilung zur Familie der Exponentialverteilungen geh\"ohrt.) \\ 
 
-Wenn man durch Konstruktion des Maximum Liklihood Sch\"atzers den Parameter $\beta$ mit $\hat{\beta}$ absch\"atzen kann, ist es wiederum m\"oglich mittels der Funktion $\gamma(\mathbf{x}^T\hat{\beta})$
+Wenn man durch Konstruktion des Maximum Liklihood Sch\"atzers den Parameter $\beta$ mit $\hat{\beta}$ absch\"atzen kann, ist es wiederum m\"oglich, mittels der Funktion $\gamma(\mathbf{x}^T\hat{\beta})$
 den gesch\"atzten Parameter $\hat{p}$ der Bernoulli Verteilung von $Y$ gegeben $\mathbf{X}$ zu bilden. Nun hat man eine Wahrscheinlichkeit mit der die abh\"angige Variable $Y$ gegeben $\mathbf{X}$ den Wert 1 annimmt.
-Um schlussendlich eine Klassifikation durchzuf\"uhren, setzt man manuell einen Schwellwert anhand diesem entschieden werden kann, ob man die Variable 1 oder 0 gesch\"atzt werden soll.
+Um schlussendlich eine Klassifikation durchzuf\"uhren, setzt man manuell einen Schwellwert anhand welchem entschieden werden kann, ob die Variable 1 oder 0 gesch\"atzt werden soll.
 
 
 
@@ -432,8 +399,8 @@ Man kann diese Vorgehensweise mit einer Abstimmung beziehungsweise der Mehrheits
 
 Die Idee dabei ist, dass viele Klassifikatoren, die individuell kaum besser sind als eine Zufallsmeinung, in der Gruppe einen
 besseren Klassifikator darstellen. Man kann dieses Ph\"anomen mit einer M\"unze vergleichen, die zu $51\%$ mit Kopf nach oben liegen bleibt. Wirft
-man sie ein paar mal, wird man nicht wirklich erkennen k\"onnen, welche Seite favorisiert wird. Wenn man sie aber sehr oft wirft, bekommt man
-ein immer stabilers Ergebnis dar\"uber, welche Seite favorisiert wird.
+man sie ein paar Mal, wird man nicht wirklich erkennen k\"onnen, welche Seite favorisiert wird. Wenn man sie aber sehr oft wirft, bekommt man
+ein immer stabileres Ergebnis dar\"uber, welche Seite favorisiert wird.
 
 Die Zusammenf\"uhrung mehrerer Decision Trees beugt auch Overfitting einzelner Prediktorfunktionen vor \cite[Seiten 255 und 256]{shalev}. Weiters
 werden bei dem verwendeten Random Forest Modell Vorgaben an die einzelnen
@@ -453,25 +420,23 @@ eines stark vereinfachten Decision Trees dargestellt.
 		oder es nur mehr eine Klasse geben, ist man am \textit{Blatt} des Decision Trees angelangt.}
 \end{figure}
 
-
-
 Nun wird das mathematische Modell eines Decision Trees genauer erkl\"art. Random Forest Modelle beruhen auf der Verwendung mehrerer, verschiedener Decision Trees.
 Grunds\"atzlich stellen sich bei einem Decision Tree folgende Fragen \cite[Seiten 251 bis 253]{shalev}:
 \begin{itemize}
-	\item Nach welcher Inputvariable soll unterteilt werden?
+	\item In welcher Inputvariable soll unterteilt werden?
 	\item Wo soll die Unterteilung der gew\"ahlten Variable stattfinden?
 \end{itemize}
 
 Um diese Fragen zu beantworten wird im Folgenden das verwendete Decision Tree Modell mathematisch beschrieben. Die Argumentation folgt jener der Implementierung von \textit{Scikit-Learn} \cite{sklearn}.
-Gegeben der Trainingsvektoren $\mathbf{x}_i \in \mathbb{R}^m$, $i=1,\dots ,n$ und den entsprechenden Zielwerten $y_i$, geht ein Decision Tree rekursiv vor, um den
+Gegeben der Trainingsvektoren $\mathbf{x}_i \in \mathbb{R}^m$, $i=1,\dots ,n$ und der entsprechenden Zielwerten $y_i$, geht ein Decision Tree rekursiv vor, um den
 Raum der Inputvariablen zu unterteilen und nach den Zielwerten zu gruppieren. Die Daten am Entscheidungsknoten $v$ werden mit
 $Q_v$ bezeichnet, wobei $Q_v$ die Menge von Trainingsdaten $\{(\mathbf{x}_1, y_1, \dots , (\mathbf{x}_{N_v}, y_{N_v})\}$ darstellt, welche an diesem
-Entscheidungsknoten noch \"ubrig geblieben ist. Die $N_v$ \"ubrig
+Entscheidungsknoten noch \"ubrig geblieben sind. Die $N_v$ \"ubrig
 gebliebenen Daten werden nach jedem m\"oglichen
-Split $\theta = (j, t_v)$, bestehend aus Inputvariablen $j$ und dem Schwellwert $t_v$, in $Q_v^{\text{left}}(\theta)$ und $Q_v^{\text{right}}(\theta)$ unterteilt. Dabei gilt:
+Split $\theta = (j, t_v)$, bestehend aus Inputvariable $j$ und dem Schwellwert $t_v$ in $Q_v^{\text{left}}(\theta)$ und $Q_v^{\text{right}}(\theta)$ unterteilt. Dabei gilt:
 $$ Q_v^{\text{left}}(\theta) = \{ (\mathbf{x},y) | \mathbf{x}^{(j)} \leq t_v \} $$
 $$ Q_v^{\text{right}}(\theta) = Q_v \backslash Q_v^{\text{left}}(\theta) $$
-Es wird unter allen Kandidaten $\theta$ mittels einer loss-Funktion $\ell(\cdot)$, die sich je nach Klassifizierungs- oder Regressionsaufgabe unterscheidet, entschieden
+Es wird unter allen Kandidaten $\theta$ mittels einer loss-Funktion $\ell(\cdot)$, die sich je nach Klassifizierungs- oder Regressionsaufgabe unterscheidet, entschieden,
 welche Wahl am besten ist:
 $$ G(Q_v, \theta) = \frac{N_v^{\text{left}}}{N_v}\ell(Q_v^{\text{left}}(\theta)) + \frac{N_v^{\text{right}}}{N_v}\ell(Q_v^{\text{right}}(\theta)) $$
 Der Kandidat $\theta^* = \argmin_{\theta}G(Q_v, \theta)$ wird ausgew\"ahlt. Danach wird rekursiv vorgegegangen bis die maximale Tiefe des Decision Trees,
@@ -483,13 +448,11 @@ der \textit{Mean Absolute Error} verwendet.
 Sei $p_{vk} = 1/N_v \sum_{y \in Q_v} \mathbbm{1}_{y = k}$
 die relative H\"aufigkeit der Klasse $k$ am Entscheidungsknoten $v$, $\operatorname{mean}_v(y) = \frac{1}{N_m}\sum_{y\in Q_m}y$ und $ \median_v(y) = \median_{y \in Q_v}(y)$, dann sind: \\
 
-
 Mean Squared Error:  $$ \ell(Q_v) = \frac{1}{N_v} \sum_{y\in Q_v} (y - \operatorname{mean}_v(y))^2 $$
 Mean Absolute Error: $$ \ell(Q_v) = \frac{1}{N_v} \sum_{y\in Q_v} |y - \median_v(y)| $$
 Entropy: $$ \ell(Q_v) = - \sum_{k} p_{vk}\log(p_{vk}) $$
 
-
-Wichtig hervorzuheben ist, dass es m\"oglich ist, mehrmals nach einer Inputvariablen an unterschiedlichen Punkten aufzuteilen.
+Wichtig ist hervorzuheben, dass es m\"oglich ist, mehrmals nach einer Inputvariablen an unterschiedlichen Punkten aufzuteilen.
 Dadurch kann man eine Teilung in mehrere Gruppen durch mehrere bin\"are Teilungen ersetzen.
 Dar\"uber hinaus ist der Decision Tree mit einer beliebigen Tiefe $w$ in dem Decision Tree der Tiefe $w + 1$ enthalten.
 
@@ -505,8 +468,6 @@ Dar\"uber hinaus ist der Decision Tree mit einer beliebigen Tiefe $w$ in dem Dec
 		betrifft das Merkmal 2 (Input 2) und ist mit der roten Trennlinie dargestellt. Die Entscheidungen zwei und drei sind
 		entsprechend mit der gr\"unen und blauen Trennlinie dargestellt.}
 \end{figure}
-
-
 
 In \hyperref[fig:rf2]{Abbildung 2.3} sieht man, wie eine m\"ogliche Unterteilung des
 Raumes der Inputvariablen durchgef\"uhrt werden kann. Bei einer Klassifikation eines Decision Trees kann man sich auch an jedem Endknoten nicht nur die entsprechende Klasse
@@ -544,21 +505,25 @@ ausgeben lassen, sondern auch deren Wahrscheinlichkeit. Diese ist die relative H
 \subsection{Support Vector Machine Modelle}
 
 Die Modellarchitektur von Support Vector Machine Modellen wurde von Vladimir Vapnik \cite{SVMVapnik} in den Neunizigerjahren eingef\"uhrt. Man kann das
-Support Vector Machine Modell f\"ur Klassifizierungs- und auch f\"ur Regressionsprobleme verwenden. Hier wird die Funktionsweise des Klassifizierungsmodells
+Support Vector Machine Modell f\"ur Klassifizierungs- und auch f\"ur Regressionsprobleme verwenden. In diesem Kapitel wird die Funktionsweise des Klassifizierungsmodells
 beschrieben. Wir betrachten in diesem Abschnitt nur Klassifikatoren.
 
 Bei diesem Modell wird ausschlie{\ss}lich versucht, die Beispieldaten nach ihren Eigenschaften linear zu separieren. Das bedeutet, man versucht f\"ur die
-Daten $S = (\mathbf{x}_1,y_1),\dots, (\mathbf{x}_m, y_m)$ mit $\mathbf{x_i} \in \mathbb{R}^n$ und $y_i \in \{\pm1\}$ einen Halbraum $(\mathbf{w},b)$ zu finden
-mit $y_i = \operatorname{sign}(\left\langle \mathbf{w},\mathbf{x}_i\right\rangle + b), \forall i$. Dadurch treten zwei Probleme auf. Erstens, falls die Daten linear separierbar sind,
-gibt es sehr viele M\"oglichkeiten diesen Halbraum auszuw\"ahlen. Zweitens, falls die Daten nicht linear separierbar sind, versucht man das durch die Berechnung
-weiterer Eigenschaften aus den bisher vorhandenen zu schaffen, wodurch der Rechenaufwand unbew\"altigbar werden kann. Die Modellarchitektur der Support Vector Machines versucht
+Daten 
+$$S = (\mathbf{x}_1,y_1),\dots, (\mathbf{x}_m, y_m)$$
+ mit $\mathbf{x_i} \in \mathbb{R}^n$ und $y_i \in \{\pm1\}$ einen Halbraum $(\mathbf{w},b)$ zu finden
+mit 
+$$y_i = \operatorname{sign}(\left\langle \mathbf{w},\mathbf{x}_i\right\rangle + b), \forall i.$$ 
+Dadurch treten zwei Probleme auf. Erstens gibt es sehr viele M\"oglichkeiten diesen Halbraum auszuw\"ahlen, falls die Daten linear separierbar sind. 
+Zweitens, falls die Daten nicht linear separierbar sind, versucht man das durch die Berechnung
+weiterer Eigenschaften aus den bisher vorhandenen Eigenschaften zu schaffen, wodurch der Rechenaufwand unbew\"altigbar werden kann. Die Modellarchitektur der Support Vector Machines versucht
 diese beiden Probleme zu l\"osen \cite[Kapitel 15]{shalev}.
 
-Die folgende Erl\"auterung folgt jener von Busuttil \cite{SVM1}. Wenn die Daten linear separierbar sind, gibt es nicht nur eine Hyperebene die dies erreicht.
-Um eine einzige zu definieren, die auch auf neue Daten gut generalisiert, w\"ahlt man jene Hyperebene aus, die die beiden Klassen mit dem gr\"o{\ss}ten Margin
-voneinander trennt. Diese Aufgabe ist ein convexes Optimierungsproblem mit einer eindeutigen L\"osung. Diese L\"osung beinhaltet nur eine Teilmenge der Trainigsbeispiele, die
-an der Grenze zur anderen Klassen liegen. Diese Beispiele werden als \textit{Support Vectors} bezeichnet. Wie man in \hyperref[fig:svm2]{Abbildung 2.4} sieht, beinhalten die Support Vectoren
-alle Information f\"ur eine weitere Klassifizierung und diese ver\"andert sich nicht, wenn man andere Trainingsbeispiele nicht verwendet.
+Die folgende Erl\"auterung folgt jener von Busuttil \cite{SVM1}. Wenn die Daten linear separierbar sind, gibt es nicht nur eine Hyperebene, die dies erreicht.
+Um eine einzige zu definieren, die auch auf neuen Daten gut generalisiert, w\"ahlt man jene Hyperebene aus, welche die beiden Klassen mit dem gr\"o{\ss}ten Margin
+voneinander trennt. Diese Aufgabe ist ein konvexes Optimierungsproblem mit einer eindeutigen L\"osung. Diese L\"osung beinhaltet nur eine Teilmenge der Trainigsbeispiele, die
+an der Grenze zu anderen Klassen liegen. Diese Beispiele werden als \textit{Support Vectors} bezeichnet. Wie man in \hyperref[fig:svm2]{Abbildung 2.4} sieht, beinhalten die Support Vektoren
+alle Informationen f\"ur eine weitere Klassifizierung und diese ver\"andert sich nicht, wenn man andere Trainingsbeispiele verwendet oder nicht.
 
 \begin{figure}[ht]
 	\label{fig:svm1}
@@ -573,9 +538,9 @@ alle Information f\"ur eine weitere Klassifizierung und diese ver\"andert sich n
 
 
 
-Es ist m\"oglich dieses Optimierungsproblem und die Entscheidungsform in \textit{dualer} Form darzustellen \cite[Seite 168]{handson}. Die Entscheidungsform hat dadurch folgende Form:
+Es ist m\"oglich, dieses Optimierungsproblem und die Entscheidungsform in \textit{dualer} Form darzustellen \cite[Seite 168]{handson}. Die Entscheidungsform hat dadurch folgende Form:
 $$ f(\mathbf{x^*}) = \operatorname{sign}(\sum_{i=1}^m y_i\alpha_i \left\langle \mathbf{x^*}, \mathbf{x}_i \right\rangle + b), $$
-wobei $\alpha_i \in \mathbb{R}$ als Ma{\ss} an Information von $\mathbf{x}_i$ gesehen werden kann. Sollte $\mathbf{x}_i$ kein Support Vector sein, dann gilt $\alpha_i = 0$.
+wobei $\alpha_i \in \mathbb{R}$ als Ma{\ss} an Information von $\mathbf{x}_i$ gesehen werden kann. Sollte $\mathbf{x}_i$ kein Support Vektor sein, dann gilt $\alpha_i = 0$.
 
 Man unterteilt Support Vector Machine Klassifikatoren in \textit{Hard-Margin} und \textit{Soft-Margin} Klassifikatoren \cite[Kapitel 15]{shalev}. Diese zwei Klassen
 unterscheiden sich darin, dass Hard-Margin Klassifikatoren eine strenge Unterteilung zwischen $y = \pm1$ durchf\"uhren, wohingegen Soft-Margin
@@ -584,7 +549,7 @@ Hyperparameter \textit{C} gibt an, wie viele Regelverletzungen zugelassen werden
 
 Um zu erreichen, dass die Daten einer Problemstellung linear separierbar sind, werden oft neue Eigenschaften berechnet. Das funktioniert durch die
 Anwendung einer Funktion $\Theta(\cdot)$ auf die vorhandenen Eigenschaften $\mathbf{x}_i$. Das Bild dieser Funktion wird als \textit{Feature Space} (Eigenschaftsraum) bezeichnet.
-Es gibt mehrere M\"oglichkeiten diese Funktion zu w\"ahlen. In
+Es gibt mehrere M\"oglichkeiten, um diese Funktion zu w\"ahlen. In
 \hyperref[fig:svm2]{Abbildung 2.5} sieht man, dass durch die Anwendung von $\Theta(x) = x^2$ die Daten linear separierbar gemacht wurden.
 
 \begin{figure}[ht]
@@ -598,20 +563,20 @@ Es gibt mehrere M\"oglichkeiten diese Funktion zu w\"ahlen. In
 	{Darstellung, dass die Daten durch die Berechnung zus\"atzlicher \textit{Features} linear separierbar wurden.}
 \end{figure}
 
-Die n\"achsten Abs\"atze folgen Géron, 2019 \cite[Kapitel 5]{handson}. Die Entscheidungsfunktion $f$ ben\"utzt das Innere Produkt von Vektoren aus dem Eigenschaftenraum. Durch die Funktion $\Theta$ in den
-Feature Space bedeutet, dass man nun $\left\langle \Theta(\mathbf{x}), \Theta(\mathbf{y}) \right\rangle$ verwendet. Das kann einen sehr hohen Rechenaufwand
+Die n\"achsten Abs\"atze folgen Géron (2019) \cite[Kapitel 5]{handson}. Die Entscheidungsfunktion $f$ ben\"utzt das Innere Produkt von Vektoren aus dem Eigenschaftsraum. Die Funktion $\Theta$ auf dem
+Eigenschaftsraum bedeutet, dass man nun $\left\langle \Theta(\mathbf{x}), \Theta(\mathbf{y}) \right\rangle$ verwendet. Das kann einen sehr hohen Rechenaufwand
 mit sich ziehen. Jedoch kann durch die Anwendung des \textit{Kernel Tricks} der Rechenaufwand in Grenzen gehalten werden. Ein Kernel ist eine Funktion
 der Form $k(\mathbf{x}, \mathbf{y}) = \left\langle \Theta(\mathbf{x}), \Theta(\mathbf{y}) \right\rangle$. Laut dem \textit{Mercer Theorem} ist eine Funktion
-$k$, die gewisse Eigenschaften (Mercer Bedingungen) erf\"ullt ein Kernel zu einer zugeh\"origen Funktion $\Theta(\cdot)$. Um
-diesen Kernel zu verwenden, muss man die Funktion $\Theta(\cdot)$ nie verwenden und nicht einmal kennen.
+$k$, die gewisse Eigenschaften (Mercer Bedingungen) erf\"ullt, ein Kernel zu einer zugeh\"origen Funktion $\Theta(\cdot)$. Um
+diesen Kernel zu verwenden, benötigt man die Funktion $\Theta(\cdot)$ nie und man muss sie nicht einmal kennen.
 
-Es gibt verschieden Kernels und die Auswahl h\"angt von der speziellen Aufgabe ab \cite{SVM1}. Im angef\"uhrten Beispiel wird $ \mathbf{x} = [x_1, x_2]^T$ und $\mathbf{y} = [y_1, y_2]^T$ angenommen.
+Es gibt verschiedene Kernels und die Auswahl h\"angt von der speziellen Aufgabe ab \cite{SVM1}. Im angef\"uhrten Beispiel wird $ \mathbf{x} = [x_1, x_2]^T$ und $\mathbf{y} = [y_1, y_2]^T$ angenommen.
 Ein m\"oglicher Kernel ist der Polynomial Kernel mit der Form
 $k(\mathbf{x}, \mathbf{y}) = \left\langle \mathbf{x}, \mathbf{y} \right\rangle^d$. F\"ur $d=2$ gilt:
 $$ \left\langle \Theta(\mathbf{x}), \Theta(\mathbf{y}) \right\rangle = \left\langle \mathbf{x}, \mathbf{y} \right\rangle^2, $$
-wobei $\Theta(\mathbf{x}) = (x_1^2, \sqrt{2}x_1x_2, x_2^2)^T$.
+wobei $\Theta(\mathbf{x}) = (x_1^2, \sqrt{2}x_1x_2, x_2^2)^T$ ist.
 Somit ist die Funktion $k(\mathbf{x}, \mathbf{y}) = \left\langle \Theta(\mathbf{x}), \Theta(\mathbf{y}) \right\rangle$
-ein Polynomial Kernel vom Grad 2. Es ist wichtig hervorzuheben, dass bei der Berechnung nie die Funktion $\Theta$ explizit angewendet wurde,
+ein Polynomial Kernel vom Grad 2. Es ist wichtig hervorzuheben, dass bei der Berechnung nie die Funktion $\Theta$ explizit angewendet wurde
 und somit weniger Rechenaufwand ben\"otigt wird.
 
 
@@ -645,15 +610,15 @@ und somit weniger Rechenaufwand ben\"otigt wird.
 
 
 \subsection{K\"unstliche Neuronale Netzwerke}
-Wie der Name dieser Modellarchitektur verr\"at, wird bei diesem Machine Learning Ansatz versucht, eine Funktion zu bilden, die von der Funktionweise
-von biologischen Neuronen in Gehirnen von Menschen und Tieren inspiriert wurde. Die Verbindung von biologischen Neuronen in Form von Synapsen soll durch gewichtete
+Wie der Name dieser Modellarchitektur verr\"at, wird bei diesem Machine Learning Modell versucht, eine Funktion zu bilden, die von der Funktionsweise
+von biologischen Neuronen in den Gehirnen von Menschen und Tieren inspiriert wird. Die Verbindung von biologischen Neuronen in Form von Synapsen soll durch gewichtete
 Verbindungen zwischen den k\"unstlichen Neuronen nachgebildet werden. Die Entstehung dieser Algorithmen
 geht auf McCulloch und Pitts im Jahr 1943 zur\"uck \cite{McCulloch}.
 
 \gls{knn} stellen eine gro{\ss}e Klasse an Funktionen dar, aus der eine passende Funktion gefunden werden soll, welche
-die wahre Funktion $f$ ausgehend von der Annahme von $Y = f(\mathbf{X}) + \epsilon$ approximieren soll. Die Netzwerke bestehen aus mehreren \textit{Layern} von Neuronen. Der erste Layer hat
+die wahre Funktion $f$ ausgehend von der Annahme $Y = f(\mathbf{X}) + \epsilon$ approximieren soll. Die Netzwerke bestehen aus mehreren \textit{Layern} von Neuronen. Der erste Layer hat
 die Dimension des Inputvektors und jedes Neuron des ersten Layers stellt den Wert der jeweiligen Eigenschaft dar. Der letzte Layer in einem Netzwerk hei{\ss}t
-Outputlayer und hat die Dimension der entsprechenden Zielvariable. Die Layer dazwischen werden als \textit{hidden Layer} bezeichnet und sind mit der Anzahl von Neuronen pro
+Outputlayer und hat die Dimension der entsprechenden Zielvariable. Die Layer dazwischen werden als \textit{hidden Layer} bezeichnet und die Anzahl der hidden Layer sind mit der Anzahl von Neuronen pro
 hidden Layer einer der Hyperparameter, die zu jeder Problemstellung angepasst werden m\"ussen.
 
 Je nach Anzahl der hidden Layer und der Neuronen pro Layer spricht man von \textit{Deep Neural Networks} oder \textit{Multilayer Perceptrons}. Weiters wird unterschieden, ob
@@ -663,7 +628,7 @@ Wenn die Gewichte in den Verbindungen zwischen den Layern \"uber mehrere Neurone
 Man kann die Vorhersagefunktion $h(\mathbf{x})$ mit ihren Parametern $\mathbf{w}$ in f\"unf Punkte einteilen \cite[Kapitel 7.1]{strang}.
 Diese sind:
 \begin{itemize}
-	\item \textbf{Operation}: Verkettung von mehren Funktionen
+	\item \textbf{Operation}: Verkettung von mehreren Funktionen
 	      $$h(\mathbf{x}, \mathbf{w}) = h_k(h_{k-1}(\dots h_2(h_1(\mathbf{x}, \mathbf{w}_1), \mathbf{w}_2)\dots,\mathbf{w}_{k-1}),\mathbf{w}_k)$$
 	\item \textbf{Regel}: Kettenregel, um die Ableitungen in den Parametern $\mathbf{w}$ von $F$ zu finden
 	\item \textbf{Lernalgorithmus}: \textit{Stochastic Gradient Descent}, um die Gewichte anzupassen
@@ -673,12 +638,12 @@ Diese sind:
 
 Die Funktionen $h_1, h_2, \dots$ stellen jeweils den Output der nacheinandergereihten Layer dar.
 
-Der Input in $h_k$ ist der Output von $h_{k-1}$, notiert mit $v_{k-1}$ der L\"ange $n_{k-1}$. Der Output von $F_k$ wird mit $v_k$ notiert und hat L\"ange $n_k$.
+Der Input in $h_k$ ist der Output von $h_{k-1}$, notiert mit $v_{k-1}$ der L\"ange $n_{k-1}$. Der Output von $F_k$ wird mit $v_k$ notiert und hat die L\"ange $n_k$.
 Die Funktion $h_k$ besteht aus einem linearen und einem nichtlinearen Teil:
 
 \begin{itemize}
 	\item Der lineare Teil: $A_k v_{k-1} + b_k$ (Hier ist $b_k$ ein bias-Vektor).
-	\item Der nichtlineare Teil: Aktivierungsfunktion $\sigma(\cdot)$. Zusammen also:
+	\item Der nichtlineare Teil: Aktivierungsfunktion $\sigma(\cdot)$. Zusammen bilden sie also:
 \end{itemize}
 $$ v_k = h_k(v_{k-1}) = \sigma(A_k v_{k-1} + b_k) $$
 wobei $\sigma$ komponentenweise angewandt wird.
@@ -700,8 +665,8 @@ $$ \frac{d}{dx}\operatorname{ReLU}(x) =
 $$
 
 
-In \hyperref[fig:nn]{Abbildung 2.2} ist der Aufbau eines kleinen k\"unstlichen neuronalen Netzwerkes skizziert. Man sieht, dass es einen dreidimensionalen Inputvektor gibt, der
-durch das Netzwerk auf einen skalaren Output abgebildet wird. Diese Architektur, mit weiteren zwei hidden Layern, verdeutlicht, dass es in jedem Neuron zuerst eine Linearkombination der
+In \hyperref[fig:nn]{Abbildung 2.26} ist der Aufbau eines kleinen k\"unstlichen neuronalen Netzwerkes skizziert. Man sieht, dass es einen dreidimensionalen Inputvektor gibt, der
+durch das Netzwerk auf einen skalaren Output abgebildet wird. Diese Architektur, mit weiteren zwei hidden Layern, verdeutlicht, dass in jedem Neuron zuerst eine Linearkombination der
 Werte der Neuronen des vorherigen Layers gebildet, und anschlie{\ss}end die Aktivierungsfunktion angewendet wird. In diesem Netzwerk sind alle Neuronen eines Layers mit den Neuronen
 des vorherigen und des darauffolgenden Layers verbunden, somit ist es ein fully-connected neuronales Netzwerk.
 
@@ -711,13 +676,13 @@ des vorherigen und des darauffolgenden Layers verbunden, somit ist es ein fully-
 		\tikzfig{fig2}
 	\end{center}
 	\caption[K\"unstliches Neuronales Netzwerk]
-	{Der Aufbau eines k\"unstlichen neuronalen Netzwerkes mit drei Inputvariablen und einer Outputvariable. Diese Architektur hat zus\"atzlich zu Input- und Outputlayer
+	{Der Aufbau eines k\"unstlichen neuronalen Netzwerkes mit drei Inputvariablen und einer Outputvariablen. Diese Architektur hat zus\"atzlich zu Input- und Outputlayer
 		noch zwei hidden Layer. Diese sind mit $\mathbf{v_k}$ dargestellt. $\mathbf{w_k}$ stellen die zwischenzeitlichen \textit{linearen} Ergebnisse eines jeden Neurons dar.
 		An den blauen Linien werden die Werte der Neuronen mit den Gewichten aus den Matrizen $A_k$ multipliziert. An den schwarzen Linien wird die Aktivierungsfunktion angewandt.}
 \end{figure}
 
-Um die Parameter $\mathbf{w}$ des neuronalen Netzwerkes zu trainieren wird versucht, die Summer der Fehler auf den Trainingsdaten zu minimieren. Das bedeutet, dass
+Um die Parameter $\mathbf{w}$ des neuronalen Netzwerkes zu trainieren, wird versucht, die Summe der Fehler auf den Trainingsdaten zu minimieren. Das bedeutet, dass
 man versucht $\sum_{i=1}^n \ell(y_i, h(\mathbf{x}_i); \mathbf{w})$ zu minimieren. Dies wird mit dem Algorithmus \textit{gradient descent} oder \textit{stochastic gradient descent}
-gemacht. Hierf\"ur werden die Gradienten mittels \textit{backpropagation} ermittelt \cite{werbos}. Backpropagation wird auch \textit{reverse-mode automatic differntiation} genannt, und man
-schafft es $n$ partielle Ableitungen mit weniger Rechenaufwand zu berechnen, als mit $n$-mal dem Aufwand einer partiellen Ableitung. Das gelingt, weil man viele
-Zwischenergebnisse immer wieder weiterverwenden kann \cite[Kaptitel 7.3]{strang}.
+gemacht. Hierf\"ur werden die Gradienten mittels \textit{backpropagation} ermittelt \cite{werbos}. Backpropagation wird auch \textit{reverse-mode automatic differentiation} genannt, und man
+schafft $n$ partielle Ableitungen mit weniger Rechenaufwand zu berechnen als mit $n$-maligem Aufwand einer partiellen Ableitung. Das gelingt, weil man viele
+Zwischenergebnisse immer weiterverwenden kann \cite[Kaptitel 7.3]{strang}.

@@ -1,4 +1,4 @@
-In diesem Abschnitt wird auf die Ergebnisse und auf entscheidende Punkte der unterschiedlichen Ans\"atze n\"aher eingegangen.
+In diesem Abschnitt wird näher auf die Ergebnisse und auf entscheidende Punkte der unterschiedlichen Ans\"atze eingegangen.
 Dar\"uber hinaus werden weitere M\"oglickkeiten genannt, die man verfolgen kann, um die Problemstellung noch genauer zu untersuchen.
 
 
@@ -16,16 +16,16 @@ Waage halten.
 Ein weiteres Merkmal der Problemstellung war es, dass man immer zwischen erstj\"ahrigen Studierenden und Studierenden in h\"oheren Studienjahren unterscheiden muss.
 F\"ur die erstj\"ahrigen Studierenden hat man weniger Inputmerkmale zur Verf\"ugung. Vor allem die \textit{Anzahl der bisherigen ECTS} und die \textit{ECTS im Jahr zuvor} sind f\"ur
 Studierende in h\"oheren Studienjahren gute Pr\"adiktoren und genau diese fehlen bei Studienanf\"angern. Deswegen sind die Sch\"atzer f\"ur Studienbeginner grunds\"atzlich
-nicht so genau, wie jene f\"ur Studierende aus h\"oheren Studienjahren.
+nicht so genau wie jene f\"ur Studierende aus h\"oheren Studienjahren.
 
-Bei P1 hat es sich als erfolgreicher herausgestellt eine Sch\"atzung der Anzahl an pr\"ufungsaktiven Studierenden \"uber eine Zeitspanne von mehreren
+Bei P1 hat es sich als erfolgreicher herausgestellt, eine Sch\"atzung der Anzahl an pr\"ufungsaktiven Studierenden \"uber eine Zeitspanne von mehreren
 Jahren zu machen, als Jahr f\"ur Jahr die ECTS Anzahl pro studierender Person vorherzusagen. Die j\"ahrliche Pr\"adiktion erweist sich als
 sehr schwierig und bringt eine Fehlerfortpflanzung mit sich. Weiters hat dieser Ansatz f\"ur die konkrete Problemstellung keinen erkenntlichen Vorteil.
 
-Weitere M\"oglichkeiten um Ansatz 1 zu verbessern, w\"aren folgende. Man kann hier an den Daten, auf denen man die unterschiedlichen Machine Learning
-Modelle bildet, noch arbeiten. Beispielsweise kann man die ECTS Werte, die vorhergesagt werden sollen, nach oben beschr\"anken. Es ist f\"ur die
+Weitere M\"oglichkeiten um Ansatz 1 zu verbessern, w\"aren Folgende: Man kann hier noch an den Daten, auf denen man die unterschiedlichen Machine Learning
+Modelle bildet, arbeiten. Beispielsweise kann man die ECTS Werte, die vorhergesagt werden sollen, nach oben beschr\"anken. Es ist f\"ur die
 zusammengefasste Anzahl nicht ausschlaggebend, wenn den wenigen Studierenden, die tats\"achlich sehr viele ECTS erreicht haben, nur eine gewisse Obergrenze zugeordnet wird.
-Man bekommt dadurch im Gegensatz Modelle, die nicht von wenigen Ausrei{\ss}ern in den Trainingsdaten beeinflusst worden sind. Diesen Ansatz m\"usste man wiederum
+Im Gegensatz bekommt man dadurch Modelle, die nicht von wenigen Ausrei{\ss}ern in den Trainingsdaten beeinflusst worden sind. Diesen Ansatz m\"usste man wiederum
 auf einem gesonderten Testdatensatz validieren.
 
 Um Ansatz 2 weiter zu vertiefen, kann man \"uberlegen, wie man die Studierenden nach den vier Merkmalen in weniger Klassen zusammenfassen kann. Grunds\"atzlich verliert man bei
@@ -50,8 +50,8 @@ weil es sich um eine Vorhersage \"uber eine gewisse Zeitspanne handelt und es im
 
 \section{Problem 2}
 
-Wie im Abschnitt zuvor bereits erw\"ahnt wurde, hat es sich als schwierig herausgestellt die Pr\"ufungsaktivit\"at von Studienbeginnern vorherzusagen, selbst
-wenn man die Anzahl und Merkmalskombinationen kannte. Die Problemstellung von P2 ist intrinsisch schwer zu l\"osen, da man hier zus\"atzlich weder Informationen \"uber die Anzahl, noch \"uber die
+Wie im Abschnitt zuvor bereits erw\"ahnt, hat es sich als schwierig herausgestellt, die Pr\"ufungsaktivit\"at von Studienbeginnern vorherzusagen, selbst
+wenn man die Anzahl und Merkmalskombinationen kannte. Die Problemstellung von P2 ist intrinsisch schwer zu l\"osen, da man hier zus\"atzlich weder Informationen \"uber die Anzahl noch \"uber die
 Merkmalskombinationen zur Verf\"ugung hat.
 
 In dieser Arbeit war es nicht m\"oglich eine ernsthafte \"Uberpr\"ufung der Ans\"atze durchzuf\"uhren, weil zu wenig Daten vorhanden waren.
@@ -82,7 +82,7 @@ Zusammenfassend kann man aus der vorliegenden Arbeit folgende Schl\"usse ziehen:
 
     \item Obwohl viele unterschiedliche Machine Learning Modelle ausprobiert worden sind, haben sie durchwegs \"ahnliche Ergebnisse geliefert.
           Aus diesem Grund kann man davon ausgehen, dass die Daten nicht mehr Informationen beinhalten und die Wahl des Modells keinen gravierenden Unterschied macht.
-          Man k\"onnte zwar weitere Modelle erproben, jedoch sollte man eher neue Ans\"atze f\"ur die Problemstellung \"uberlegen.
+          Man k\"onnte zwar weitere Modelle erproben, jedoch sollte man sich eher neue Ans\"atze f\"ur die Problemstellung \"uberlegen.
 
     \item Die wichtigste Erkenntnis der vorliegenden Arbeit war das Verstehen der Problemstellung. Der \"Ubergang von genauer Klassifizierung jeder einzelnen
           studierenden Person auf die Sch\"atzung der erwarteten Gesamtanzahl von pr\"ufungsaktiven Studierenden hat die Testergebnisse verbessert.
@@ -90,7 +90,7 @@ Zusammenfassend kann man aus der vorliegenden Arbeit folgende Schl\"usse ziehen:
     \item Bei P1 kann man mit zus\"atzlichen Daten noch Ansatz 2 \"uberpr\"ufen. Sollte auch dieser Ansatz vielversprechend sein, k\"onnen noch weitere
           \"Uberlegungen hinsichtlich einer Auswahl von wenigen relevanten Zusammenfassungen von mehreren Merkmalskombinationen durchgef\"uhrt werden.
 
-    \item Vor allem bei P2 kann man mittels zus\"atzlicher Daten und Daten, die weiter in die Vergangenheit zur\"uckliegen, bessere Sch\"atzungen der
+    \item Vor allem bei P2 kann man mittels zus\"atzlicher Daten und Daten, die weiter in der Vergangenheit zur\"uckliegen, bessere Sch\"atzungen der
           Anzahl von neuhinzukommenden Studierenden durchf\"uhren. Weiters k\"onnen die vorgestellten Ans\"atze anhand zuk\"unftiger Daten bewertet werden.
 
     \item Jede Vorhersage h\"angt von der Stabilit\"at der Zusammenh\"ange in der Zukunft ab. Grundlegende \"Anderungen des Verhaltens von Studierenden

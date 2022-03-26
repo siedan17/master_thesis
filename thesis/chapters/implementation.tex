@@ -19,30 +19,29 @@ von 0, und eine empirische Standardabweichung von 1 haben. Nominale Dateneintr\"
 aufgeteilt, welche nur die Werte 0 oder 1 annehmen k\"onnen.
 
 One-Hot-Encoding bedeutet, dass ein nominales Merkmal mit $m$ Klassen in $m-1$ neue Merkmale umcodiert wird. Danach ist jenes Merkmal, welches
-der Klasse enspricht in der das Beispiel zuvor war, mit 1 codiert und die anderen neuen Merkmale mit 0. Sollte das Beispiel zuvor in der Klasse gewesen sein, f\"ur die
-es kein neues Merkmal gibt, so entspricht es der Kodierung, dass alle neuen Merkmale 0 sind \cite[Seite 67]{handson}.
+der Klasse enspricht in der das Beispiel zuvor war, mit 1 codiert und die anderen neuen Merkmale mit 0. Sollte das Beispiel zuvor in der Klasse, f\"ur die
+es kein neues Merkmal gibt, gewesen sein, so entspricht es der Kodierung, dass alle neuen Merkmale 0 sind \cite[Seite 67]{handson}.
 
 F\"ur das Training der Machine Learning Algorithmen wird der von den Anpassungen \"ubrig gebliebene Datensatz
-in \textit{Trainigsdaten}, in \textit{Testdaten} und gegebenenfalls in \textit{Valiedierungsdaten} unterteilt.
+in \textit{Trainigsdaten}, in \textit{Testdaten} und gegebenenfalls in \textit{Validierungsdaten} unterteilt.
 Diese Unterteilung wurde so durchgef\"uhrt, dass die jeweiligen Datens\"atze pseudo-randomisiert zusammengestellt wurden,
 und auch der Anteil an pr\"ufungsaktiven Studierenden \"uberall gleich ist. Diesen Vorgang nennt man \textit{Stratifizierung} \cite[Seite 53]{handson}. Zus\"atzlich wurde bei der Auswertung des Trainings der
 Algorithmen \gls{CV} verwendet.
 
-Crossvalidation bedeuted, dass der Trainingsdatensatz in $k$ gleichm\"achtige Mengen zerteilt wird, die zuf\"allig gebildet werden.
+Crossvalidation bedeuted, dass der Trainingsdatensatz in $k$ gleich m\"achtige Mengen zerteilt wird, die zuf\"allig gebildet werden.
 Anschlie{\ss}end wird das Modell $k$-mal trainiert, wobei immer eine Menge ausgelassen wird, auf der das Modell danach validiert wird. Somit bekommt man mehrere Validierungswerte
 und sieht auch deren Verteilung \cite[Seiten 31 und 32]{handson}.
 
-Um die Machine Learning Modelle zu erproben, sowie die besten auszuw\"ahlen und sp\"ater in den \"ubergeordneten Ans\"atzen zu verwenden,
-die dann eine Sch\"atzung der pr\"ufungsaktiven Studierenden ergibt, wurde wie folgt vorgegangen. Zuerst wurden die Daten auf Vollst\"andigkeit geprüft und neue
-Merkmale aus bereits vorhanden Merkmalen berechnet. Hier wurde auch entschieden, ob Merkmale verwendet oder verworfen werden.
-Danach wurden, je nach Ansatz, die Daten nach Studienjahren unterteilt und anschlie{\ss}end die unterschiedlichen Modelle ausprobiert. Hier wurde jenes Modell
+Um die Machine Learning Modelle zu erproben sowie die besten auszuw\"ahlen und sp\"ater in den \"ubergeordneten Ans\"atzen zu verwenden,
+die dann eine Sch\"atzung der pr\"ufungsaktiven Studierenden ergibt, wurde wie folgt vorgegangen: Zuerst wurden die Daten auf Vollst\"andigkeit geprüft und neue
+Merkmale aus bereits vorhandenen Merkmalen berechnet. Hier wurde auch entschieden, ob Merkmale verwendet oder verworfen wurden.
+Danach wurden die Daten, je nach Ansatz, nach Studienjahren unterteilt und anschlie{\ss}end wurden die unterschiedlichen Modelle ausprobiert. Hier wurde jenes Modell
 beibehalten, welches nach der entsprechenden Metrik am besten abgeschnitten hatte.
 Dieses Modell wurde danach in den \"ubergeordneten Ans\"atzen weiterverwendet.
 
-
 Es wurden bei allen Modellen unterschiedliche Hyperparameter ausprobiert, um f\"ur die Problemstellung den jeweiligen
 Algorithmus bestm\"oglich anzupassen. Sie sind in \hyperref[tab:hyperparameter]{Tabelle 2.1} zusammengefasst. Hier handelt es sich
-um eine grobe Optimierung der Hyperparameter. F\"ur das Machine Learning Modell, das bei dieser Vorauswertung die besten Werte erzielt hat,
+um eine grobe Optimierung der Hyperparameter. F\"ur das Machine Learning Modell, das bei dieser Vorauswertung die besten Werte erzielt hatte,
 wurden die Hyperparameter nochmals genauer angepasst. Hierzu wird die Methode des \textit{Grid Search} verwendet.
 
 \begin{table}[ht]
@@ -62,7 +61,7 @@ wurden die Hyperparameter nochmals genauer angepasst. Hierzu wird die Methode de
                                                          & criterion        & mse, mae                \\
                                                          & max\_samples     & 100, 500                \\
     \midrule
-    \multirow{5}{7em}{K\"unstliches Neuronales Netzwerk} & loss             & mse, mae, huber         \\
+    \multirow{5}{7em}{K\"unstliches Neuronales Netzwerk} & loss functions   & mse, mae, huber         \\
                                                          & epochs           & 30, 35                  \\
                                                          & activation       & relu, selu              \\
                                                          & num\_layers      & 2, 3, 4                 \\
@@ -79,9 +78,10 @@ wurden die Hyperparameter nochmals genauer angepasst. Hierzu wird die Methode de
 
 \end{table}
 
-Grid Search bedeutet, dass man einen Bereich an diskreten Werten angibt, und danach mit jeder Kombination der Werte das Modell neu trainiert und auswertet.
-Das ist sehr zeitintensiv, und kann somit nur \"uber wenige Kombinationen durchgef\"uhrt werden \cite[Seiten 76 bis 78]{handson}. In dieser Arbeit wurde zuerst Grid Search \"uber eine grobe Einteilung
+Grid Search bedeutet, dass man einen Bereich an diskreten Werten angibt und danach mit jeder Kombination der Werte das Modell neu trainiert und auswertet.
+Das ist sehr zeitintensiv und kann somit nur \"uber wenige Kombinationen durchgef\"uhrt werden \cite[Seiten 76 bis 78]{handson}. In dieser Arbeit wurde zuerst Grid Search \"uber eine grobe Einteilung
 vorgenommen und anschlie{\ss}end nur das beste Modell einer feineren Grid Search unterzogen.
+
 
 
 
