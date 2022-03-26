@@ -1,5 +1,0 @@
-[1] Config.pm:304> INFO - This is Biber 2.14 (beta)
-[2] Config.pm:307> INFO - Logfile is 'abstract_english.blg'
-[130] biber:322> INFO - === Sat Mar 26, 2022, 12:05:39
-[341] Utils.pm:309> ERROR - Cannot find 'abstract_english.bcf'!
-[341] Biber.pm:132> INFO - ERRORS: 1
