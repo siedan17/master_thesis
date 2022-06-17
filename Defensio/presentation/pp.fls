@@ -248,16 +248,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/genmisc/default.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/genmisc/default.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemeMadrid.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemeMadrid.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 INPUT /home/siedan/programming/masterarbeit/Defensio/presentation/pp.aux
@@ -301,6 +291,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
+INPUT /home/siedan/programming/masterarbeit/Defensio/presentation/bwl3.pdf
+INPUT /home/siedan/programming/masterarbeit/Defensio/presentation/bwl3.pdf
+INPUT /home/siedan/programming/masterarbeit/Defensio/presentation/bwl3.pdf
 OUTPUT /home/siedan/programming/masterarbeit/Defensio/presentation/pp.nav
 OUTPUT /home/siedan/programming/masterarbeit/Defensio/presentation/pp.toc
 OUTPUT /home/siedan/programming/masterarbeit/Defensio/presentation/pp.snm
@@ -308,4 +301,3 @@ INPUT /home/siedan/programming/masterarbeit/Defensio/presentation/pp.aux
 INPUT /home/siedan/programming/masterarbeit/Defensio/presentation/pp.out
 INPUT /home/siedan/programming/masterarbeit/Defensio/presentation/pp.out
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb
-INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb
