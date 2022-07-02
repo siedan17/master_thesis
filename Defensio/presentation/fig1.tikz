@@ -1,0 +1,58 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-12, 4) {};
+		\node [style=grey dot] (1) at (-16.25, 4.5) {Start};
+		\node [style=grey dot] (2) at (-12, 8.75) {a};
+		\node [style=grey dot] (3) at (-12, 6) {b};
+		\node [style=grey dot] (4) at (-12, 3) {c};
+		\node [style=grey dot] (5) at (-12, 0) {d};
+		\node [style=grey dot] (6) at (-7, 3) {c};
+		\node [style=grey dot] (7) at (-7, 0) {d};
+		\node [style=grey dot] (8) at (-7, 6) {b};
+		\node [style=grey dot] (9) at (-7, 9) {a};
+		\node [style=grey dot] (10) at (-2, 9) {a};
+		\node [style=grey dot] (11) at (-2, 6) {b};
+		\node [style=grey dot] (12) at (-2, 3) {c};
+		\node [style=grey dot] (13) at (-2, 0) {d};
+		\node [style=grey dot] (14) at (3, 0) {d};
+		\node [style=grey dot] (15) at (3, 3) {c};
+		\node [style=grey dot] (16) at (3, 6) {b};
+		\node [style=grey dot] (17) at (3, 9) {a};
+		\node [style=none] (18) at (-16, -2) {};
+		\node [style=none] (19) at (-12, -2) {Jahr 1};
+		\node [style=none] (20) at (-7, -2) {Jahr 2};
+		\node [style=none] (21) at (-2, -2) {Jahr 3};
+		\node [style=none] (22) at (3, -2) {Jahr 4};
+		\node [style=none] (23) at (-16, -2) {Jahr 0};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=dark] (1) to (2);
+		\draw [style=dark] (1) to (3);
+		\draw [style=dark] (1) to (4);
+		\draw [style=dark] (1) to (5);
+		\draw [style=dark] (4) to (9);
+		\draw [style=dark] (4) to (8);
+		\draw [style=dark] (4) to (6);
+		\draw [style=dark] (4) to (7);
+		\draw [style=dark] (6) to (10);
+		\draw [style=dark] (6) to (11);
+		\draw [style=dark] (6) to (12);
+		\draw [style=dark] (6) to (13);
+		\draw [style=dark] (12) to (17);
+		\draw [style=dark] (12) to (16);
+		\draw [style=dark] (12) to (15);
+		\draw [style=dark] (12) to (14);
+		\draw [style=blue] (5) to (9);
+		\draw [style=blue] (5) to (8);
+		\draw [style=blue] (5) to (6);
+		\draw [style=blue] (5) to (7);
+		\draw [style=blue] (7) to (10);
+		\draw [style=blue] (7) to (11);
+		\draw [style=blue] (7) to (12);
+		\draw [style=blue, in=180, out=0] (7) to (13);
+		\draw [style=blue] (13) to (17);
+		\draw [style=blue] (13) to (16);
+		\draw [style=blue, in=210, out=30] (13) to (15);
+		\draw [style=blue] (13) to (14);
+	\end{pgfonlayer}
+\end{tikzpicture}
