@@ -32,35 +32,26 @@
 \end{frame}
 
 \begin{frame}
-    Wie viele prüfungsaktive Studierende gibt es in drei Jahren? \\[1cm]
+    Wie viele prüfungsaktive Studierende wird es in drei Jahren geben? \\[1cm]
     \pause
-    Ansätze des LQM \\[1cm]
+    Ansätze des Leistungs- und Qualitätsmanagement (LQM)\\[1cm]
     \pause
     Prädiktion der Wahrscheinlichkeit, in drei Jahren prüfungsaktiv zu sein - ohne konkrete Klassifizierung
 \end{frame}
 
-\begin{frame}{Machine Learning}
-    \small{
-    $ \mathcal{X} \dots \text{Menge der Inputdaten} $ \\[0.2cm]
-    $ \mathcal{Y} \dots \text{Menge der Outputdaten} $ \\[0.2cm]
-    $ \mathcal{D_{\mathbf{X}}} \dots \text{Verteilung über } \mathcal{X} $ \\[0.2cm]
-    $ f(\cdot) \dots \text{mit } Y = f(\mathbf{X}) + \epsilon $ \\[0.2cm]
-    $ S = \{ (\mathbf{x}_1, y_1), \dots , (\mathbf{x}_n, y_n) \} \text{ mit n Datenpunkten} $ \\[0.2cm]
-    $ \mathcal{D} \dots \text{gemeinsame Verteilung von } (\mathbf{X}, Y) $ \\[0.2cm]
-    }
-\end{frame}
 
 \begin{frame}{Machine Learning}
+    \pause
     \small{
-    $ \mathcal{H} = \{ h( \cdot, \mathbf{w}) | \mathbf{w} \in \mathbf{W} \} $ \\[0.2cm]
+    $ f(\cdot) \dots \text{mit } Y = f(\mathbf{X}) + \epsilon $ \\[0.2cm]
     $ \mathcal{A} \dots \text{Algorithmus mit } h_S = \mathcal{A}(S) $ \\[0.2cm]
-    $ l : \mathcal{H} \times \mathcal{Z} \rightarrow \mathbb{R}_+ \dots \text{loss-Funktion, wobei } \mathcal{Z} = \mathcal{X} \times \mathcal{Y} $ \\[0.2cm]
     $ L_D(\mathcal{A}) = \mathbb{E}[l(\mathcal{A}(S), (\mathbf{X}, Y)) ] \dots \text{wahre Risikofunktion} $ \\[0.2cm]
     $ L_S(h_S) = \frac{1}{n} \sum_{i=1}^n l(h_S, (\mathbf{x}_i, y_i)) \dots \text{empirische Risikofunktion} $ \\[0.2cm]
     }
 \end{frame}
 
 \begin{frame}{Machine Learning}
+    
     \small{
         mit $ \epsilon $ wird Verteilung von $ \mathcal{D}_{Y|\mathbf{X}} $ festgelgt \\ [0.2cm]
         Parameter von $ \mathcal{D}_{Y|\mathbf{X}} $ soll mittels $ h_S $ approximiert werden \\ [0.2cm]
@@ -68,18 +59,33 @@
         loss-Funktion entscheidet darüber, welcher Parameter approximiert wird
         \begin{itemize}
             \item $l(h_S, (\mathbf{X}, Y)) = (Y - h_S(\mathbf{X}))^2 $ approximiert $\mathbb{E}[Y|\mathbf{X}] $
-            \item $l(h_S, (\mathbf{X}, Y)) = |Y- h_S(\mathbf{X})| $ approximiert $m(Y|\mathbf{X}) $ (Median) 
+            \item $l(h_S, (\mathbf{X}, Y)) = |Y- h_S(\mathbf{X})| $ approximiert $\text{m}(Y|\mathbf{X}) $ (Median) 
         \end{itemize}
     }
 \end{frame}
 
 \begin{frame}{Machine Learning}
+    
+    
+    Das wahre Risiko kann folgendermaßen umgeformt werden: \\[0.5cm]
     \small{
-        erwarteter Output: $ \bar{y}(\mathbf{x}) = \mathbb{E}[Y|\mathbf{X} = \mathbf{x}] $ \\[0.5cm]
-        erwartete Vorhersagefunktion: $ \bar{h} = \mathbb{E}[\mathcal{A}(S)] = \int_{\mathbb{R}^{(d+1)n}} h_s p_S(s)  \,ds $ \\[0.5cm]
-        $ \mathcal{L}_{\mathcal{D}}(\mathcal{A}) = \mathbb{E}[(h_S(\mathbf{\mathbf{X}})-Y)^2] $ wird zu \\[0.5cm]
-        \footnotesize{$ \underbrace{\mathbb{E}[(h_S(\mathbf{X})- \bar{h}(\mathbf{X}))^2]}_{\text{Variance}}+\underbrace{\mathbb{E}[(\bar{h}(\mathbf{X})-\bar{y}(\mathbf{X}))^2]}_{\text{Bias}^2} + \underbrace{\mathbb{E}[(\bar{y}(\mathbf{X})-Y)^2]}_{\text{Noise}} $
-    }}
+    $ \mathbb{E}[l(\mathcal{A}(S), (\mathbf{X}, Y)) ] = $ \\ [0.5cm]
+    }
+    \footnotesize{
+    $ \underbrace{\mathbb{E}[(h_S(\mathbf{X})- \bar{h}(\mathbf{X}))^2]}_{\text{Variance}}+\underbrace{\mathbb{E}[(\bar{h}(\mathbf{X})-\bar{y}(\mathbf{X}))^2]}_{\text{Bias}^2} + \underbrace{\mathbb{E}[(\bar{y}(\mathbf{X})-Y)^2]}_{\text{Noise}} $
+    }
+    
+\end{frame}
+
+\begin{frame}{Machine Learning}
+    
+    Lineare und logistische Regression \\ [1cm]
+    \pause
+    Support Vector Machines \\[1cm]
+    \pause
+    Random Forest Modelle \\[1cm]
+    \pause
+    Künstliche Neuronale Netzwerke 
     
 \end{frame}
 
@@ -117,7 +123,7 @@
 
 \begin{frame}
     Problem 1: \\
-    Schätzung der prüfungsaktiven Studierenden, von den bereits Anzahl und Merkmalskombinationen vorhanden sind \\[1cm]
+    Schätzung der prüfungsaktiven Studierenden, von denen bereits Anzahl und Merkmalskombinationen vorhanden sind \\[1cm]
 
     \pause
 
@@ -136,30 +142,21 @@
     
 \end{frame}
 
-\begin{frame}{Ergebnisse für Problem 1 Ansatz 1}
+\begin{frame}{Ergebnisse für Ansatz 1 (P1)}
+    \pause
     \scriptsize{
     \begin{table}[ht]
-        \begin{tabular}{ p{2cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} }
-          Metrik &               & lineare Regression & Random Forest  & SVM            & KNN (ohne CV) \\
+        \begin{tabular}{ p{1cm} p{1cm} p{1.5cm} p{1.5cm} p{1.5cm} p{1.5cm} }
+          Metrik &               & lineare Regression & Random Forest  & SVM            & KNN \\
           \hline
-          \multirow{2}{3em}{RMSE (Crossvalidation)}
-                 & 1 Jahr        & $18.7 \pm 0.2$     & $19.2 \pm 0.3$ & $19.7 \pm 0.4$ & $18.72$       \\
-                 & $\geq$ 2 Jahre & $16.8 \pm 0.2$     & $15.4 \pm 0.2$ & $19.2 \pm 0.3$ & $14.8$        \\
+          \multirow{2}{3em}{RMSE}
+                 & 1 Jahr        & $18.7 \pm 0.2$     & $19.2 \pm 0.3$ & $19.7 \pm 0.4$ & $18.7 \pm 0.3$       \\
+                 & $\geq$ 2 Jahre & $16.8 \pm 0.2$     & $15.4 \pm 0.2$ & $19.2 \pm 0.3$ & $14.8 \pm 0.2$        \\
       
           \hline
-          \multirow{2}{3em}{MAE (Trainingsdaten)}
+          \multirow{2}{3em}{MAE}
                  & 1 Jahr        & $15.6$             & $15.9$         & $15.9$         & $14.5$        \\
                  & $\geq$ 2 Jahre & $13.3$             & $11.7$         & $16.2$         & $10.4$        \\
-      
-          \hline
-          \multirow{2}{3em}{R2-Score}
-                 & 1 Jahr        & $0.06$             & $-.01$         & $-0.05$        & $0.06$        \\
-                 & $\geq$ 2 Jahre & $0.38$             & $0.48$         & $0.17$         & $0.52$        \\
-      
-          \hline
-          \multirow{2}{3em}{$\%$ Accurancy}
-                 & 1 Jahr        & $61$               & $61$           & $60$           & $63$          \\
-                 & $\geq$ 2 Jahre & $80$               & $78$           & $66$           & $80$          \\
       
           \hline
         \end{tabular}
@@ -168,28 +165,29 @@
     
 \end{frame}
 
-\begin{frame}{Ergebnisse für Problem 1 Ansatz 2}
+\begin{frame}{Ergebnisse für Ansatz 2 (P1)}
+    \pause    
     \begin{scriptsize}
 		\tikzfig{fig1}
 	\end{scriptsize}
 \end{frame}
 
-\begin{frame}{Ergebnisse für Problem 1 Ansatz 2}
+\begin{frame}{Ergebnisse für Ansatz 2 (P1)}
     \footnotesize{
     $\left[ \begin{array}{rrrr}  0.05 & 0.19 & 0.53 & 0.23  \end{array}\right]$,
     $\left[ \begin{array}{rrrr} 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \\ 0.02 & 0.13 & 0.79 & 0.07 \\ 0.02 & 0.49 & 0.19 & 0.29 \end{array}\right]$,
     $\left[ \begin{array}{rrrr} 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \\ 0.01 & 0.05  & 0.82  & 0.13 \\ 0.01 & 0.46 & 0.24 & 0.29 \end{array}\right]$,
-    $\left[ \begin{array}{rrrr} 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \\ 0.05 & 0.01 & 0.83 & 0.11\\ 0.00& 0.18 & 0.25 & 0.50\end{array}\right]$,
-    $\left[ \begin{array}{rrrr} 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \\ 0.15& 0.02& 0.71& 0.12\\ 0.03& 0.27& 0.28& 0.42 \end{array}\right]$.
+    $\left[ \begin{array}{rrrr} 0 & 0 & 0 & 0 \\  0 & 0 & 0 & 0 \\ 0.05 & 0.01 & 0.83 & 0.11\\ 0.00& 0.18 & 0.25 & 0.50\end{array}\right]$.
     }
 \end{frame}
 
 
 
-\begin{frame}{Ergebnisse für Problem 1 Ansatz 3}
+\begin{frame}{Ergebnisse für Ansatz 3 (P1)}
+    \pause
     \scriptsize{
     \begin{table}[ht]
-        \begin{tabular}{ p{1.5cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} }
+        \begin{tabular}{ p{1.5cm} p{1.5cm} p{1cm} p{1cm} p{1cm} p{1cm} }
                          &                  & log. Reg.                                  & RF                                         & SVM                                        & KNN                                        \\
           \hline
           \multirow{2}{3em}{1 Jahr}
@@ -200,17 +198,14 @@
                          & Predicted        & 121.25                                     & 117.46                                     & 120.59                                     & 120.9                                      \\
                          & Real             & 121                                        & 121                                        & 121                                        & 121                                        \\
           \hline
-          
-          1 Jahr         & CV Scores        & 0.63 $\pm$ 0.00                            & 0.62 $\pm$ 0.01                            & 0.63 $\pm$ 0.02                            & 0.62 $\pm$ 0.01                            \\
-          $\geq$ 2 Jahre & CV Scores        & 0.70 $\pm$ 0.01                            & 0.73 $\pm$ 0.01                            & 0.68 $\pm$ 0.01                            & 0.72 $\pm$ 0.01                            \\
-      
-          \hline
+
         \end{tabular}
       \end{table}
     }
 \end{frame}
 
 \begin{frame}{Ergebnisse für Problem 1}
+    \pause
     \small{
     \begin{itemize}
         \item[\textcolor{red}{X}] Ansatz 1 funktioniert nicht - zu große Fehler bei Schätzung der ECTS \pause
@@ -233,17 +228,16 @@
 \begin{frame}{Ergebnisse für Problem 2}
     \scriptsize{
     \begin{table}[ht]
-        \begin{tabular}{ p{1cm} p{0.5cm} p{2cm} p{2.5cm} p{2cm} }
-          Zeitspanne der Sch\"atzung &      & Prediction reale Daten & Prediction dummy Daten (Anzahl gegeben) & tats\"achliche Anzahl \\
+        \begin{tabular}{ p{1cm} p{1cm} p{2.5cm} p{2cm} }
+          Zeitspanne der Sch\"atzung &   & Prediction dummy Daten (Anzahl gegeben) & tats\"achliche Anzahl \\
           \hline
           \multirow{2}{3em}{1 Jahr}
-                                     & 2016 & 1118                   & 1105                                    & 1092                  \\
-                                     & 2017 & 1000                   & 984                                     & 973                   \\
+                                     & 2016                   & 1105                                    & 1092                  \\
+                                     & 2017                   & 984                                     & 973                   \\
           \hline
           \multirow{2}{4em}{2 Jahre}
-                                     & 2016 & 867                    & 878                                     & 819                   \\
-                                     & 2017 & 769                    & 769                                     & 721                   \\
-      
+                                     & 2016                   & 878                                     & 819                   \\
+                                     & 2017                   & 769                                     & 721                   \\
           \hline
         \end{tabular}
       \end{table}
@@ -257,6 +251,7 @@
 \end{frame}
 
 \begin{frame}{Beiträge}
+    \pause
     Klare Darstellung der Problemstellung \\[1cm]
     \pause
     Erprobung unterschiedlicher Ansätze \\[1cm]
@@ -266,8 +261,6 @@
     Notwendigkeit von mehr Daten, um Ansätze weiter zu Erproben
     
 \end{frame}
-
-
 
 
 

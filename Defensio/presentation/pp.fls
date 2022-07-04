@@ -470,6 +470,9 @@ INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmsso8.tfm
 INPUT /home/siedan/programming/masterarbeit/Defensio/presentation/fig1.tikz
 INPUT /home/siedan/programming/masterarbeit/Defensio/presentation/fig1.tikz
 INPUT /home/siedan/programming/masterarbeit/Defensio/presentation/fig1.tikz
+INPUT /home/siedan/programming/masterarbeit/Defensio/presentation/fig1.tikz
+INPUT /home/siedan/programming/masterarbeit/Defensio/presentation/fig1.tikz
+INPUT /home/siedan/programming/masterarbeit/Defensio/presentation/fig1.tikz
 OUTPUT /home/siedan/programming/masterarbeit/Defensio/presentation/pp.nav
 OUTPUT /home/siedan/programming/masterarbeit/Defensio/presentation/pp.toc
 OUTPUT /home/siedan/programming/masterarbeit/Defensio/presentation/pp.snm
