@@ -16,8 +16,10 @@
 \usepackage{multirow} % for tables
 
 \title[]{Masterarbeit}
-\author[]{Daniel Siemmeister}
-\date[]{2022 - 07 - 07}
+\author[]{\small{Daniel Siemmeister \\[0.8cm]
+            Betreuer: Univ.-Prof. Dr. Gunther Leobacher
+            }}
+\date[]{\small{\today}}
 
 % begin document
 \begin{document}
@@ -55,8 +57,10 @@
     \small{
         mit $ \epsilon $ wird Verteilung von $ \mathcal{D}_{Y|\mathbf{X}} $ festgelgt \\ [0.2cm]
         Parameter von $ \mathcal{D}_{Y|\mathbf{X}} $ soll mittels $ h_S $ approximiert werden \\ [0.2cm]
+        \pause
         Sinvolle Wahlen: Erwartungswert, Median \\ [0.2cm]
         loss-Funktion entscheidet darüber, welcher Parameter approximiert wird
+        \pause
         \begin{itemize}
             \item $l(h_S, (\mathbf{X}, Y)) = (Y - h_S(\mathbf{X}))^2 $ approximiert $\mathbb{E}[Y|\mathbf{X}] $
             \item $l(h_S, (\mathbf{X}, Y)) = |Y- h_S(\mathbf{X})| $ approximiert $\text{m}(Y|\mathbf{X}) $ (Median) 
@@ -121,16 +125,6 @@
     
 \end{frame}
 
-\begin{frame}
-    Problem 1: \\
-    Schätzung der prüfungsaktiven Studierenden, von denen bereits Anzahl und Merkmalskombinationen vorhanden sind \\[1cm]
-
-    \pause
-
-    Problem 2: \\
-    Schätzung der prüfungsaktiven Studierenden, von denen weder Anzahl noch Merkmalskombinationen vorhanden sind    
-\end{frame}
-
 \begin{frame}{Herangehensweise Problem 1}
     \begin{itemize}
         \item Regression der ECTS \\[1cm]
@@ -149,6 +143,7 @@
         \begin{tabular}{ p{1cm} p{1cm} p{1.5cm} p{1.5cm} p{1.5cm} p{1.5cm} }
           Metrik &               & lineare Regression & Random Forest  & SVM            & KNN \\
           \hline
+          
           \multirow{2}{3em}{RMSE}
                  & 1 Jahr        & $18.7 \pm 0.2$     & $19.2 \pm 0.3$ & $19.7 \pm 0.4$ & $18.7 \pm 0.3$       \\
                  & $\geq$ 2 Jahre & $16.8 \pm 0.2$     & $15.4 \pm 0.2$ & $19.2 \pm 0.3$ & $14.8 \pm 0.2$        \\
@@ -258,7 +253,7 @@
     \pause
     Machine Learning Ansatz für Problem 1, der gute Ergebnisse liefert \\[1cm]
     \pause
-    Notwendigkeit von mehr Daten, um Ansätze weiter zu Erproben
+    Grundlegende mathematische Ergebnisse für Regressionsproblemstellungen
     
 \end{frame}
 

@@ -7,14 +7,14 @@
 		\node [style=none] (6) at (-9.75, 4.75) {Daten von 2022 und davor};
 		\node [style=none] (7) at (4, 7) {};
 		\node [style=none] (8) at (4, 2) {};
-		\node [style=none] (9) at (-0.5, 4.75) {Daten von 2023, 2024, 2025};
+		\node [style=none] (9) at (-0.5, 4.75) {Daten von 2023 und 2024};
 		\node [style=green] (10) at (-13, 1) {};
 		\node [style=green] (11) at (-13, -1) {};
 		\node [style=red] (12) at (-4, 1) {};
 		\node [style=red] (13) at (-4, -1) {};
 		\node [style=none] (14) at (-10, 1) {Anzahl vorhanden};
 		\node [style=none] (15) at (-9, -1) {Merkmalskombinationen};
-		\node [style=none] (16) at (-0.25, 1) {Anzahl nicht vorhanden};
+		\node [style=none] (16) at (0, 1) {Anzahl nicht vorhanden};
 		\node [style=none] (17) at (0, -1) {Merkmalskombinationen};
 		\node [style=none] (18) at (-9, -1.75) {vorhanden};
 		\node [style=none] (19) at (0, -1.75) {nicht vorhanden};
